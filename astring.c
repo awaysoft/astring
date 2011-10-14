@@ -156,7 +156,7 @@ AString *astring_append_len(AString *string, const char *value, asize len)
 {
 	int i;
 	if (string->len + len > string->allocated_len){
-		astring_realloc(string, astring->len + len);
+		astring_realloc(string, string->len + len);
 	}
 	for (i = 0; i < len; ++i){
 		if (value[i] == '\0') break;
@@ -166,6 +166,121 @@ AString *astring_append_len(AString *string, const char *value, asize len)
 	string->len = string->len + i;
 	return string;
 }
+
+AString * astring_prepend(AString *string, const char *value)
+{
+
+	return string;
+}
+
+AString * astring_prepend_c(AString *string, char c)
+{
+
+	return string;
+}
+
+AString * astring_prepend_unichar(AString *string, aunichar wc)
+{
+
+	return string;
+}
+
+AString * astring_prepend_len(AString *string, const char *value, asize len)
+{
+
+	return string;
+}
+
+AString *      astring_insert                (AString *string,
+						                      asize pos,
+					                          const char *value)
+{
+
+	return string;
+}
+AString *      astring_insert_c              (AString *string,
+						                      asize pos,
+						                      char c)
+{
+
+	return string;
+}
+AString *      astring_insert_unichar        (AString *string,
+						                      asize pos,
+						                      aunichar wc)
+{
+
+	return string;
+}
+AString *      astring_insert_len            (AString *string,
+						                      asize pos,
+						                      const char *value,
+						                      asize len)
+{
+
+	return string;
+}
+						
+AString *      astring_overwrite             (AString *string,
+                                              asize pos,
+                                              const char *value)
+{
+
+	return string;
+}
+AString *      astring_overwrite_len         (AString *string,
+                                              asize pos,
+                                              const char *value,
+                                              asize len)
+{
+
+	return string;
+}
+
+AString *      astring_erase                 (AString *string,
+											  asize pos,
+											  asize len)
+{
+
+	return string;
+}
+											  
+
+AString *      astring_truncate              (AString *string,
+											  asize len)
+{
+
+	return string;
+}
+											  
+											  
+AString *      astring_set_size              (AString *string,
+											  asize len)
+{
+
+	return string;
+}
+
+AString *      astring_trim                  (AString *string)
+{
+
+	return string;
+}
+
+
+auint          astring_hash                  (AString *string)
+{
+
+	return 0;
+}
+
+aboolean       astring_equal                 (AString *string,
+                                              AString *string2)
+{
+
+	return 1;
+}
+
 
 void astring_free (AString *string)
 {
