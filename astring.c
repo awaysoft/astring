@@ -1,5 +1,7 @@
 #include "astring.h"
 
+#define a_new(type, size) (type *)malloc(sizeof(type) * (size))
+
 static AString *astring_new_empty(asize size)
 {
 	AString *res = (AString *) malloc (sizeof(AString));
@@ -23,10 +25,22 @@ static AString *astring_new_empty(asize size)
 	return res;
 }
 
+/*  Reallocat String And Keep All Data! */
 static void astring_realloc(AString *string, asize size)
 {
 	int alloc = (size / DEFAULT_SIZE + 1) * DEFAULT_SIZE + 1;
 	string->str = (char *)realloc(string->str, alloc);
+	string->allocated_len = size;
+}
+
+/*  Reallocat String And Clear All Data! */
+static void astring_resize(AString *string, asize size)
+{
+	int alloc = (size / DEFAULT_SIZE + 1) * DEFAULT_SIZE + 1;
+	free(string->str);
+	string->str = a_new(char, alloc);
+	string->len = 0;
+	string->allocated_len = size;
 }
 
 AString *astring_new (const char *init)
@@ -115,6 +129,13 @@ AString *astring_dump(AString *source)
 	return dest;
 }
 
+char *astring_dumpstr(AString *source)
+{
+	char *result = a_new(char, source->len + 1);
+   	strcpy(result, source->str);
+	return result;	
+}
+
 AString *astring_append(AString *string, const char *value)
 {
 	int len = strlen(value);
@@ -122,6 +143,7 @@ AString *astring_append(AString *string, const char *value)
 		astring_realloc(string, len+string->len);
 	}
 	strcat(string->str, value);
+	string->len += len;
 	return string;
 }
 
@@ -155,38 +177,91 @@ AString *astring_append_unichar(AString *string, aunichar wc)
 AString *astring_append_len(AString *string, const char *value, asize len)
 {
 	int i;
+	int slen = strlen(value);
+	if (len > slen) len = slen;
 	if (string->len + len > string->allocated_len){
 		astring_realloc(string, string->len + len);
 	}
 	for (i = 0; i < len; ++i){
-		if (value[i] == '\0') break;
 		string->str[string->len + i] = value[i];
 	}
 	string->str[string->len + i] = '\0';
-	string->len = string->len + i;
+	string->len += i;
 	return string;
 }
 
 AString * astring_prepend(AString *string, const char *value)
 {
+	int len = strlen(value);
+	/*  Backup string data */
+	char *tempstr = a_new(char, string->len + 1);
+	strcpy(tempstr, string->str);
+
+	/*  Copy data */
+	if (string->len + len > string->allocated_len) astring_resize(string, len + string->len);
+	strcpy(string->str, value);
+	strcat(string->str, tempstr);
+	free(tempstr);
+	string->len += len;
 
 	return string;
 }
 
 AString * astring_prepend_c(AString *string, char c)
 {
+	int len = string->len + 1;
+	/* Backup string data */
+	char *tempstr = a_new(char, string->len + 1);
+	strcpy(tempstr, string->str);
+
+	/*  Copy Data */
+	if (len > string->allocated_len) astring_resize(string, len);
+	string->str[0] = c; string->str[1] = '\0';
+	strcat(string->str, tempstr);
+	free(tempstr);
+	string->len = len;
 
 	return string;
 }
 
 AString * astring_prepend_unichar(AString *string, aunichar wc)
 {
+	int len = string->len + 4, i;
+	/* Backup string data */
+	char *tempstr = a_new(char, string->len + 1);
+	strcpy(tempstr, string->str);
+
+	if (len > string->allocated_len) astring_resize(string, len);
+	for (i = 0; i < 4; ++i){
+		string->str[i] = wc & 255;
+		wc >> 8;
+	}
+	string->str[4] = '\0';
+	strcat(string->str, tempstr);
+	free(tempstr);
+	string->len = len;
 
 	return string;
 }
 
 AString * astring_prepend_len(AString *string, const char *value, asize len)
 {
+	int slen = strlen(value), i;
+   	if (slen < len) len = slen;
+	
+	/* Backup string data */
+	char *tempstr = a_new(char, string->len + 1);
+	strcpy(tempstr, string->str);
+	
+	/*  Copy Data */
+	if (len + string->len > string->allocated_len) astring_resize(string, len + string->len);
+	for (i = 0; i < len; ++i){
+		string->str[i] = value[i];
+	}
+	string->str[i] = '\0';
+	strcat(string->str, tempstr);
+	free(tempstr);
+	string->len += len;
 
 	return string;
 }

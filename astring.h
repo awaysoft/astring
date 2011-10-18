@@ -25,6 +25,7 @@ AString *      astring_sized_new             (asize size);
 AString *      astring_assign                (AString *string,
 						                      const char * value);
 AString *      astring_dump                  (AString *source);
+char    *      astring_dumpstr               (AString *source);
 
 /* Append Something */
 AString *      astring_append                (AString *string,
