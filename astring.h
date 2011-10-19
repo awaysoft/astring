@@ -5,6 +5,7 @@
 #include <string.h>
 
 #define DEFAULT_SIZE 100
+#define ZERO         '\0'
 
 typedef unsigned long asize;
 typedef unsigned int aunichar;
@@ -12,6 +13,7 @@ typedef unsigned char aboolean;
 typedef unsigned int auint;
 
 typedef struct{
+	aboolean lock;
 	char *str;
 	asize len;
 	asize allocated_len;
@@ -79,7 +81,9 @@ AString *      astring_erase                 (AString *string,
 											  asize len);
 											  
 
-/* Truncate Something */
+/* Truncate Something 
+ * Leave the first len char 
+ * */
 AString *      astring_truncate              (AString *string,
 											  asize len);
 											  
@@ -89,6 +93,21 @@ AString *      astring_set_size              (AString *string,
 											  asize len);
 
 AString *      astring_trim                  (AString *string);
+
+/* Find and Replace */
+asize         astring_find              	(AString *string,
+											char *str,
+											asize position);
+
+int			  astring_replace				(AString *string,
+											char *findstr,
+											char *replacestr,
+											asize position);
+
+int 		  astring_replace_all			(AString *string,
+											char *findstr,
+											char *replacestr);
+
 
 /* Free this string */
 void           astring_free                  (AString *string);
