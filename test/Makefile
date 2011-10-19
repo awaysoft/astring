@@ -1,2 +1,3 @@
-testtrim:testtrim.c ../astring.o
-	gcc -o testtrim testtrim.c ../astring.o
+all:test
+test:test.c ../astring.o
+	gcc -o test test.c ../astring.o -g
