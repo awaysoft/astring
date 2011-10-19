@@ -95,7 +95,7 @@ AString *      astring_set_size              (AString *string,
 AString *      astring_trim                  (AString *string);
 
 /* Find and Replace */
-asize         astring_find              	(AString *string,
+int         astring_find              	(AString *string,
 											char *str,
 											asize position);
 
