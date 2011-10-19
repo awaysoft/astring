@@ -393,6 +393,7 @@ static AString * _astring_trim(AString *string)
 	while(endch != string->str && (*endch == ' ' || *endch == '\t' || *endch == ZERO)){
 		--endch;
 	}
+	++endch;
 	
 	while(*startch && (*startch == ' ' || *startch == '\t')){
 		++startch;
@@ -404,7 +405,7 @@ static AString * _astring_trim(AString *string)
 		*p++ = *q++;
 	}
 
-	string->len = ((int)endch - (int)startch) / (sizeof(char)) + 1;
+	string->len = ((int)endch - (int)startch) / (sizeof(char));
 	string->str[string->len] = ZERO;
 	
 	return string;
@@ -434,8 +435,8 @@ static int _astring_replace(AString *string, char *findstr, char *replacestr, as
 	int pos = _astring_find(string, findstr, position);
 	
 	if (pos != -1){
-		_string_erase(string, pos, findlen);
-		_string_insert(string, pos, replacestr);
+		_astring_erase(string, pos, findlen);
+		_astring_insert(string, pos, replacestr);
 		return 0;
 	}else{
 		return 1;
