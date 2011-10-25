@@ -74,6 +74,12 @@ int main()
 	str = astring_new("abcdefagaslksadjlkfjaskllkfaklsdflkalksvnalksjdflkjasdlkfjlaksjlkfajsldkfjladsjlkfsdjalkjdklsjakla");
 	astring_append(str, "ncdi");
 	print(str);
+
+	astring_append_c(str, 'o');
+	print(str);
+
+	astring_append_len(str, "1234567890", 5);
+	print(str);
 	astring_free(str);
 
 	/*  Test Trim */
@@ -111,6 +117,28 @@ int main()
 	testreplaceall(str, "Hello", "AWA");
 	str = astring_new("aHellobHelloHelloHello");
 	testreplaceall(str, "Hello", "AWA");
+	astring_free(str);
+
+	/*  Test Prepend */
+	str = astring_new("Hellowlkjalksdjkfa");
+	astring_prepend(str, "abc");
+	print(str);
+
+	astring_prepend_c(str, 'o');
+	print(str);
+
+	astring_prepend_len(str, "lkajdlkfjalksdfklajskldfklasjkflajlsdjflkasdjlkfjaslkjflksadjlkfjdsakljlfdskklfdj", 50);
+	print(str);
+
+	astring_free(str);
+
+	str = astring_new("Hello\bWorld!\n");
+	printf(">>>>>>%d\n", astring_find(str, "\b", 0));
+	
+	/* Test Load File */
+	printf("\n>>Testing Load File<<\n");
+	str = astring_get_file_content("test.c");
+	print(str);
 	astring_free(str);
 	return 0;
 }

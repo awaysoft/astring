@@ -13,7 +13,7 @@ typedef unsigned char aboolean;
 typedef unsigned int auint;
 
 typedef struct{
-	aboolean lock;
+	volatile aboolean lock;
 	char *str;
 	asize len;
 	asize allocated_len;
@@ -28,6 +28,9 @@ AString *      astring_assign                (AString *string,
 						                      const char * value);
 AString *      astring_dump                  (AString *source);
 char    *      astring_dumpstr               (AString *source);
+
+/* Get String From a file */
+AString *      astring_get_file_content			 (const char * filename);
 
 /* Append Something */
 AString *      astring_append                (AString *string,
@@ -95,11 +98,11 @@ AString *      astring_set_size              (AString *string,
 AString *      astring_trim                  (AString *string);
 
 /* Find and Replace */
-int         astring_find              	(AString *string,
+int 	       astring_find              	(AString *string,
 											char *str,
 											asize position);
 
-int			  astring_replace				(AString *string,
+int		 	  astring_replace				(AString *string,
 											char *findstr,
 											char *replacestr,
 											asize position);

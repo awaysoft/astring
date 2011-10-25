@@ -1,4 +1,6 @@
 #include "astring.h"
+#include <stdio.h>
+#include <stdlib.h>
 
 #define a_new(type, size) (type *)malloc(sizeof(type) * (size))
 
@@ -78,6 +80,46 @@ static char *_astring_dumpstr(AString *source)
 	char *result = a_new(char, source->len + 1);
    	strcpy(result, source->str);
    	
+	return result;
+}
+
+static size_t _astring_file_length(FILE *fp)
+{
+	unsigned char temp[1000000];
+	size_t count = 0;
+	long pos;
+	pos = ftell(fp);
+	/* Pos to End */
+	fseek(fp, 0L, 2);
+	
+	count = ftell(fp);
+	
+	fseek(fp, pos, 0);
+	return count;
+}
+
+static AString * _astring_get_file_content(const char * filename)
+{
+	FILE *fp;
+	size_t flen, fr;
+	AString *result = NULL;
+	char *p;
+
+	if ((fp = fopen(filename, "rb")) == NULL) return NULL;
+	flen = _astring_file_length(fp);
+
+	fseek(fp, 0L, 0);
+	result = astring_new_empty(flen + 1);
+	p = result -> str;
+	flen = 0;
+
+	while((fr = fread(p, 1, 1024, fp))){
+		p += fr;
+		flen += fr;
+	}
+	*p = '\0';
+	result->len = flen;
+
 	return result;
 }
 
@@ -558,6 +600,11 @@ AString *astring_assign(AString *string, const char * value)
 
 	V(string->lock);
 	return string;
+}
+
+AString *astring_get_file_content (const char * filename)
+{
+	return _astring_get_file_content(filename);
 }
 
 AString *astring_dump(AString *source)
