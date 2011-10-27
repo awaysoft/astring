@@ -166,6 +166,11 @@ int main()
 	astring_set_char(str, 5, 'b');
 	print(str);
 	astring_free(str);
+	
+	str = astring_new("012345678901234567890");
+	astring_truncate(str, 5);
+	print(str);
+	astring_free(str);
 
 
 	return 0;

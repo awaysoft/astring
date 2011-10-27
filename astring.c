@@ -556,12 +556,12 @@ static auint _astring_hash(AString *string)
 
 static aboolean _astring_equal(AString *string, AString *string2)
 {
-	aboolean result = 0;
+	aboolean result = FALSE;
 
-	if (string->len != string2->len) result = 0;
+	if (string->len != string2->len) result = FALSE;
 	else{
-		if (strcmp(string->str, string2->str) == 0) result = 1;
-		else result = 0;
+		if (strcmp(string->str, string2->str) == 0) result = TRUE;
+		else result = FALSE;
 	}
 
 	return result;

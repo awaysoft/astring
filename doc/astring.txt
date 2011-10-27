@@ -57,6 +57,7 @@ AString *      astring_sized_new             (asize size);
 AString *      astring_assign                (AString *string,
                                               const char * value);
 	Copies the bytes from a string into an AString, destroying any previous contents. It is rather like the standard strcpy() function, except that you do not have to worry about having enough space to copy the string.
+
 	string    :the destination AString. Its current contents are destroyed.	
 	value     :the string to copy into string
 	Returns   :string
@@ -83,94 +84,216 @@ AString *      astring_get_file_content	     (const char * filename);
 
 AString *      astring_append                (AString *string,
                                               const char *value);
+	Append a string to An AString.
+	
+	string    :the destination AString
+	value     :the string you want to append
+	Returns   :string
 
 AString *      astring_append_c              (AString *string,
                                               char c);
+	Append a char to An AString.
+	
+	string    :the destination AString
+	value     :the char you want to append
+	Returns   :string
 
 AString *      astring_append_unichar        (AString *string,
                                               aunichar wc);
+	Append a wide char to An AString.
+	
+	string    :the destination AString
+	value     :the wide char you want to append
+	Returns   :string
 
 AString *      astring_append_len            (AString *string,
                                               const char *value,
                                               asize len);
+	Append a string to An AString.when strlen(value) is lager than string, only append len's char.
+	
+	string    :the destination AString
+	value     :the string you want to append
+	Returns   :string
 
 AString *      astring_prepend               (AString *string,
                                               const char *value);
+	like append.
 
 AString *      astring_prepend_c             (AString *string,
                                               char c);
+	like append.
 
 AString *      astring_prepend_unichar       (AString *string,
                                               aunichar wc);
+	like append.
 
 AString *      astring_prepend_len           (AString *string,
                                               const char *value,
-                                              asize len);						
+                                              asize len);
+	like append.						
 
 AString *      astring_insert                (AString *string,
                                               asize pos,
                                               const char *value);
+	like append.pos is start with 0.
 
 AString *      astring_insert_c              (AString *string,
                                               asize pos,
                                               char c);
+	like append.
 
 AString *      astring_insert_unichar        (AString *string,
                                               asize pos,
                                               aunichar wc);
+	like append.
 
 AString *      astring_insert_len            (AString *string,
                                               asize pos,
                                               const char *value,
                                               asize len);	
+	like append.
 						
 AString *      astring_overwrite             (AString *string,
                                               asize pos,
                                               const char *value);
+	overwrite an AString from pos
+	
+	string     :the AString you want to overwrite
+	pos        :the overwrite position
+	value      :the string you want to overwrite to
 
 AString *      astring_overwrite_len         (AString *string,
                                               asize pos,
                                               const char *value,
                                               asize len);
+	like append and overwrite
 
 AString *      astring_erase                 (AString *string,
                                               asize pos,
                                               asize len);
-											  
+	Erase something from an AString.
+	
+	string     :the AString you want to erase
+	pos        :the erase start
+	len        :How long you want to erase
+	Returns    :string
 
 AString *      astring_truncate              (AString *string,
                                               asize len);
+	Truncate an AString, leave the first len char.
+	
+	string     :the AString you want to truncate
+	len        :How long you want to leave
+	Returns    :string
 											  
 AString *      astring_set_size              (AString *string,
                                               asize len);
+	Set string's length, if len is smaller than string->len, it'll be truncate,else it'll fill with undefined char.
+	
+	string     :the AString you want to set.
+	len        :the new length
+	Returns    :string
+
 
 AString *      astring_trim                  (AString *string);
+	wipe off the head and tail's space or tab.
+	"  abc  " will be "abc"
+	
+	string     :the AString you want to trim
+	Returns    :string
 
 AString *      astring_substring             (AString *string, asize start, asize end);
+	change an AString to it's substring.
+	
+	string     :the AString you want to sub
+	start      :where do you want to start
+	end        :where do you want to end
+	Returns    :string
+
+	Example:
+		str = astring_new("01234567890");
+		astring_substring(str, 2, 5);
+		printf("%s\n", str->str);
+		
+	Run:    2345
 
 AString *      astring_substring_new	     (AString *string, asize start, asize end);
+	Like substring, but it'll create a new AString to return.
+	string will not to be changed.
+
+	string     :the AString you want to sub
+	start      :where do you want to start
+	end        :where do you want to end
+	Returns    :string
+
+	Example:
+		str = astring_new("01234567890");
+		str2 = astring_substring(str, 2, 5);
+		printf("%s\n", str->str);
+		printf("%s\n", str2->str);
+		
+	Run:    01234567890
+		2345
 
 char           astring_get_char	             (AString *string, asize position);
+	Get the char in an AString.
+	
+	string     :the source AString
+	position   :the position you want to get
+	Returns    :the char in position
+	
 
 AString *      astring_set_char	             (AString *string, asize position, char ch);
+	Set the char in position.
+
+	string     :the destination AString
+	position   :the position you want to change
+	char       :the char you want to change to
+	Returns    :string
 
 int 	       astring_find                  (AString *string,
                                               char *str,
                                               asize position);
+	Find a string from an AString
+	
+	string     :the source AString
+	str        :the string you want to find
+	asize      :the position where you want to find
+	Returns    :the position where the str at, return -1 when no found.
 
 int            astring_replace               (AString *string,
                                               char *findstr,
                                               char *replacestr,
                                               asize position);
+	Replace a string from an AString
+	
+	string     :the source AString
+	findstr    :the string you want to find
+	replacestr :the string you want to replace
+	asize      :the position where you want to find
+	Returns    :the position where the str at, return -1 when no found.
 
 int            astring_replace_all           (AString *string,
                                               char *findstr,
                                               char *replacestr);
+	like replace, but will replace all in string.
+
+	Returns    :the count you have replace.
 
 void           astring_free                  (AString *string);
+	Frees the memory allocated for the AString.
+
+	string     :an AString
 
 auint          astring_hash                  (AString *string);
-
+	Get the hashcode from a string.
+	
+	string     :an AString
+	Returns    :the hashcode from string
 
 aboolean       astring_equal                 (AString *string,
                                               AString *string2);
+	Equal the two AString
+	string     :the first AString
+	string2    :the second AString
+	Returns    :TRUE or FALSE
