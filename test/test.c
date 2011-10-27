@@ -30,6 +30,7 @@ void testreplaceall(AString *string, char *findstr, char *replacestr)
 
 void print(AString *string)
 {
+	if (!A_IS_STRING(string)) return;
 	printf("========================================\n");
 	printf("String Info\n");
 	printf("string->str:%s\n", string->str);
@@ -140,5 +141,32 @@ int main()
 	str = astring_get_file_content("test.c");
 	print(str);
 	astring_free(str);
+
+	/* Test SubString */
+	printf("\n>>Testing SubString<<\n");
+	str = astring_new("012345678901234567890123456789");
+	print(str);
+	astring_substring(str, 0, 28);
+	print(str);
+	str2 = astring_substring_new(str, 10, 16);
+	print(str2);
+	astring_substring(str2, 1, 3);
+	print(str2);
+	astring_free(str);
+	astring_free(str2);
+
+	astring_assign(str, "Hello");
+	print(str);
+
+	/* Test Char */
+	printf("\n>>Testing char<<\n");
+	str = astring_new("01234567890");
+	printf(">>%c<<\n", astring_get_char(str, 5));
+	printf(">>%c<<\n", astring_get_char(str, 11));
+	astring_set_char(str, 5, 'b');
+	print(str);
+	astring_free(str);
+
+
 	return 0;
 }

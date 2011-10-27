@@ -2,6 +2,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+
 #define a_new(type, size) (type *)malloc(sizeof(type) * (size))
 
 /*  Get String's Lock and Lock
@@ -10,6 +11,12 @@
 
 /*  Unlock String */
 #define V(lock) --lock;
+
+#define A_WARING(msg) do{fprintf(stderr, "WARING: [%s():%d] %s\n", __func__, __LINE__, msg);}while(0)
+
+#define A_WARING_NOT_STRING A_WARING("A_IS_STRING Check falt!")
+
+static AString ASTRING_EMPTY = {str:"",len:0,allocated_len:0};
 
 static AString *astring_new_empty(asize size)
 {
@@ -20,6 +27,7 @@ static AString *astring_new_empty(asize size)
 		return NULL;
 	}
 	
+	res->flag = A_FLAG;
 	res->len = 0;
 	res->allocated_len = size;
 	res->str = a_new(char, res->allocated_len);
@@ -453,6 +461,41 @@ static AString * _astring_trim(AString *string)
 	return string;
 }
 
+static AString *_astring_substring(AString *string, asize start, asize end)
+{
+	if (start >= string->len) return string;
+	if (end < start) return string;
+	if (end >= string->len) end = string->len - 1;
+
+	char *p = string->str;
+	char *q = &(string->str[start]);
+	char *ends = &(string->str[end + 1]);
+	
+	while(q != ends){
+		*p++ = *q++;
+	}
+	*p = '\0';
+
+	string -> len = end - start + 1;
+
+	return string;
+}
+
+static char _astring_get_char(AString *string, asize position)
+{
+	if (position >= string->len) return ZERO;
+
+	return (string->str[position]);
+}
+
+static AString *_astring_set_char(AString *string, asize position, char ch)
+{
+	if (position >= string->len) return string;
+	string->str[position] = ch;
+
+	return string;
+}
+
 static int _astring_find(AString *string, char *str, asize position)
 {
 	int result = -1;
@@ -594,6 +637,10 @@ AString *astring_sized_new (asize size)
 
 AString *astring_assign(AString *string, const char * value)
 {
+	if (!A_IS_STRING(string)) {
+		A_WARING_NOT_STRING;
+		return &ASTRING_EMPTY;
+	}
 	P(string->lock);
 
 	_astring_assign(string, value);
@@ -609,6 +656,10 @@ AString *astring_get_file_content (const char * filename)
 
 AString *astring_dump(AString *source)
 {
+	if (!A_IS_STRING(source)) {
+		A_WARING_NOT_STRING;
+		return &ASTRING_EMPTY;
+	}
 	P(source->lock);
 
 	AString *dest = _astring_dump(source);
@@ -619,6 +670,10 @@ AString *astring_dump(AString *source)
 
 char *astring_dumpstr(AString *source)
 {
+	if (!A_IS_STRING(source)) {
+		A_WARING_NOT_STRING;
+		return NULL;
+	}
 	P(source->lock);
 
 	char *result = _astring_dumpstr(source);	
@@ -629,6 +684,10 @@ char *astring_dumpstr(AString *source)
 
 AString *astring_append(AString *string, const char *value)
 {
+	if (!A_IS_STRING(string)) {
+		A_WARING_NOT_STRING;
+		return &ASTRING_EMPTY;
+	}
 	P(string->lock);
 
 	_astring_append(string, value);
@@ -639,6 +698,10 @@ AString *astring_append(AString *string, const char *value)
 
 AString *astring_append_c(AString *string, char c)
 {
+	if (!A_IS_STRING(string)) {
+		A_WARING_NOT_STRING;
+		return &ASTRING_EMPTY;
+	}
 	P(string->lock);
 
 	_astring_append_c(string, c);
@@ -649,6 +712,10 @@ AString *astring_append_c(AString *string, char c)
 
 AString *astring_append_unichar(AString *string, aunichar wc)
 {
+	if (!A_IS_STRING(string)) {
+		A_WARING_NOT_STRING;
+		return &ASTRING_EMPTY;
+	}
 	P(string->lock);
 
 	_astring_append_unichar(string, wc);
@@ -659,6 +726,10 @@ AString *astring_append_unichar(AString *string, aunichar wc)
 
 AString *astring_append_len(AString *string, const char *value, asize len)
 {
+	if (!A_IS_STRING(string)) {
+		A_WARING_NOT_STRING;
+		return &ASTRING_EMPTY;
+	}
 	P(string->lock);
 
 	_astring_append_len(string, value, len);
@@ -669,6 +740,10 @@ AString *astring_append_len(AString *string, const char *value, asize len)
 
 AString * astring_prepend(AString *string, const char *value)
 {
+	if (!A_IS_STRING(string)) {
+		A_WARING_NOT_STRING;
+		return &ASTRING_EMPTY;
+	}
 	P(string->lock);
 
 	_astring_prepend(string, value);
@@ -679,6 +754,10 @@ AString * astring_prepend(AString *string, const char *value)
 
 AString * astring_prepend_c(AString *string, char c)
 {
+	if (!A_IS_STRING(string)) {
+		A_WARING_NOT_STRING;
+		return &ASTRING_EMPTY;
+	}
 	P(string->lock);
 
 	_astring_prepend_c(string, c);
@@ -689,6 +768,10 @@ AString * astring_prepend_c(AString *string, char c)
 
 AString * astring_prepend_unichar(AString *string, aunichar wc)
 {
+	if (!A_IS_STRING(string)) {
+		A_WARING_NOT_STRING;
+		return &ASTRING_EMPTY;
+	}
 	P(string->lock);
 
 	_astring_prepend_unichar(string, wc);
@@ -699,6 +782,10 @@ AString * astring_prepend_unichar(AString *string, aunichar wc)
 
 AString * astring_prepend_len(AString *string, const char *value, asize len)
 {
+	if (!A_IS_STRING(string)) {
+		A_WARING_NOT_STRING;
+		return &ASTRING_EMPTY;
+	}
 	P(string->lock);
 
 	_astring_prepend_len(string, value, len);
@@ -709,6 +796,10 @@ AString * astring_prepend_len(AString *string, const char *value, asize len)
 
 AString * astring_insert(AString *string, asize pos, const char *value)
 {
+	if (!A_IS_STRING(string)) {
+		A_WARING_NOT_STRING;
+		return &ASTRING_EMPTY;
+	}
 	P(string->lock);
 
 	_astring_insert(string, pos, value);
@@ -719,6 +810,10 @@ AString * astring_insert(AString *string, asize pos, const char *value)
 
 AString * astring_insert_c(AString *string, asize pos, char c)
 {
+	if (!A_IS_STRING(string)) {
+		A_WARING_NOT_STRING;
+		return &ASTRING_EMPTY;
+	}
 	P(string->lock);
 
 	_astring_insert_c(string, pos, c);
@@ -729,6 +824,10 @@ AString * astring_insert_c(AString *string, asize pos, char c)
 
 AString * astring_insert_unichar(AString *string, asize pos, aunichar wc)
 {
+	if (!A_IS_STRING(string)) {
+		A_WARING_NOT_STRING;
+		return &ASTRING_EMPTY;
+	}
 	P(string->lock);
 
 	_astring_insert_unichar(string, pos, wc);
@@ -739,6 +838,10 @@ AString * astring_insert_unichar(AString *string, asize pos, aunichar wc)
 
 AString * astring_insert_len(AString *string, asize pos, const char *value, asize len)
 {
+	if (!A_IS_STRING(string)) {
+		A_WARING_NOT_STRING;
+		return &ASTRING_EMPTY;
+	}
 	P(string->lock);
 
 	_astring_insert_len(string, pos, value, len);
@@ -749,6 +852,10 @@ AString * astring_insert_len(AString *string, asize pos, const char *value, asiz
 
 AString * astring_overwrite(AString *string, asize pos, const char *value)
 {
+	if (!A_IS_STRING(string)) {
+		A_WARING_NOT_STRING;
+		return &ASTRING_EMPTY;
+	}
 	P(string->lock);
 	
 	int len = strlen(value);
@@ -760,6 +867,10 @@ AString * astring_overwrite(AString *string, asize pos, const char *value)
 
 AString * astring_overwrite_len(AString *string, asize pos, const char *value, asize len)
 {
+	if (!A_IS_STRING(string)) {
+		A_WARING_NOT_STRING;
+		return &ASTRING_EMPTY;
+	}
 	P(string->lock);
 
 	_astring_overwrite_len(string, pos, value, len);
@@ -770,6 +881,10 @@ AString * astring_overwrite_len(AString *string, asize pos, const char *value, a
 
 AString * astring_erase(AString *string, asize pos, asize len)
 {
+	if (!A_IS_STRING(string)) {
+		A_WARING_NOT_STRING;
+		return &ASTRING_EMPTY;
+	}
 	P(string->lock);
 
 	_astring_erase(string, pos, len);
@@ -780,6 +895,10 @@ AString * astring_erase(AString *string, asize pos, asize len)
 
 AString * astring_truncate (AString *string, asize len)
 {
+	if (!A_IS_STRING(string)) {
+		A_WARING_NOT_STRING;
+		return &ASTRING_EMPTY;
+	}
 	P(string->lock);
 
 	_astring_truncate(string, len);
@@ -790,6 +909,10 @@ AString * astring_truncate (AString *string, asize len)
 
 AString * astring_set_size(AString *string, asize len)
 {
+	if (!A_IS_STRING(string)) {
+		A_WARING_NOT_STRING;
+		return &ASTRING_EMPTY;
+	}
 	P(string->lock);
 	
 	_astring_set_size(string, len);
@@ -800,6 +923,10 @@ AString * astring_set_size(AString *string, asize len)
 
 AString * astring_trim(AString *string)
 {
+	if (!A_IS_STRING(string)) {
+		A_WARING_NOT_STRING;
+		return &ASTRING_EMPTY;
+	}
 	P(string->lock);
 
 	_astring_trim(string);
@@ -808,8 +935,69 @@ AString * astring_trim(AString *string)
 	return string;
 }
 
+AString * astring_substring(AString *string, asize start, asize end)
+{
+	if (!A_IS_STRING(string)) {
+		A_WARING_NOT_STRING;
+		return &ASTRING_EMPTY;
+	}
+	P(string->lock);
+
+	_astring_substring(string, start, end);
+
+	V(string->lock);
+	return string;
+}
+ 
+AString * astring_substring_new(AString *string, asize start, asize end)
+{
+	if (!A_IS_STRING(string)) {
+		A_WARING_NOT_STRING;
+		return &ASTRING_EMPTY;
+	}
+	P(string->lock);
+	
+	AString *result = _astring_dump(string);
+	_astring_substring(result, start, end);
+
+	V(string->lock);
+	return result;
+}
+
+char astring_get_char(AString *string, asize position)
+{
+	if (!A_IS_STRING(string)) {
+		A_WARING_NOT_STRING;
+		return ZERO;
+	}
+	P(string->lock);
+
+	char result = _astring_get_char(string, position);
+
+	V(string->lock);
+	return result;
+}
+
+AString *astring_set_char(AString *string, asize position, char ch)
+{
+	if (!A_IS_STRING(string)) {
+		A_WARING_NOT_STRING;
+		return &ASTRING_EMPTY;
+	}
+	P(string->lock);
+
+	_astring_set_char(string, position, ch);
+
+	V(string->lock);
+	return string;
+}
+
 int astring_find(AString *string, char *str, asize position)
 {
+	if (!A_IS_STRING(string)) {
+		A_WARING_NOT_STRING;
+		return -1;
+	}
 	P(string->lock);
 	
 	int result = _astring_find(string, str, position);
@@ -820,6 +1008,10 @@ int astring_find(AString *string, char *str, asize position)
 
 int astring_replace(AString *string, char *findstr, char *replacestr, asize position)
 {
+	if (!A_IS_STRING(string)) {
+		A_WARING_NOT_STRING;
+		return -1;
+	}
 	P(string->lock);
 
 	int result = _astring_replace(string, findstr, replacestr, position);
@@ -831,6 +1023,10 @@ int astring_replace(AString *string, char *findstr, char *replacestr, asize posi
 
 int astring_replace_all(AString *string, char *findstr, char *replacestr)
 {
+	if (!A_IS_STRING(string)) {
+		A_WARING_NOT_STRING;
+		return -1;
+	}
 	P(string->lock);
 
 	int result = _astring_replace_all(string, findstr, replacestr);
@@ -841,6 +1037,10 @@ int astring_replace_all(AString *string, char *findstr, char *replacestr)
 
 auint astring_hash(AString *string)
 {
+	if (!A_IS_STRING(string)) {
+		A_WARING_NOT_STRING;
+		return 0;
+	}
 	P(string->lock);
 
 	auint hash = _astring_hash(string);
@@ -851,6 +1051,14 @@ auint astring_hash(AString *string)
 
 aboolean astring_equal(AString *string, AString *string2)
 {
+	if (!A_IS_STRING(string)) {
+		A_WARING_NOT_STRING;
+		return FALSE;
+	}
+	if (!A_IS_STRING(string2)) {
+		A_WARING_NOT_STRING;
+		return FALSE;
+	}
 	P(string->lock);
 	
 	aboolean result = _astring_equal(string, string2);
@@ -862,7 +1070,8 @@ aboolean astring_equal(AString *string, AString *string2)
 
 void astring_free (AString *string)
 {
-	if (string == NULL) return ;
+	if (!A_IS_STRING(string)) return ;
+	string->flag = 0;
 	free(string->str);
 	free(string);
 }

@@ -4,8 +4,13 @@
 #include <stdlib.h>
 #include <string.h>
 
+#define A_FLAG       101
 #define DEFAULT_SIZE 100
 #define ZERO         '\0'
+#define FALSE        0
+#define TRUE         1
+
+#define A_IS_STRING(string) (*(unsigned char *)string == A_FLAG)
 
 typedef unsigned long asize;
 typedef unsigned int aunichar;
@@ -13,7 +18,9 @@ typedef unsigned char aboolean;
 typedef unsigned int auint;
 
 typedef struct{
+	unsigned char flag; /* Check is astring */
 	volatile aboolean lock;
+
 	char *str;
 	asize len;
 	asize allocated_len;
@@ -96,6 +103,16 @@ AString *      astring_set_size              (AString *string,
 											  asize len);
 
 AString *      astring_trim                  (AString *string);
+
+/* Get SubString */
+AString *	   astring_substring			(AString *string, asize start, asize end);
+
+AString *	   astring_substring_new	    (AString *string, asize start, asize end);
+
+/* Get Chat */
+char		   astring_get_char				(AString *string, asize position);
+
+AString *	   astring_set_char				(AString *string, asize position, char ch);
 
 /* Find and Replace */
 int 	       astring_find              	(AString *string,
