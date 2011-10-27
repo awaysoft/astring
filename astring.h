@@ -10,15 +10,16 @@
 #define FALSE        0
 #define TRUE         1
 
-#define A_IS_STRING(string) (*(unsigned char *)string == A_FLAG)
+#define A_IS_STRING(string) (*(auchar *)string == A_FLAG)
 
 typedef unsigned long asize;
 typedef unsigned int aunichar;
 typedef unsigned char aboolean;
 typedef unsigned int auint;
+typedef unsigned char auchar;
 
-typedef struct{
-	unsigned char flag; /* Check is astring */
+typedef struct AString{
+	auchar flag; /* Check is astring */
 	volatile aboolean lock;
 
 	char *str;
