@@ -3,28 +3,21 @@
 
 #include <stdlib.h>
 #include <string.h>
+#include "atype.h"
 
-#define A_FLAG       101
-#define DEFAULT_SIZE 100
-#define ZERO         '\0'
-#define FALSE        0
-#define TRUE         1
+#define A_STRING_FLAG       101
+#define DEFAULT_SIZE        100
+#define ZERO                '\0'
 
-#define A_IS_STRING(string) (*(auchar *)string == A_FLAG)
-
-typedef unsigned long asize;
-typedef unsigned int aunichar;
-typedef unsigned char aboolean;
-typedef unsigned int auint;
-typedef unsigned char auchar;
+#define A_IS_STRING(string) (*(auchar *)string == A_STRING_FLAG)
 
 typedef struct AString{
-	auchar flag; /* Check is astring */
-	volatile aboolean lock;
+	auchar              flag; /* Check is astring */
+	volatile aboolean   lock;
 
-	char *str;
-	asize len;
-	asize allocated_len;
+	char *              str;
+	asize               len;
+	asize               allocated_len;
 }AString;
 
 /* Alloc a new AString */
@@ -34,8 +27,8 @@ AString *      astring_new_len               (const char *init,
 AString *      astring_sized_new             (asize size);
 AString *      astring_assign                (AString *string,
 						                      const char * value);
-AString *      astring_dump                  (AString *source);
-char    *      astring_dumpstr               (AString *source);
+AString *      astring_dup                   (AString *source);
+char    *      astring_dupstr                (AString *source);
 
 /* Get String From a file */
 AString *      astring_get_file_content			 (const char * filename);

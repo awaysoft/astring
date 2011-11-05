@@ -27,7 +27,7 @@ static AString *astring_new_empty(asize size)
 		return NULL;
 	}
 	
-	res->flag = A_FLAG;
+	res->flag = A_STRING_FLAG;
 	res->len = 0;
 	res->allocated_len = size;
 	res->str = a_new(char, res->allocated_len);
@@ -74,7 +74,7 @@ static AString *_astring_assign(AString *string, const char * value)
 	return string;
 }
 
-static AString *_astring_dump(AString *source)
+static AString *_astring_dup(AString *source)
 {
 	AString *dest = astring_new_empty(source->allocated_len);
 	dest->len = source->len;
@@ -83,7 +83,7 @@ static AString *_astring_dump(AString *source)
 	return dest;
 }
 
-static char *_astring_dumpstr(AString *source)
+static char *_astring_dupstr(AString *source)
 {
 	char *result = a_new(char, source->len + 1);
    	strcpy(result, source->str);
@@ -654,7 +654,7 @@ AString *astring_get_file_content (const char * filename)
 	return _astring_get_file_content(filename);
 }
 
-AString *astring_dump(AString *source)
+AString *astring_dup(AString *source)
 {
 	if (!A_IS_STRING(source)) {
 		A_WARING_NOT_STRING;
@@ -662,13 +662,13 @@ AString *astring_dump(AString *source)
 	}
 	P(source->lock);
 
-	AString *dest = _astring_dump(source);
+	AString *dest = _astring_dup(source);
 
 	V(source->lock);
 	return dest;
 }
 
-char *astring_dumpstr(AString *source)
+char *astring_dupstr(AString *source)
 {
 	if (!A_IS_STRING(source)) {
 		A_WARING_NOT_STRING;
@@ -676,7 +676,7 @@ char *astring_dumpstr(AString *source)
 	}
 	P(source->lock);
 
-	char *result = _astring_dumpstr(source);	
+	char *result = _astring_dupstr(source);	
 	
 	V(source->lock);
 	return result;	
@@ -957,7 +957,7 @@ AString * astring_substring_new(AString *string, asize start, asize end)
 	}
 	P(string->lock);
 	
-	AString *result = _astring_dump(string);
+	AString *result = _astring_dup(string);
 	_astring_substring(result, start, end);
 
 	V(string->lock);

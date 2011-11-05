@@ -62,13 +62,13 @@ AString *      astring_assign                (AString *string,
 	value     :the string to copy into string
 	Returns   :string
 
-AString *      astring_dump                  (AString *source);
+AString *      astring_dup                  (AString *source);
 	duplicate an AString.
 
 	source    :the source AString.
 	Returns   :the new AString
 
-char    *      astring_dumpstr               (AString *source);
+char    *      astring_dupstr               (AString *source);
 	duplicate char * from an AString.
 	You should free the return string when you don't want to use it.
 	When you just want the string to print or view, not change it, you can use source->str instead.
