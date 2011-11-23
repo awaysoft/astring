@@ -3,28 +3,28 @@
 
 void testtrim(char *str)
 {
-	AString *string = astring_new(str);
-	astring_trim(string);
+	AString *string = a_string_new(str);
+	a_string_trim(string);
 	printf("|%s| Trim From: |%s|\n", string->str, str);
 }
 
 void testfind(AString *string, char *findstr)
 {
-	int pos = astring_find(string, findstr, 1);
+	int pos = a_string_find(string, findstr, 1);
 	printf("%s Find %s:%d\n", string->str, findstr, pos);
 }
 
 void testreplace(AString *string, char *findstr, char *replacestr)
 {
 	printf("%s ", string->str);
-	int pos = astring_replace(string, findstr, replacestr, 0);
+	int pos = a_string_replace(string, findstr, replacestr, 0);
 	printf("Find %s Replace %s:%d:%s\n", findstr, replacestr, pos, string->str);
 }
 
 void testreplaceall(AString *string, char *findstr, char *replacestr)
 {
 	printf("%s ", string->str);
-	int pos = astring_replace_all(string, findstr, replacestr);
+	int pos = a_string_replace_all(string, findstr, replacestr);
 	printf("Find %s Replace %s:%d:%s\n", findstr, replacestr, pos, string->str);
 }
 
@@ -43,45 +43,45 @@ int main()
 {
 	AString *str = NULL;
 	/*  Test New */
-	str = astring_new("");
+	str = a_string_new("");
 	print(str);
-	astring_free(str);
+	a_string_free(str);
 
-	str = astring_new("Hellowalewjke");
+	str = a_string_new("Hellowalewjke");
 	print(str);
-	astring_free(str);
+	a_string_free(str);
 
-	str = astring_new_len("Helloskljflsadjlkfask", 21);
+	str = a_string_new_len("Helloskljflsadjlkfask", 21);
 	print(str);
-	astring_free(str);
+	a_string_free(str);
 
-	str = astring_sized_new(10000);
+	str = a_string_sized_new(10000);
 	print(str);
-	astring_free(str);
+	a_string_free(str);
 
-	str = astring_new("helalklksakldfkasd");
-	astring_assign(str, "Hello");
+	str = a_string_new("helalklksakldfkasd");
+	a_string_assign(str, "Hello");
 	print(str);
-	astring_free(str);
+	a_string_free(str);
 
-	str = astring_new("hellklasjdf");
-	AString *str2 = astring_dump(str);
+	str = a_string_new("hellklasjdf");
+	AString *str2 = a_string_dup(str);
 	print(str2);
-	astring_free(str);
-	astring_free(str2);
+	a_string_free(str);
+	a_string_free(str2);
 
 	/*  Test append */
 	printf("\n>>Testing Append<<\n");
-	str = astring_new("abcdefagaslksadjlkfjaskllkfaklsdflkalksvnalksjdflkjasdlkfjlaksjlkfajsldkfjladsjlkfsdjalkjdklsjakla");
-	astring_append(str, "ncdi");
+	str = a_string_new("abcdefagaslksadjlkfjaskllkfaklsdflkalksvnalksjdflkjasdlkfjlaksjlkfajsldkfjladsjlkfsdjalkjdklsjakla");
+	a_string_append(str, "ncdi");
 	print(str);
 
-	astring_append_c(str, 'o');
+	a_string_append_c(str, 'o');
 	print(str);
 
-	astring_append_len(str, "1234567890", 5);
+	a_string_append_len(str, "1234567890", 5);
 	print(str);
-	astring_free(str);
+	a_string_free(str);
 
 	/*  Test Trim */
 	printf(">>Testing Trim<<\n");
@@ -93,84 +93,111 @@ int main()
 	
 	/*  Test find */
 	printf("\n>>Testing Find<<\n");
-	str = astring_new("HelloWhljaklslknvclasioerjlkasfdc");
+	str = a_string_new("HelloWhljaklslknvclasioerjlkasfdc");
 	testfind(str, "ello");
 	testfind(str, "jak");
 	testfind(str, "Hell");
 	testfind(str, "asio");
 	testfind(str, "dkfaslj");
 	testfind(str, "sfdc");
-	astring_free(str);
+	a_string_free(str);
 
 	/*  Test Replace */
 	printf("\n>>Testing Replace<<\n");
-	str = astring_new("HelloHelloHelloHello");
+	str = a_string_new("HelloHelloHelloHello");
 	testreplace(str, "Hello", "AWA");
 	testreplace(str, "Hello", "AWA");
 	testreplace(str, "Hello", "AWA");
 	testreplace(str, "Hello", "AWA");
 	testreplace(str, "Hello", "AWA");
-	astring_free(str);
+	a_string_free(str);
 
 	/*  Test Replace All */
 	printf("\n>>Testing Replace All<<\n");
-	str = astring_new("HelloHelloHelloHello");
+	str = a_string_new("HelloHelloHelloHello");
 	testreplaceall(str, "Hello", "AWA");
-	str = astring_new("aHellobHelloHelloHello");
+	str = a_string_new("aHellobHelloHelloHello");
 	testreplaceall(str, "Hello", "AWA");
-	astring_free(str);
+	a_string_free(str);
 
 	/*  Test Prepend */
-	str = astring_new("Hellowlkjalksdjkfa");
-	astring_prepend(str, "abc");
+	str = a_string_new("Hellowlkjalksdjkfa");
+	a_string_prepend(str, "abc");
 	print(str);
 
-	astring_prepend_c(str, 'o');
+	a_string_prepend_c(str, 'o');
 	print(str);
 
-	astring_prepend_len(str, "lkajdlkfjalksdfklajskldfklasjkflajlsdjflkasdjlkfjaslkjflksadjlkfjdsakljlfdskklfdj", 50);
+	a_string_prepend_len(str, "lkajdlkfjalksdfklajskldfklasjkflajlsdjflkasdjlkfjaslkjflksadjlkfjdsakljlfdskklfdj", 50);
 	print(str);
 
-	astring_free(str);
+	a_string_free(str);
 
-	str = astring_new("Hello\bWorld!\n");
-	printf(">>>>>>%d\n", astring_find(str, "\b", 0));
+	str = a_string_new("Hello\bWorld!\n");
+	printf(">>>>>>%d\n", a_string_find(str, "\b", 0));
 	
 	/* Test Load File */
 	printf("\n>>Testing Load File<<\n");
-	str = astring_get_file_content("test.c");
+	str = a_string_get_file_content("test.c");
 	print(str);
-	astring_free(str);
+	a_string_free(str);
 
 	/* Test SubString */
 	printf("\n>>Testing SubString<<\n");
-	str = astring_new("012345678901234567890123456789");
+	str = a_string_new("012345678901234567890123456789");
 	print(str);
-	astring_substring(str, 0, 28);
+	a_string_substring(str, 0, 28);
 	print(str);
-	str2 = astring_substring_new(str, 10, 16);
+	str2 = a_string_substring_new(str, 10, 16);
 	print(str2);
-	astring_substring(str2, 1, 3);
+	a_string_substring(str2, 1, 3);
 	print(str2);
-	astring_free(str);
-	astring_free(str2);
+	a_string_free(str);
+	a_string_free(str2);
 
-	astring_assign(str, "Hello");
+	a_string_assign(str, "Hello");
 	print(str);
 
 	/* Test Char */
 	printf("\n>>Testing char<<\n");
-	str = astring_new("01234567890");
-	printf(">>%c<<\n", astring_get_char(str, 5));
-	printf(">>%c<<\n", astring_get_char(str, 11));
-	astring_set_char(str, 5, 'b');
+	str = a_string_new("01234567890");
+	printf(">>%c<<\n", a_string_get_char(str, 5));
+	printf(">>%c<<\n", a_string_get_char(str, 11));
+	a_string_set_char(str, 5, 'b');
 	print(str);
-	astring_free(str);
+	a_string_free(str);
 	
-	str = astring_new("012345678901234567890");
-	astring_truncate(str, 5);
+	str = a_string_new("012345678901234567890");
+	a_string_truncate(str, 5);
 	print(str);
-	astring_free(str);
+	a_string_free(str);
+
+	/* Test Key/Value */
+	printf("\n>>Testing Key/Value<<\n");
+	str = a_string_new("hello=12");
+	printf("String:|%s|\n", str->str);
+	char *strc = a_string_get_key(str);
+	printf("Key:|%s|\n", strc);
+	free(strc);
+	strc = a_string_get_value(str);
+	printf("value:|%s|\n", strc);
+	free(strc);
+	a_string_free(str);
+	
+	/* Test Split */
+	printf("\n>>Testing Split<<\n");
+	str = a_string_new("/1hello//2ald///3sadfljsa///4sd/s//////5sdfs////6sdfs////7sfs/dfds//8sfdsfsd////a");
+	printf("String:%s\n", str->str);
+	AStringArray *asa = a_string_split(str, "//");
+	printf("StringArray:\nSize:%d\n", asa->size);
+	int i = 0;
+	while(i < asa->size){
+		printf("%d:%s\n", i, asa->data[i]->str);
+		a_string_free(asa->data[i]);
+		++i;
+	}
+	free(asa);
+	a_string_free(str);
 
 
 	return 0;

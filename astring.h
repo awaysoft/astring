@@ -8,11 +8,13 @@
 #define A_STRING_FLAG       101
 #define DEFAULT_SIZE        100
 #define ZERO                '\0'
+#define TRUE                1
+#define FALSE               0
 
 #define A_IS_STRING(string) (*(auchar *)string == A_STRING_FLAG)
 
-typedef struct AString{
-	auchar              flag; /* Check is astring */
+typedef struct _AString{
+	auchar              flag; /* Check is a_string */
 	volatile aboolean   lock;
 
 	char *              str;
@@ -20,67 +22,74 @@ typedef struct AString{
 	asize               allocated_len;
 }AString;
 
+typedef struct _AStringArray{
+	AString **          data;
+	asize               size;
+}AStringArray;
+
 /* Alloc a new AString */
-AString *      astring_new                   (const char *init);
-AString *      astring_new_len               (const char *init, 
+AString *      a_string_new                   (const char *init);
+AString *      a_string_new_len               (const char *init, 
 						                      asize len);
-AString *      astring_sized_new             (asize size);
-AString *      astring_assign                (AString *string,
+AString *      a_string_sized_new             (asize size);
+AString *      a_string_assign                (AString *string,
 						                      const char * value);
-AString *      astring_dup                   (AString *source);
-char    *      astring_dupstr                (AString *source);
+AString *      a_string_dup                   (AString *source);
+char    *      a_string_dupstr                (AString *source);
 
 /* Get String From a file */
-AString *      astring_get_file_content			 (const char * filename);
+AString *      a_string_get_file_content			 (const char * filename);
 
 /* Append Something */
-AString *      astring_append                (AString *string,
+AString *      a_string_append                (AString *string,
 						                      const char *value);
-AString *      astring_append_c              (AString *string,
+AString *      a_string_append_c              (AString *string,
 						                      char c);
-AString *      astring_append_unichar        (AString *string,
+AString *      a_string_append_unichar        (AString *string,
 					                          aunichar wc);
-AString *      astring_append_len            (AString *string,
+AString *      a_string_append_len            (AString *string,
 					                          const char *value,
 					                          asize len);
 
 /* Prepend Something */
-AString *      astring_prepend               (AString *string,
+AString *      a_string_prepend               (AString *string,
 						                      const char *value);
-AString *      astring_prepend_c             (AString *string,
+AString *      a_string_prepend_c             (AString *string,
 					                          char c);
-AString *      astring_prepend_unichar       (AString *string,
+AString *      a_string_prepend_unichar       (AString *string,
 						                      aunichar wc);
-AString *      astring_prepend_len           (AString *string,
+AString *      a_string_prepend_len           (AString *string,
 						                      const char *value,
 						                      asize len);						
 
 /* Insert Something */
-AString *      astring_insert                (AString *string,
+AString *      a_string_insert                (AString *string,
 						                      asize pos,
 					                          const char *value);
-AString *      astring_insert_c              (AString *string,
+AString *      a_string_insert_c              (AString *string,
 						                      asize pos,
 						                      char c);
-AString *      astring_insert_unichar        (AString *string,
+AString *      a_string_insert_unichar        (AString *string,
 						                      asize pos,
 						                      aunichar wc);
-AString *      astring_insert_len            (AString *string,
+AString *      a_string_insert_len            (AString *string,
 						                      asize pos,
 						                      const char *value,
 						                      asize len);	
+char *         a_string_get_key               (AString *string);
+char *         a_string_get_value             (AString *string);
 						
 /* Overwrite Something */
-AString *      astring_overwrite             (AString *string,
+AString *      a_string_overwrite             (AString *string,
                                               asize pos,
                                               const char *value);
-AString *      astring_overwrite_len         (AString *string,
+AString *      a_string_overwrite_len         (AString *string,
                                               asize pos,
                                               const char *value,
                                               asize len);
 
 /* Erase Something */
-AString *      astring_erase                 (AString *string,
+AString *      a_string_erase                 (AString *string,
 											  asize pos,
 											  asize len);
 											  
@@ -88,49 +97,52 @@ AString *      astring_erase                 (AString *string,
 /* Truncate Something 
  * Leave the first len char 
  * */
-AString *      astring_truncate              (AString *string,
+AString *      a_string_truncate              (AString *string,
 											  asize len);
 											  
 											  
 /* Set Size */
-AString *      astring_set_size              (AString *string,
+AString *      a_string_set_size              (AString *string,
 											  asize len);
 
-AString *      astring_trim                  (AString *string);
+AString *      a_string_trim                  (AString *string);
+
+AStringArray * a_string_split                 (AString *string,
+											  const char *splitstr);
 
 /* Get SubString */
-AString *	   astring_substring			(AString *string, asize start, asize end);
+AString *	   a_string_substring			(AString *string, asize start, asize end);
 
-AString *	   astring_substring_new	    (AString *string, asize start, asize end);
+AString *	   a_string_substring_new	    (AString *string, asize start, asize end);
 
 /* Get Chat */
-char		   astring_get_char				(AString *string, asize position);
+char		   a_string_get_char				(AString *string, asize position);
 
-AString *	   astring_set_char				(AString *string, asize position, char ch);
+AString *	   a_string_set_char				(AString *string, asize position, char ch);
 
 /* Find and Replace */
-int 	       astring_find              	(AString *string,
+int 	       a_string_find              	(AString *string,
 											char *str,
 											asize position);
 
-int		 	  astring_replace				(AString *string,
+int		 	  a_string_replace				(AString *string,
 											char *findstr,
 											char *replacestr,
 											asize position);
 
-int 		  astring_replace_all			(AString *string,
+int 		  a_string_replace_all			(AString *string,
 											char *findstr,
 											char *replacestr);
 
 
 /* Free this string */
-void           astring_free                  (AString *string);
+void           a_string_free                  (AString *string);
 
 /* calc a hash code */
-auint          astring_hash                  (AString *string);
+auint          a_string_hash                  (AString *string);
 
 /* return if two string is equal */
-aboolean       astring_equal                 (AString *string,
+aboolean       a_string_equal                 (AString *string,
                                               AString *string2);
 
 #endif
