@@ -21,12 +21,15 @@ struct _AStringList {
 
 typedef int (*A_CMP)(const void *a, const void *b);
 typedef struct _AStringList AStringList;
-typedef int (*AStringCMP) (const AString *a, const AString *b);
 
 AStringList *   a_string_list_new          (void);
 
 AStringList *   a_string_list_assign       (AStringList *list,
                                             AString *string);
+
+AStringList *   a_string_list_assign_split (AStringList *list,
+                                            AString *string,
+                                            AString *split);
 
 AStringList *   a_string_list_load_from_file(const char * filename);
 
@@ -36,14 +39,14 @@ AStringList *   a_string_list_append       (AStringList *list,
 AStringList *   a_string_list_prepend      (AStringList *list,
                                             AStringList *list2);
 
-AStringList *   a_string_list_add          (AStringList *list, 
+AStringList *   a_string_list_add          (AStringList *list,
                                             AString *string);
 
 AStringList *   a_string_list_insert       (AStringList *list,
                                             asize index,
 											AString *string);
 
-AStringList *   a_string_list_delete       (AStringList *list, 
+AStringList *   a_string_list_delete       (AStringList *list,
                                             asize index);
 
 AStringList *   a_string_list_clear        (AStringList *list);

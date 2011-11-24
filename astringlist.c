@@ -40,20 +40,20 @@ AStringList * a_string_list_new(void)
 
 	res->flag = A_STRING_LIST_FLAG;
 	res->lock = FALSE;
-	
+
 	return res;
 }
 
 static AStringList * _a_string_list_clear (AStringList *list)
 {
 	int i = list->length - 1;
-	while(i){
+	while(i>0){
 		a_string_free(list->data[i]);
 		list->data[i] = NULL;
 		i--;
-	}	
+	}
 	list->length = 0;
-	
+
 	return list;
 }
 
@@ -110,6 +110,7 @@ static AStringList * _a_string_list_assign (AStringList *list, AString *string)
 		}
 		*q = '\0';
 		str->len = len;
+		printf("Str:%s\n", str->str);
 
 		_a_string_list_add(list, str);
 		a_string_free(str);
@@ -120,12 +121,60 @@ static AStringList * _a_string_list_assign (AStringList *list, AString *string)
 	return list;
 }
 
+static aboolean _a_string_split_cmp(AString *split, char *str)
+{
+    int i = 0;
+    while(i < split->len && *str){
+        if (split->str[i] != *str) return FALSE;
+        i++; str++;
+    }
+    if (i == split->len) return TRUE;
+    else return FALSE;
+}
+
+static AStringList * _a_string_list_assign_split (AStringList *list, AString *string, AString *split)
+{
+    _a_string_list_clear(list);
+
+	char *p = string->str, *q, *start;
+	int len = 0, i;
+	AString *str = NULL;
+	while(*p){
+		len = 0;
+		start = p;
+		/* find \r\n */
+		while(*p && *p!='\n' && *p!='\r' && !_a_string_split_cmp(split, p)){
+			len ++;
+			p++;
+		}
+		if (*p == '\r' && *(p+1) == '\n') p++;
+
+		/* Copy Data */
+		str = a_string_sized_new(len + 2);
+		i = len;
+		q = str->str;
+		while(i--){
+			*q++ = *start++;
+		}
+		*q = '\0';
+		str->len = len;
+
+		_a_string_list_add(list, str);
+		a_string_free(str);
+
+		if (*p && (*p == '\n'||*p == '\r')) p++;
+		else p += split->len;
+	}
+
+    return list;
+}
+
 static AStringList * _a_string_list_load_from_file(const char *filename)
 {
 	AString *string = a_string_get_file_content(filename);
 	AStringList *list = a_string_list_new();
 	_a_string_list_assign(list, string);
-	
+
 	a_string_free(string);
 
 	return list;
@@ -292,7 +341,7 @@ static AStringList * _a_string_list_dup(AStringList *list)
 	_a_string_list_resize(result, list->allocated_len);
 	result->length = list->length;
 	while(i < result->length){
-		result->data[i] = a_string_dup(list->data[i]);	
+		result->data[i] = a_string_dup(list->data[i]);
 	}
 
 	return result;
@@ -322,7 +371,7 @@ static AString * _a_string_list_get_text(AStringList *list, auchar returnchar)
 			default:
 				   break;
 		}
-	}	
+	}
 
 	return result;
 }
@@ -331,7 +380,7 @@ static aboolean _a_string_list_save_to_file(AStringList *list, const char *filen
 {
 	FILE *fp;
 	size_t fr;
-	
+
 	if ((fp = fopen(filename, "wb")) == NULL) return FALSE;
 	AString *string = _a_string_list_get_text(list, returnchar);
 	char *p = string->str;
@@ -343,7 +392,7 @@ static aboolean _a_string_list_save_to_file(AStringList *list, const char *filen
 		wsize = len >= 1024?1024:len;
 		fwrite(p, 1, wsize, fp);
 		p += wsize;
-		len -= wsize;	
+		len -= wsize;
 	}
 
 	fclose(fp);
@@ -355,7 +404,7 @@ static aboolean _a_string_list_save_to_file(AStringList *list, const char *filen
 static aboolean _a_string_list_equal(AStringList *list1, AStringList *list2)
 {
 	if (list1->length != list2->length) return FALSE;
-	
+
 	asize i = 0;
 	while(i < list1->length){
 		if (!a_string_equal(list1->data[i], list2->data[i])) return FALSE;
@@ -401,10 +450,36 @@ AStringList * a_string_list_assign (AStringList *list, AString *string)
 	return list;
 }
 
+AStringList * a_string_list_assign_split (AStringList *list, AString *string, AString *split)
+{
+    if (!A_IS_STRING_LIST(list)){
+		A_WARNING_NOT_STRING_LIST;
+		return list;
+	}
+	if (!A_IS_STRING(string)){
+		A_WARNING_NOT_STRING;
+		return list;
+	}
+	if (!A_IS_STRING(split)){
+		A_WARNING_NOT_STRING;
+		return list;
+	}
+
+	P(list->lock);
+	P(string->lock);
+	P(split->lock);
+
+    _a_string_list_assign_split(list, string, split);
+
+	V(split->lock);
+	V(string->lock);
+	V(list->lock);
+}
+
 
 AStringList * a_string_list_load_from_file(const char * filename)
 {
-	return _a_string_list_load_from_file(filename);	
+	return _a_string_list_load_from_file(filename);
 }
 
 AStringList * a_string_list_append (AStringList *list, AStringList *list2)
@@ -427,7 +502,7 @@ AStringList * a_string_list_append (AStringList *list, AStringList *list2)
 	V(list->lock);
 
 	return list;
-	
+
 }
 
 AStringList * a_string_list_prepend (AStringList *list, AStringList *list2)
@@ -518,7 +593,7 @@ AStringList * a_string_list_clear (AStringList *list)
 		A_WARNING_NOT_STRING_LIST;
 		return list;
 	}
-	
+
 	P(list->lock);
 
 	_a_string_list_clear(list);
@@ -594,7 +669,7 @@ AString * a_string_list_get_value (AStringList *list, asize index)
 		A_WARNING_NOT_STRING_LIST;
 		return NULL;
 	}
-	
+
 	P(list->lock);
 
 	AString *result = _a_string_list_get_value(list, index);
