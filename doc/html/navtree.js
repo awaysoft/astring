@@ -9,9 +9,11 @@ var NAVTREE =
     [ "数据结构索引", "classes.html", null ],
     [ "数据字段", "functions.html", null ],
     [ "文件列表", "files.html", [
-      [ "E:/projects/AString/astring.h", "astring_8h.html", null ],
-      [ "E:/projects/AString/astringlist.h", "astringlist_8h.html", null ],
-      [ "E:/projects/AString/atype.h", "atype_8h.html", null ]
+      [ "/home/Tom/Projects/astring/astring.c", "astring_8c.html", null ],
+      [ "/home/Tom/Projects/astring/astring.h", "astring_8h.html", null ],
+      [ "/home/Tom/Projects/astring/astringlist.c", "astringlist_8c.html", null ],
+      [ "/home/Tom/Projects/astring/astringlist.h", "astringlist_8h.html", null ],
+      [ "/home/Tom/Projects/astring/atype.h", "atype_8h.html", null ]
     ] ],
     [ "全局定义", "globals.html", null ]
   ] ]

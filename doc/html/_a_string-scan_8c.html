@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
-<title>AString: _AStringList结构参考</title>
+<title>AString: /home/Tom/Projects/astring/AString-scan.c文件参考</title>
 
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
@@ -34,7 +34,7 @@
    <div id="projectname">AString
    &#160;<span id="projectnumber">0.2</span>
    </div>
-   <div id="projectbrief">A Lightweight C Language String Library</div>
+   <div id="projectbrief">A Weight C Language String Library</div>
   </td>
   
   
@@ -51,8 +51,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'搜索');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>首页</span></a></li>
-      <li class="current"><a href="annotated.html"><span>数据结构</span></a></li>
-      <li><a href="files.html"><span>文件</span></a></li>
+      <li><a href="annotated.html"><span>数据结构</span></a></li>
+      <li class="current"><a href="files.html"><span>文件</span></a></li>
       <li>
         <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
@@ -73,9 +73,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'搜索');
   </div>
   <div id="navrow2" class="tabs2">
     <ul class="tablist">
-      <li><a href="annotated.html"><span>数据结构</span></a></li>
-      <li><a href="classes.html"><span>数据结构索引</span></a></li>
-      <li><a href="functions.html"><span>数据字段</span></a></li>
+      <li><a href="files.html"><span>文件列表</span></a></li>
+      <li><a href="globals.html"><span>全局定义</span></a></li>
     </ul>
   </div>
 </div>
@@ -89,111 +88,136 @@ var searchBox = new SearchBox("searchBox", "search",false,'搜索');
   </div>
 </div>
 <script type="text/javascript">
-  initNavTree('struct___a_string_list.html','');
+  initNavTree('_a_string-scan_8c.html','');
 </script>
 <div id="doc-content">
 <div class="header">
   <div class="summary">
-<a href="#pub-attribs">数据成员</a>  </div>
+<a href="#func-members">函数</a> &#124;
+<a href="#var-members">变量</a>  </div>
   <div class="headertitle">
-<div class="title">_AStringList结构参考</div>  </div>
+<div class="title">/home/Tom/Projects/astring/AString-scan.c文件参考</div>  </div>
 </div>
 <div class="contents">
-<!-- doxytag: class="_AStringList" -->
-<p>AStringList struct.  
- <a href="struct___a_string_list.html#details">更多...</a></p>
-
-<p><code>#include &lt;<a class="el" href="astringlist_8h_source.html">astringlist.h</a>&gt;</code></p>
-<table class="memberdecls">
-<tr><td colspan="2"><h2><a name="pub-attribs"></a>
-数据成员</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="atype_8h.html#aa6988e8dac6da1dfc24124b05c91e566">auchar</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct___a_string_list.html#a2a0db3ad29bc396a40bf6e564d0e758e">flag</a></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">volatile <a class="el" href="atype_8h.html#a5ddaf36bb3c5fbdfb3312fd8fee6ade1">aboolean</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct___a_string_list.html#affd26dd3fdd018d17f3c7c79aaf23b6c">lock</a></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="atype_8h.html#a890366194341d30ffc42673649c34200">asize</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct___a_string_list.html#ae1ba67ee484a5ce0aa23504abd19235e">length</a></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="atype_8h.html#a890366194341d30ffc42673649c34200">asize</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct___a_string_list.html#ac4204e5ec8d4de6522689d971dc6661f">allocated_len</a></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="astring_8h.html#ab78aa377b6493e8ce52cc631448b02cf">AString</a> **&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct___a_string_list.html#a191fd23814433f1af333d0514a4727c7">data</a></td></tr>
+<div class="textblock"><code>#include &lt;string.h&gt;</code><br/>
+<code>#include &lt;stdlib.h&gt;</code><br/>
+<code>#include &lt;stdio.h&gt;</code><br/>
+<code>#include &lt;errno.h&gt;</code><br/>
+</div><table class="memberdecls">
+<tr><td colspan="2"><h2><a name="func-members"></a>
+函数</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">GtkType *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_a_string-scan_8c.html#ae88489841fcc745e000c2d7cae884a0a">get_object_types</a> (void)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_a_string-scan_8c.html#a0ddf1224851353fc92bfbff6f499fa97">main</a> (int argc, char *argv[])</td></tr>
+<tr><td colspan="2"><h2><a name="var-members"></a>
+变量</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">GtkType&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_a_string-scan_8c.html#a16190f9ae9ba8ca18926ba2723daca67">object_types</a> [1]</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">gchar *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_a_string-scan_8c.html#a53429c73c3a1ee276f28a08145f6592c">signals_filename</a> = &quot;doc/AString.signals.new&quot;</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">gchar *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_a_string-scan_8c.html#a33d865ba366be465d4bd2f0f8e25a223">hierarchy_filename</a> = &quot;doc/AString.hierarchy.new&quot;</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">gchar *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_a_string-scan_8c.html#a591746e3539e73b25fbb6e9a9468b8b7">args_filename</a> = &quot;doc/AString.args.new&quot;</td></tr>
 </table>
-<hr/><a name="details" id="details"></a><h2>详细描述</h2>
-<div class="textblock"><p>AStringList struct. </p>
-</div><hr/><h2>字段文档</h2>
-<a class="anchor" id="ac4204e5ec8d4de6522689d971dc6661f"></a><!-- doxytag: member="_AStringList::allocated_len" ref="ac4204e5ec8d4de6522689d971dc6661f" args="" -->
+<hr/><h2>函数文档</h2>
+<a class="anchor" id="ae88489841fcc745e000c2d7cae884a0a"></a><!-- doxytag: member="AString&#45;scan.c::get_object_types" ref="ae88489841fcc745e000c2d7cae884a0a" args="(void)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="atype_8h.html#a890366194341d30ffc42673649c34200">asize</a> <a class="el" href="struct___a_string_list.html#ac4204e5ec8d4de6522689d971dc6661f">allocated_len</a></td>
+          <td class="memname">GtkType* get_object_types </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
-<p>contains the length of the stringlist. </p>
 
 </div>
 </div>
-<a class="anchor" id="a191fd23814433f1af333d0514a4727c7"></a><!-- doxytag: member="_AStringList::data" ref="a191fd23814433f1af333d0514a4727c7" args="" -->
+<a class="anchor" id="a0ddf1224851353fc92bfbff6f499fa97"></a><!-- doxytag: member="AString&#45;scan.c::main" ref="a0ddf1224851353fc92bfbff6f499fa97" args="(int argc, char *argv[])" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="astring_8h.html#ab78aa377b6493e8ce52cc631448b02cf">AString</a>** <a class="el" href="struct___a_string_list.html#a191fd23814433f1af333d0514a4727c7">data</a></td>
+          <td class="memname">int main </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>argc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>argv</em>[]&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
-<p>points to the string data. </p>
 
 </div>
 </div>
-<a class="anchor" id="a2a0db3ad29bc396a40bf6e564d0e758e"></a><!-- doxytag: member="_AStringList::flag" ref="a2a0db3ad29bc396a40bf6e564d0e758e" args="" -->
+<hr/><h2>变量文档</h2>
+<a class="anchor" id="a591746e3539e73b25fbb6e9a9468b8b7"></a><!-- doxytag: member="AString&#45;scan.c::args_filename" ref="a591746e3539e73b25fbb6e9a9468b8b7" args="" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="atype_8h.html#aa6988e8dac6da1dfc24124b05c91e566">auchar</a> <a class="el" href="struct___a_string_list.html#a2a0db3ad29bc396a40bf6e564d0e758e">flag</a></td>
+          <td class="memname">gchar* <a class="el" href="_a_string-scan_8c.html#a591746e3539e73b25fbb6e9a9468b8b7">args_filename</a> = &quot;doc/AString.args.new&quot;</td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Don't Change it, it used to check a object is AStringList. </p>
 
 </div>
 </div>
-<a class="anchor" id="ae1ba67ee484a5ce0aa23504abd19235e"></a><!-- doxytag: member="_AStringList::length" ref="ae1ba67ee484a5ce0aa23504abd19235e" args="" -->
+<a class="anchor" id="a33d865ba366be465d4bd2f0f8e25a223"></a><!-- doxytag: member="AString&#45;scan.c::hierarchy_filename" ref="a33d865ba366be465d4bd2f0f8e25a223" args="" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="atype_8h.html#a890366194341d30ffc42673649c34200">asize</a> <a class="el" href="struct___a_string_list.html#ae1ba67ee484a5ce0aa23504abd19235e">length</a></td>
+          <td class="memname">gchar* <a class="el" href="_a_string-scan_8c.html#a33d865ba366be465d4bd2f0f8e25a223">hierarchy_filename</a> = &quot;doc/AString.hierarchy.new&quot;</td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
-<p>contains the length of the stringlist. </p>
 
 </div>
 </div>
-<a class="anchor" id="affd26dd3fdd018d17f3c7c79aaf23b6c"></a><!-- doxytag: member="_AStringList::lock" ref="affd26dd3fdd018d17f3c7c79aaf23b6c" args="" -->
+<a class="anchor" id="a16190f9ae9ba8ca18926ba2723daca67"></a><!-- doxytag: member="AString&#45;scan.c::object_types" ref="a16190f9ae9ba8ca18926ba2723daca67" args="[1]" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">volatile <a class="el" href="atype_8h.html#a5ddaf36bb3c5fbdfb3312fd8fee6ade1">aboolean</a> <a class="el" href="struct___a_string_list.html#affd26dd3fdd018d17f3c7c79aaf23b6c">lock</a></td>
+          <td class="memname">GtkType <a class="el" href="_a_string-scan_8c.html#a16190f9ae9ba8ca18926ba2723daca67">object_types</a>[1]</td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Don't Change it, it used to keep thread safe. </p>
 
 </div>
 </div>
-<hr/>该结构的文档由以下文件生成：<ul>
-<li>/home/Tom/Projects/astring/<a class="el" href="astringlist_8h_source.html">astringlist.h</a></li>
-</ul>
+<a class="anchor" id="a53429c73c3a1ee276f28a08145f6592c"></a><!-- doxytag: member="AString&#45;scan.c::signals_filename" ref="a53429c73c3a1ee276f28a08145f6592c" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">gchar* <a class="el" href="_a_string-scan_8c.html#a53429c73c3a1ee276f28a08145f6592c">signals_filename</a> = &quot;doc/AString.signals.new&quot;</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
 </div>
 </div>
   <div id="nav-path" class="navpath">
     <ul>
-      <li class="navelem"><a class="el" href="struct___a_string_list.html">_AStringList</a>      </li>
+      <li class="navelem"><a class="el" href="_a_string-scan_8c.html">AString-scan.c</a>      </li>
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -209,7 +233,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'搜索');
 </div>
 
 
-    <li class="footer">Generated at 2011年十一月26日 星期六 14:13:26 for AString by
+    <li class="footer">Generated at 2011年十一月26日 星期六 13:27:14 for AString by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.5 </li>
    </ul>

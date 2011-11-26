@@ -1,4 +1,4 @@
-# Doxyfile 1.7.5.1
+# Doxyfile 1.7.5
 
 # This file describes the settings to be used by the documentation system
 # doxygen (www.doxygen.org) for a project
@@ -38,7 +38,7 @@ PROJECT_NUMBER         = 0.2
 # for a project that appears at the top of each page and should give viewer 
 # a quick idea about the purpose of the project. Keep the description short.
 
-PROJECT_BRIEF          = "A Weight C Language String Library"
+PROJECT_BRIEF          = "A Lightweight C Language String Library"
 
 # With the PROJECT_LOGO tag one can specify an logo or icon that is 
 # included in the documentation. The maximum height of the logo should not 
@@ -52,7 +52,7 @@ PROJECT_LOGO           =
 # If a relative path is entered, it will be relative to the location 
 # where doxygen was started. If left blank the current directory will be used.
 
-OUTPUT_DIRECTORY       = E:/projects/AString/doc
+OUTPUT_DIRECTORY       = .
 
 # If the CREATE_SUBDIRS tag is set to YES, then doxygen will create 
 # 4096 sub-directories (in 2 levels) under the output directory of each output 
@@ -638,7 +638,7 @@ WARN_LOGFILE           =
 # directories like "/usr/src/myproject". Separate the files or directories 
 # with spaces.
 
-INPUT                  = E:/projects/AString/
+INPUT                  = ../
 
 # This tag can be used to specify the character encoding of the source files 
 # that doxygen parses. Internally doxygen uses the UTF-8 encoding, which is 
@@ -900,6 +900,11 @@ HTML_HEADER            =
 # standard footer.
 
 HTML_FOOTER            = 
+
+# If the HTML_TIMESTAMP tag is set to YES then the generated HTML
+# documentation will contain the timesstamp.
+
+HTML_TIMESTAMP         = YES
 
 # The HTML_STYLESHEET tag can be used to specify a user-defined cascading 
 # style sheet that is used by each HTML page. It can be used to 
