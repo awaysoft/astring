@@ -1,0 +1,1119 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<title>AString: /home/Tom/Projects/astring/astringlist.c文件参考</title>
+
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+</script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+
+</head>
+<body>
+<div id="top"><!-- do not remove this div! -->
+
+
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  
+  
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">AString
+   &#160;<span id="projectnumber">0.2</span>
+   </div>
+   <div id="projectbrief">A Lightweight C Language String Library</div>
+  </td>
+  
+  
+  
+ </tr>
+ </tbody>
+</table>
+</div>
+
+<!-- 制作者 Doxygen 1.7.5 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'搜索');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>首页</span></a></li>
+      <li><a href="annotated.html"><span>数据结构</span></a></li>
+      <li class="current"><a href="files.html"><span>文件</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="搜索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>文件列表</span></a></li>
+      <li><a href="globals.html"><span>全局定义</span></a></li>
+    </ul>
+  </div>
+</div>
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+  initNavTree('astringlist_8c.html','');
+</script>
+<div id="doc-content">
+<div class="header">
+  <div class="summary">
+<a href="#define-members">宏定义</a> &#124;
+<a href="#func-members">函数</a>  </div>
+  <div class="headertitle">
+<div class="title">/home/Tom/Projects/astring/astringlist.c文件参考</div>  </div>
+</div>
+<div class="contents">
+<div class="textblock"><code>#include &quot;<a class="el" href="astring_8h_source.html">astring.h</a>&quot;</code><br/>
+<code>#include &quot;<a class="el" href="astringlist_8h_source.html">astringlist.h</a>&quot;</code><br/>
+<code>#include &lt;stdio.h&gt;</code><br/>
+<code>#include &lt;string.h&gt;</code><br/>
+</div><table class="memberdecls">
+<tr><td colspan="2"><h2><a name="define-members"></a>
+宏定义</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="astringlist_8c.html#a125b0875acb86b4ec4d4af752473d9f4">a_new</a>(type, size)&#160;&#160;&#160;(type *)malloc(sizeof(type) * (size))</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="astringlist_8c.html#a3289a291f7bb9cda5cd200cee4142f26">a_free</a>(point)&#160;&#160;&#160;do{free(point);point = NULL;}while(0)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="astringlist_8c.html#a5a6624c7c2c4684e69b010ea3fa786c8">P</a>(lock)&#160;&#160;&#160;while(lock++){--lock;}</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="astringlist_8c.html#a42f28bf6220ec44723561a004c7be5ed">V</a>(lock)&#160;&#160;&#160;--lock;</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="astringlist_8c.html#a52c19de15d0b4654d5b9e7a200c322f7">A_WARING</a>(msg)&#160;&#160;&#160;do{fprintf(stderr, &quot;WARING: [%s():%d] %s\n&quot;, __func__, __LINE__, msg);}while(0)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="astringlist_8c.html#a9f5ef061778ebb178b2e949756a24b93">A_WARNING_NOT_STRING_LIST</a>&#160;&#160;&#160;A_WARING(&quot;A_IS_STRING_LIST Check falt!&quot;)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="astringlist_8c.html#adedfd164f43e682e70dae65f8e2bd895">A_WARNING_NOT_STRING</a>&#160;&#160;&#160;A_WARING(&quot;A_IS_STRING Check falt!&quot;)</td></tr>
+<tr><td colspan="2"><h2><a name="func-members"></a>
+函数</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="astringlist_8h.html#aeb1db826fe604d0bcc0d477b94a0306a">AStringList</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="astringlist_8c.html#a14a1af93619054e082dd87691d7317ed">a_string_list_new</a> (void)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a new AStringList with none string.  <a href="#a14a1af93619054e082dd87691d7317ed"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="astringlist_8h.html#aeb1db826fe604d0bcc0d477b94a0306a">AStringList</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="astringlist_8c.html#a53845694a82f746c279d30e4b0c74657">a_string_list_assign</a> (<a class="el" href="astringlist_8h.html#aeb1db826fe604d0bcc0d477b94a0306a">AStringList</a> *list, <a class="el" href="astring_8h.html#ab78aa377b6493e8ce52cc631448b02cf">AString</a> *string)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Copies string from an AString into an AStringList, destroying any previous contents. It alias a_string_list_set_text;.  <a href="#a53845694a82f746c279d30e4b0c74657"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="astringlist_8h.html#aeb1db826fe604d0bcc0d477b94a0306a">AStringList</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="astringlist_8c.html#a12d3ccf7cce3580e37147403df732b42">a_string_list_assign_split</a> (<a class="el" href="astringlist_8h.html#aeb1db826fe604d0bcc0d477b94a0306a">AStringList</a> *list, <a class="el" href="astring_8h.html#ab78aa377b6493e8ce52cc631448b02cf">AString</a> *string, <a class="el" href="astring_8h.html#ab78aa377b6493e8ce52cc631448b02cf">AString</a> *split)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">It's like assign,but,split will be <br/>
+.  <a href="#a12d3ccf7cce3580e37147403df732b42"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="astringlist_8h.html#aeb1db826fe604d0bcc0d477b94a0306a">AStringList</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="astringlist_8c.html#a8ef432bb4c9e0cf45281670b124f8a4a">a_string_list_load_from_file</a> (const char *filename)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Create an AStringList from a file.  <a href="#a8ef432bb4c9e0cf45281670b124f8a4a"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="astringlist_8h.html#aeb1db826fe604d0bcc0d477b94a0306a">AStringList</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="astringlist_8c.html#ac56720f8124c8be9f6ca3095dd769c88">a_string_list_append</a> (<a class="el" href="astringlist_8h.html#aeb1db826fe604d0bcc0d477b94a0306a">AStringList</a> *list, <a class="el" href="astringlist_8h.html#aeb1db826fe604d0bcc0d477b94a0306a">AStringList</a> *list2)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Append AStringList to exists AStringList.  <a href="#ac56720f8124c8be9f6ca3095dd769c88"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="astringlist_8h.html#aeb1db826fe604d0bcc0d477b94a0306a">AStringList</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="astringlist_8c.html#a1ba569397d288871314c05652003a1d0">a_string_list_prepend</a> (<a class="el" href="astringlist_8h.html#aeb1db826fe604d0bcc0d477b94a0306a">AStringList</a> *list, <a class="el" href="astringlist_8h.html#aeb1db826fe604d0bcc0d477b94a0306a">AStringList</a> *list2)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Prepend AStringList to exists AStringList.  <a href="#a1ba569397d288871314c05652003a1d0"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="astringlist_8h.html#aeb1db826fe604d0bcc0d477b94a0306a">AStringList</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="astringlist_8c.html#ac9271769d0b2c3d21e93ff983c4e13e0">a_string_list_add</a> (<a class="el" href="astringlist_8h.html#aeb1db826fe604d0bcc0d477b94a0306a">AStringList</a> *list, <a class="el" href="astring_8h.html#ab78aa377b6493e8ce52cc631448b02cf">AString</a> *string)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Add an AString to the end of AStringList.  <a href="#ac9271769d0b2c3d21e93ff983c4e13e0"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="astringlist_8h.html#aeb1db826fe604d0bcc0d477b94a0306a">AStringList</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="astringlist_8c.html#ac8fd360982ac435fbb22371ffbe5d3d7">a_string_list_insert</a> (<a class="el" href="astringlist_8h.html#aeb1db826fe604d0bcc0d477b94a0306a">AStringList</a> *list, <a class="el" href="atype_8h.html#a890366194341d30ffc42673649c34200">asize</a> index, <a class="el" href="astring_8h.html#ab78aa377b6493e8ce52cc631448b02cf">AString</a> *string)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Insert an AString to AStringList.  <a href="#ac8fd360982ac435fbb22371ffbe5d3d7"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="astringlist_8h.html#aeb1db826fe604d0bcc0d477b94a0306a">AStringList</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="astringlist_8c.html#a6ea0a81023830c5e11ceb28f19fba895">a_string_list_delete</a> (<a class="el" href="astringlist_8h.html#aeb1db826fe604d0bcc0d477b94a0306a">AStringList</a> *list, <a class="el" href="atype_8h.html#a890366194341d30ffc42673649c34200">asize</a> index)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Delete an AString from an AStringList.  <a href="#a6ea0a81023830c5e11ceb28f19fba895"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="astringlist_8h.html#aeb1db826fe604d0bcc0d477b94a0306a">AStringList</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="astringlist_8c.html#a4baf0da341a22f777ed047303b3bfdcb">a_string_list_clear</a> (<a class="el" href="astringlist_8h.html#aeb1db826fe604d0bcc0d477b94a0306a">AStringList</a> *list)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Clear the AStringList.  <a href="#a4baf0da341a22f777ed047303b3bfdcb"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="astringlist_8h.html#aeb1db826fe604d0bcc0d477b94a0306a">AStringList</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="astringlist_8c.html#a542cceb97331f63495e0d7ebfa88d5ff">a_string_list_exchange</a> (<a class="el" href="astringlist_8h.html#aeb1db826fe604d0bcc0d477b94a0306a">AStringList</a> *list, <a class="el" href="atype_8h.html#a890366194341d30ffc42673649c34200">asize</a> index1, <a class="el" href="atype_8h.html#a890366194341d30ffc42673649c34200">asize</a> index2)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Exchange two lines in an AStringList.  <a href="#a542cceb97331f63495e0d7ebfa88d5ff"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="atype_8h.html#a890366194341d30ffc42673649c34200">asize</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="astringlist_8c.html#afa44527f81ce9ec61b0fe49bc4cb1b7f">a_string_list_find</a> (<a class="el" href="astringlist_8h.html#aeb1db826fe604d0bcc0d477b94a0306a">AStringList</a> *list, <a class="el" href="astring_8h.html#ab78aa377b6493e8ce52cc631448b02cf">AString</a> *string, <a class="el" href="atype_8h.html#a890366194341d30ffc42673649c34200">asize</a> index)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Find an AString from an AStringList.  <a href="#afa44527f81ce9ec61b0fe49bc4cb1b7f"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="atype_8h.html#a890366194341d30ffc42673649c34200">asize</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="astringlist_8c.html#ad4fc4f6102546c85a9c0a3c578ca8872">a_string_list_find_name</a> (<a class="el" href="astringlist_8h.html#aeb1db826fe604d0bcc0d477b94a0306a">AStringList</a> *list, <a class="el" href="astring_8h.html#ab78aa377b6493e8ce52cc631448b02cf">AString</a> *string, <a class="el" href="atype_8h.html#a890366194341d30ffc42673649c34200">asize</a> index)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Find a key from an AStringList When the stringlist is like key=value, find the key in the list.  <a href="#ad4fc4f6102546c85a9c0a3c578ca8872"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="astring_8h.html#ab78aa377b6493e8ce52cc631448b02cf">AString</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="astringlist_8c.html#a10de54a74d2ac4d385fce43571fccc78">a_string_list_get_value</a> (<a class="el" href="astringlist_8h.html#aeb1db826fe604d0bcc0d477b94a0306a">AStringList</a> *list, <a class="el" href="atype_8h.html#a890366194341d30ffc42673649c34200">asize</a> index)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Get a value from an AStringList When the stringlist is like key=value, get the value from a string.  <a href="#a10de54a74d2ac4d385fce43571fccc78"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="astringlist_8h.html#aeb1db826fe604d0bcc0d477b94a0306a">AStringList</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="astringlist_8c.html#ac88a9441291b4990e3852be8a76356be">a_string_list_sort</a> (<a class="el" href="astringlist_8h.html#aeb1db826fe604d0bcc0d477b94a0306a">AStringList</a> *list)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Sort the StringList.  <a href="#ac88a9441291b4990e3852be8a76356be"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="astringlist_8h.html#aeb1db826fe604d0bcc0d477b94a0306a">AStringList</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="astringlist_8c.html#a372be7a2424ca3b359675286299dc317">a_string_list_sort_custom</a> (<a class="el" href="astringlist_8h.html#aeb1db826fe604d0bcc0d477b94a0306a">AStringList</a> *list, <a class="el" href="astringlist_8h.html#a704b29df5775083cca5476ec2e19aa83">A_CMP</a> cmp)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Sort the StringList by a custom function.  <a href="#a372be7a2424ca3b359675286299dc317"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="atype_8h.html#a5ddaf36bb3c5fbdfb3312fd8fee6ade1">aboolean</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="astringlist_8c.html#a9f3033110b19c9e4da5812b79504e631">a_string_list_sorted</a> (<a class="el" href="astringlist_8h.html#aeb1db826fe604d0bcc0d477b94a0306a">AStringList</a> *list)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Check the StringList is sorted.  <a href="#a9f3033110b19c9e4da5812b79504e631"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="astringlist_8h.html#aeb1db826fe604d0bcc0d477b94a0306a">AStringList</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="astringlist_8c.html#a1702fbeae2aee30502200eb9303578b4">a_string_list_dup</a> (<a class="el" href="astringlist_8h.html#aeb1db826fe604d0bcc0d477b94a0306a">AStringList</a> *list)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">duplicate the AStringList  <a href="#a1702fbeae2aee30502200eb9303578b4"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="astring_8h.html#ab78aa377b6493e8ce52cc631448b02cf">AString</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="astringlist_8c.html#a86828ae1acff1821126bc46d014bccd3">a_string_list_get_text</a> (<a class="el" href="astringlist_8h.html#aeb1db826fe604d0bcc0d477b94a0306a">AStringList</a> *list, <a class="el" href="atype_8h.html#aa6988e8dac6da1dfc24124b05c91e566">auchar</a> returnchar)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">export an AStringList to an AString  <a href="#a86828ae1acff1821126bc46d014bccd3"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="atype_8h.html#a5ddaf36bb3c5fbdfb3312fd8fee6ade1">aboolean</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="astringlist_8c.html#a28e56a792f38c68f33d3e7f44e7de57b">a_string_list_save_to_file</a> (<a class="el" href="astringlist_8h.html#aeb1db826fe604d0bcc0d477b94a0306a">AStringList</a> *list, const char *filename, <a class="el" href="atype_8h.html#aa6988e8dac6da1dfc24124b05c91e566">auchar</a> returnchar)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">export an AStringList to a file  <a href="#a28e56a792f38c68f33d3e7f44e7de57b"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="atype_8h.html#a5ddaf36bb3c5fbdfb3312fd8fee6ade1">aboolean</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="astringlist_8c.html#a4f7cef5dbd385c8c67c6a6671944deb9">a_string_list_equal</a> (<a class="el" href="astringlist_8h.html#aeb1db826fe604d0bcc0d477b94a0306a">AStringList</a> *list1, <a class="el" href="astringlist_8h.html#aeb1db826fe604d0bcc0d477b94a0306a">AStringList</a> *list2)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">compare the two AStringLists  <a href="#a4f7cef5dbd385c8c67c6a6671944deb9"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="astringlist_8c.html#a8d7b7fc61ba4bdadbfb59e6577ad0641">a_string_list_free</a> (<a class="el" href="astringlist_8h.html#aeb1db826fe604d0bcc0d477b94a0306a">AStringList</a> *list)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Frees the memory allocated for the AStringList.  <a href="#a8d7b7fc61ba4bdadbfb59e6577ad0641"></a><br/></td></tr>
+</table>
+<hr/><h2>宏定义文档</h2>
+<a class="anchor" id="a3289a291f7bb9cda5cd200cee4142f26"></a><!-- doxytag: member="astringlist.c::a_free" ref="a3289a291f7bb9cda5cd200cee4142f26" args="(point)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define a_free</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">point</td><td>)</td>
+          <td>&#160;&#160;&#160;do{free(point);point = NULL;}while(0)</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a125b0875acb86b4ec4d4af752473d9f4"></a><!-- doxytag: member="astringlist.c::a_new" ref="a125b0875acb86b4ec4d4af752473d9f4" args="(type, size)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define a_new</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">type, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">size&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td>&#160;&#160;&#160;(type *)malloc(sizeof(type) * (size))</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a52c19de15d0b4654d5b9e7a200c322f7"></a><!-- doxytag: member="astringlist.c::A_WARING" ref="a52c19de15d0b4654d5b9e7a200c322f7" args="(msg)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define A_WARING</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">msg</td><td>)</td>
+          <td>&#160;&#160;&#160;do{fprintf(stderr, &quot;WARING: [%s():%d] %s\n&quot;, __func__, __LINE__, msg);}while(0)</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="adedfd164f43e682e70dae65f8e2bd895"></a><!-- doxytag: member="astringlist.c::A_WARNING_NOT_STRING" ref="adedfd164f43e682e70dae65f8e2bd895" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define A_WARNING_NOT_STRING&#160;&#160;&#160;A_WARING(&quot;A_IS_STRING Check falt!&quot;)</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a9f5ef061778ebb178b2e949756a24b93"></a><!-- doxytag: member="astringlist.c::A_WARNING_NOT_STRING_LIST" ref="a9f5ef061778ebb178b2e949756a24b93" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define A_WARNING_NOT_STRING_LIST&#160;&#160;&#160;A_WARING(&quot;A_IS_STRING_LIST Check falt!&quot;)</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a5a6624c7c2c4684e69b010ea3fa786c8"></a><!-- doxytag: member="astringlist.c::P" ref="a5a6624c7c2c4684e69b010ea3fa786c8" args="(lock)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define P</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">lock</td><td>)</td>
+          <td>&#160;&#160;&#160;while(lock++){--lock;}</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a42f28bf6220ec44723561a004c7be5ed"></a><!-- doxytag: member="astringlist.c::V" ref="a42f28bf6220ec44723561a004c7be5ed" args="(lock)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define V</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">lock</td><td>)</td>
+          <td>&#160;&#160;&#160;--lock;</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<hr/><h2>函数文档</h2>
+<a class="anchor" id="ac9271769d0b2c3d21e93ff983c4e13e0"></a><!-- doxytag: member="astringlist.c::a_string_list_add" ref="ac9271769d0b2c3d21e93ff983c4e13e0" args="(AStringList *list, AString *string)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="astringlist_8h.html#aeb1db826fe604d0bcc0d477b94a0306a">AStringList</a>* a_string_list_add </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="astringlist_8h.html#aeb1db826fe604d0bcc0d477b94a0306a">AStringList</a> *&#160;</td>
+          <td class="paramname"><em>list</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="astring_8h.html#ab78aa377b6493e8ce52cc631448b02cf">AString</a> *&#160;</td>
+          <td class="paramname"><em>string</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Add an AString to the end of AStringList. </p>
+<dl><dt><b>参数:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">list</td><td>the destination AStringList </td></tr>
+    <tr><td class="paramname">string</td><td>the string you want to add </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>返回:</b></dt><dd>list </dd></dl>
+<dl class="see"><dt><b>参见:</b></dt><dd><a class="el" href="astringlist_8h.html#ac56720f8124c8be9f6ca3095dd769c88" title="Append AStringList to exists AStringList.">a_string_list_append</a> </dd></dl>
+<dl class="since"><dt><b>自从:</b></dt><dd>0.2 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ac56720f8124c8be9f6ca3095dd769c88"></a><!-- doxytag: member="astringlist.c::a_string_list_append" ref="ac56720f8124c8be9f6ca3095dd769c88" args="(AStringList *list, AStringList *list2)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="astringlist_8h.html#aeb1db826fe604d0bcc0d477b94a0306a">AStringList</a>* a_string_list_append </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="astringlist_8h.html#aeb1db826fe604d0bcc0d477b94a0306a">AStringList</a> *&#160;</td>
+          <td class="paramname"><em>list</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="astringlist_8h.html#aeb1db826fe604d0bcc0d477b94a0306a">AStringList</a> *&#160;</td>
+          <td class="paramname"><em>list2</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Append AStringList to exists AStringList. </p>
+<dl><dt><b>参数:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">list</td><td>the destination AStringList </td></tr>
+    <tr><td class="paramname">list2</td><td>the list you want to append </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>返回:</b></dt><dd>list </dd></dl>
+<dl class="since"><dt><b>自从:</b></dt><dd>0.2 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a53845694a82f746c279d30e4b0c74657"></a><!-- doxytag: member="astringlist.c::a_string_list_assign" ref="a53845694a82f746c279d30e4b0c74657" args="(AStringList *list, AString *string)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="astringlist_8h.html#aeb1db826fe604d0bcc0d477b94a0306a">AStringList</a>* a_string_list_assign </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="astringlist_8h.html#aeb1db826fe604d0bcc0d477b94a0306a">AStringList</a> *&#160;</td>
+          <td class="paramname"><em>list</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="astring_8h.html#ab78aa377b6493e8ce52cc631448b02cf">AString</a> *&#160;</td>
+          <td class="paramname"><em>string</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Copies string from an AString into an AStringList, destroying any previous contents. It alias a_string_list_set_text;. </p>
+<dl><dt><b>参数:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">list</td><td>the AStringList to opera </td></tr>
+    <tr><td class="paramname">string</td><td>the AString to assign </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>返回:</b></dt><dd>list </dd></dl>
+<dl class="since"><dt><b>自从:</b></dt><dd>0.2 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a12d3ccf7cce3580e37147403df732b42"></a><!-- doxytag: member="astringlist.c::a_string_list_assign_split" ref="a12d3ccf7cce3580e37147403df732b42" args="(AStringList *list, AString *string, AString *split)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="astringlist_8h.html#aeb1db826fe604d0bcc0d477b94a0306a">AStringList</a>* a_string_list_assign_split </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="astringlist_8h.html#aeb1db826fe604d0bcc0d477b94a0306a">AStringList</a> *&#160;</td>
+          <td class="paramname"><em>list</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="astring_8h.html#ab78aa377b6493e8ce52cc631448b02cf">AString</a> *&#160;</td>
+          <td class="paramname"><em>string</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="astring_8h.html#ab78aa377b6493e8ce52cc631448b02cf">AString</a> *&#160;</td>
+          <td class="paramname"><em>split</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>It's like assign,but,split will be <br/>
+. </p>
+<dl><dt><b>参数:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">list</td><td>the AStringList to opera </td></tr>
+    <tr><td class="paramname">string</td><td>the AString to assign </td></tr>
+    <tr><td class="paramname">split</td><td>the split string </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>返回:</b></dt><dd>list </dd></dl>
+<dl class="see"><dt><b>参见:</b></dt><dd><a class="el" href="astringlist_8h.html#a53845694a82f746c279d30e4b0c74657" title="Copies string from an AString into an AStringList, destroying any previous contents. It alias a_string_list_set_text;.">a_string_list_assign</a> </dd></dl>
+<dl class="since"><dt><b>自从:</b></dt><dd>0.2 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a4baf0da341a22f777ed047303b3bfdcb"></a><!-- doxytag: member="astringlist.c::a_string_list_clear" ref="a4baf0da341a22f777ed047303b3bfdcb" args="(AStringList *list)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="astringlist_8h.html#aeb1db826fe604d0bcc0d477b94a0306a">AStringList</a>* a_string_list_clear </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="astringlist_8h.html#aeb1db826fe604d0bcc0d477b94a0306a">AStringList</a> *&#160;</td>
+          <td class="paramname"><em>list</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Clear the AStringList. </p>
+<dl><dt><b>参数:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">list</td><td>the AStringList you want to clear </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>返回:</b></dt><dd>list </dd></dl>
+<dl class="since"><dt><b>自从:</b></dt><dd>0.2 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a6ea0a81023830c5e11ceb28f19fba895"></a><!-- doxytag: member="astringlist.c::a_string_list_delete" ref="a6ea0a81023830c5e11ceb28f19fba895" args="(AStringList *list, asize index)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="astringlist_8h.html#aeb1db826fe604d0bcc0d477b94a0306a">AStringList</a>* a_string_list_delete </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="astringlist_8h.html#aeb1db826fe604d0bcc0d477b94a0306a">AStringList</a> *&#160;</td>
+          <td class="paramname"><em>list</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="atype_8h.html#a890366194341d30ffc42673649c34200">asize</a>&#160;</td>
+          <td class="paramname"><em>index</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Delete an AString from an AStringList. </p>
+<dl><dt><b>参数:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">list</td><td>the destination AStringList </td></tr>
+    <tr><td class="paramname">index</td><td>the position you want to delete </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>返回:</b></dt><dd>list </dd></dl>
+<dl class="since"><dt><b>自从:</b></dt><dd>0.2 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a1702fbeae2aee30502200eb9303578b4"></a><!-- doxytag: member="astringlist.c::a_string_list_dup" ref="a1702fbeae2aee30502200eb9303578b4" args="(AStringList *list)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="astringlist_8h.html#aeb1db826fe604d0bcc0d477b94a0306a">AStringList</a>* a_string_list_dup </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="astringlist_8h.html#aeb1db826fe604d0bcc0d477b94a0306a">AStringList</a> *&#160;</td>
+          <td class="paramname"><em>list</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>duplicate the AStringList </p>
+<dl class="warning"><dt><b>警告:</b></dt><dd>You should free the return string when you don't want to use it. </dd></dl>
+<dl><dt><b>参数:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">list</td><td>An AStringList </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>返回:</b></dt><dd>a new AStringList </dd></dl>
+<dl class="since"><dt><b>自从:</b></dt><dd>0.2 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a4f7cef5dbd385c8c67c6a6671944deb9"></a><!-- doxytag: member="astringlist.c::a_string_list_equal" ref="a4f7cef5dbd385c8c67c6a6671944deb9" args="(AStringList *list1, AStringList *list2)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="atype_8h.html#a5ddaf36bb3c5fbdfb3312fd8fee6ade1">aboolean</a> a_string_list_equal </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="astringlist_8h.html#aeb1db826fe604d0bcc0d477b94a0306a">AStringList</a> *&#160;</td>
+          <td class="paramname"><em>list1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="astringlist_8h.html#aeb1db826fe604d0bcc0d477b94a0306a">AStringList</a> *&#160;</td>
+          <td class="paramname"><em>list2</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>compare the two AStringLists </p>
+<dl><dt><b>参数:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">list</td><td>the first AStringList </td></tr>
+    <tr><td class="paramname">list2</td><td>the second AStringList </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>返回:</b></dt><dd>TRUE or FALSE </dd></dl>
+<dl class="since"><dt><b>自从:</b></dt><dd>0.2 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a542cceb97331f63495e0d7ebfa88d5ff"></a><!-- doxytag: member="astringlist.c::a_string_list_exchange" ref="a542cceb97331f63495e0d7ebfa88d5ff" args="(AStringList *list, asize index1, asize index2)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="astringlist_8h.html#aeb1db826fe604d0bcc0d477b94a0306a">AStringList</a>* a_string_list_exchange </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="astringlist_8h.html#aeb1db826fe604d0bcc0d477b94a0306a">AStringList</a> *&#160;</td>
+          <td class="paramname"><em>list</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="atype_8h.html#a890366194341d30ffc42673649c34200">asize</a>&#160;</td>
+          <td class="paramname"><em>index1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="atype_8h.html#a890366194341d30ffc42673649c34200">asize</a>&#160;</td>
+          <td class="paramname"><em>index2</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Exchange two lines in an AStringList. </p>
+<dl><dt><b>参数:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">list</td><td>the destination AStringList </td></tr>
+    <tr><td class="paramname">index1</td><td>the first position </td></tr>
+    <tr><td class="paramname">index2</td><td>the second position </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>返回:</b></dt><dd>list </dd></dl>
+<dl class="since"><dt><b>自从:</b></dt><dd>0.2 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="afa44527f81ce9ec61b0fe49bc4cb1b7f"></a><!-- doxytag: member="astringlist.c::a_string_list_find" ref="afa44527f81ce9ec61b0fe49bc4cb1b7f" args="(AStringList *list, AString *string, asize index)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="atype_8h.html#a890366194341d30ffc42673649c34200">asize</a> a_string_list_find </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="astringlist_8h.html#aeb1db826fe604d0bcc0d477b94a0306a">AStringList</a> *&#160;</td>
+          <td class="paramname"><em>list</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="astring_8h.html#ab78aa377b6493e8ce52cc631448b02cf">AString</a> *&#160;</td>
+          <td class="paramname"><em>string</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="atype_8h.html#a890366194341d30ffc42673649c34200">asize</a>&#160;</td>
+          <td class="paramname"><em>index</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Find an AString from an AStringList. </p>
+<dl><dt><b>参数:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">list</td><td>An AStringList </td></tr>
+    <tr><td class="paramname">string</td><td>the string to find </td></tr>
+    <tr><td class="paramname">index</td><td>the position you want to find start </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>返回:</b></dt><dd>the position, return -1 when doesn't find it. </dd></dl>
+<dl class="since"><dt><b>自从:</b></dt><dd>0.2 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ad4fc4f6102546c85a9c0a3c578ca8872"></a><!-- doxytag: member="astringlist.c::a_string_list_find_name" ref="ad4fc4f6102546c85a9c0a3c578ca8872" args="(AStringList *list, AString *string, asize index)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="atype_8h.html#a890366194341d30ffc42673649c34200">asize</a> a_string_list_find_name </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="astringlist_8h.html#aeb1db826fe604d0bcc0d477b94a0306a">AStringList</a> *&#160;</td>
+          <td class="paramname"><em>list</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="astring_8h.html#ab78aa377b6493e8ce52cc631448b02cf">AString</a> *&#160;</td>
+          <td class="paramname"><em>string</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="atype_8h.html#a890366194341d30ffc42673649c34200">asize</a>&#160;</td>
+          <td class="paramname"><em>index</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Find a key from an AStringList When the stringlist is like key=value, find the key in the list. </p>
+<dl><dt><b>参数:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">list</td><td>An AStringList </td></tr>
+    <tr><td class="paramname">string</td><td>the string to find </td></tr>
+    <tr><td class="paramname">index</td><td>the position you want to find start </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>返回:</b></dt><dd>the position, return -1 when doesn't find it. </dd></dl>
+<dl class="since"><dt><b>自从:</b></dt><dd>0.2 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a8d7b7fc61ba4bdadbfb59e6577ad0641"></a><!-- doxytag: member="astringlist.c::a_string_list_free" ref="a8d7b7fc61ba4bdadbfb59e6577ad0641" args="(AStringList *list)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void a_string_list_free </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="astringlist_8h.html#aeb1db826fe604d0bcc0d477b94a0306a">AStringList</a> *&#160;</td>
+          <td class="paramname"><em>list</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Frees the memory allocated for the AStringList. </p>
+<dl><dt><b>参数:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">string</td><td>the AStringList you want to free </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="since"><dt><b>自从:</b></dt><dd>0.2 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a86828ae1acff1821126bc46d014bccd3"></a><!-- doxytag: member="astringlist.c::a_string_list_get_text" ref="a86828ae1acff1821126bc46d014bccd3" args="(AStringList *list, auchar returnchar)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="astring_8h.html#ab78aa377b6493e8ce52cc631448b02cf">AString</a>* a_string_list_get_text </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="astringlist_8h.html#aeb1db826fe604d0bcc0d477b94a0306a">AStringList</a> *&#160;</td>
+          <td class="paramname"><em>list</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="atype_8h.html#aa6988e8dac6da1dfc24124b05c91e566">auchar</a>&#160;</td>
+          <td class="paramname"><em>returnchar</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>export an AStringList to an AString </p>
+<dl class="warning"><dt><b>警告:</b></dt><dd>You should free the return string when you don't want to use it. </dd></dl>
+<dl><dt><b>参数:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">list</td><td>An AStringList </td></tr>
+    <tr><td class="paramname">returnchar</td><td>the return char, 0:'<br/>
+', 1:'', 2:"\r\n" </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>返回:</b></dt><dd>A new AString </dd></dl>
+<dl class="since"><dt><b>自从:</b></dt><dd>0.2 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a10de54a74d2ac4d385fce43571fccc78"></a><!-- doxytag: member="astringlist.c::a_string_list_get_value" ref="a10de54a74d2ac4d385fce43571fccc78" args="(AStringList *list, asize index)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="astring_8h.html#ab78aa377b6493e8ce52cc631448b02cf">AString</a>* a_string_list_get_value </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="astringlist_8h.html#aeb1db826fe604d0bcc0d477b94a0306a">AStringList</a> *&#160;</td>
+          <td class="paramname"><em>list</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="atype_8h.html#a890366194341d30ffc42673649c34200">asize</a>&#160;</td>
+          <td class="paramname"><em>index</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Get a value from an AStringList When the stringlist is like key=value, get the value from a string. </p>
+<dl><dt><b>参数:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">list</td><td>An AStringList </td></tr>
+    <tr><td class="paramname">index</td><td>the position you want to get value </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>返回:</b></dt><dd>a new AString </dd></dl>
+<dl class="see"><dt><b>参见:</b></dt><dd><a class="el" href="astringlist_8h.html#ad4fc4f6102546c85a9c0a3c578ca8872" title="Find a key from an AStringList When the stringlist is like key=value, find the key in the list...">a_string_list_find_name</a> </dd></dl>
+<dl class="since"><dt><b>自从:</b></dt><dd>0.2 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ac8fd360982ac435fbb22371ffbe5d3d7"></a><!-- doxytag: member="astringlist.c::a_string_list_insert" ref="ac8fd360982ac435fbb22371ffbe5d3d7" args="(AStringList *list, asize index, AString *string)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="astringlist_8h.html#aeb1db826fe604d0bcc0d477b94a0306a">AStringList</a>* a_string_list_insert </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="astringlist_8h.html#aeb1db826fe604d0bcc0d477b94a0306a">AStringList</a> *&#160;</td>
+          <td class="paramname"><em>list</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="atype_8h.html#a890366194341d30ffc42673649c34200">asize</a>&#160;</td>
+          <td class="paramname"><em>index</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="astring_8h.html#ab78aa377b6493e8ce52cc631448b02cf">AString</a> *&#160;</td>
+          <td class="paramname"><em>string</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Insert an AString to AStringList. </p>
+<dl><dt><b>参数:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">list</td><td>the destination AStringList </td></tr>
+    <tr><td class="paramname">index</td><td>the position you want to insert </td></tr>
+    <tr><td class="paramname">string</td><td>the string you want to insert </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>返回:</b></dt><dd>list </dd></dl>
+<dl class="see"><dt><b>参见:</b></dt><dd><a class="el" href="astringlist_8h.html#ac9271769d0b2c3d21e93ff983c4e13e0" title="Add an AString to the end of AStringList.">a_string_list_add</a> </dd></dl>
+<dl class="since"><dt><b>自从:</b></dt><dd>0.2 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a8ef432bb4c9e0cf45281670b124f8a4a"></a><!-- doxytag: member="astringlist.c::a_string_list_load_from_file" ref="a8ef432bb4c9e0cf45281670b124f8a4a" args="(const char *filename)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="astringlist_8h.html#aeb1db826fe604d0bcc0d477b94a0306a">AStringList</a>* a_string_list_load_from_file </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>filename</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Create an AStringList from a file. </p>
+<dl><dt><b>参数:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">filename</td><td>the filename you want to load </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>返回:</b></dt><dd>a new AStringList </dd></dl>
+<dl class="since"><dt><b>自从:</b></dt><dd>0.2 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a14a1af93619054e082dd87691d7317ed"></a><!-- doxytag: member="astringlist.c::a_string_list_new" ref="a14a1af93619054e082dd87691d7317ed" args="(void)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="astringlist_8h.html#aeb1db826fe604d0bcc0d477b94a0306a">AStringList</a>* a_string_list_new </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Create a new AStringList with none string. </p>
+<dl class="return"><dt><b>返回:</b></dt><dd>A new AStringList </dd></dl>
+<dl class="since"><dt><b>自从:</b></dt><dd>0.2 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a1ba569397d288871314c05652003a1d0"></a><!-- doxytag: member="astringlist.c::a_string_list_prepend" ref="a1ba569397d288871314c05652003a1d0" args="(AStringList *list, AStringList *list2)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="astringlist_8h.html#aeb1db826fe604d0bcc0d477b94a0306a">AStringList</a>* a_string_list_prepend </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="astringlist_8h.html#aeb1db826fe604d0bcc0d477b94a0306a">AStringList</a> *&#160;</td>
+          <td class="paramname"><em>list</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="astringlist_8h.html#aeb1db826fe604d0bcc0d477b94a0306a">AStringList</a> *&#160;</td>
+          <td class="paramname"><em>list2</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Prepend AStringList to exists AStringList. </p>
+<dl><dt><b>参数:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">list</td><td>the destination AStringList </td></tr>
+    <tr><td class="paramname">list2</td><td>the list you want to prepend </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>返回:</b></dt><dd>list </dd></dl>
+<dl class="since"><dt><b>自从:</b></dt><dd>0.2 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a28e56a792f38c68f33d3e7f44e7de57b"></a><!-- doxytag: member="astringlist.c::a_string_list_save_to_file" ref="a28e56a792f38c68f33d3e7f44e7de57b" args="(AStringList *list, const char *filename, auchar returnchar)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="atype_8h.html#a5ddaf36bb3c5fbdfb3312fd8fee6ade1">aboolean</a> a_string_list_save_to_file </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="astringlist_8h.html#aeb1db826fe604d0bcc0d477b94a0306a">AStringList</a> *&#160;</td>
+          <td class="paramname"><em>list</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>filename</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="atype_8h.html#aa6988e8dac6da1dfc24124b05c91e566">auchar</a>&#160;</td>
+          <td class="paramname"><em>returnchar</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>export an AStringList to a file </p>
+<dl class="warning"><dt><b>警告:</b></dt><dd>You should free the return string when you don't want to use it. </dd></dl>
+<dl><dt><b>参数:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">list</td><td>An AStringList </td></tr>
+    <tr><td class="paramname">filename</td><td>the file you want to export </td></tr>
+    <tr><td class="paramname">returnchar</td><td>the return char, 0:'<br/>
+', 1:'', 2:"\r\n" </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>返回:</b></dt><dd>TRUE or FALSE </dd></dl>
+<dl class="since"><dt><b>自从:</b></dt><dd>0.2 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ac88a9441291b4990e3852be8a76356be"></a><!-- doxytag: member="astringlist.c::a_string_list_sort" ref="ac88a9441291b4990e3852be8a76356be" args="(AStringList *list)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="astringlist_8h.html#aeb1db826fe604d0bcc0d477b94a0306a">AStringList</a>* a_string_list_sort </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="astringlist_8h.html#aeb1db826fe604d0bcc0d477b94a0306a">AStringList</a> *&#160;</td>
+          <td class="paramname"><em>list</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Sort the StringList. </p>
+<dl><dt><b>参数:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">list</td><td>An AStringList </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>返回:</b></dt><dd>list </dd></dl>
+<dl class="since"><dt><b>自从:</b></dt><dd>0.2 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a372be7a2424ca3b359675286299dc317"></a><!-- doxytag: member="astringlist.c::a_string_list_sort_custom" ref="a372be7a2424ca3b359675286299dc317" args="(AStringList *list, A_CMP cmp)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="astringlist_8h.html#aeb1db826fe604d0bcc0d477b94a0306a">AStringList</a>* a_string_list_sort_custom </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="astringlist_8h.html#aeb1db826fe604d0bcc0d477b94a0306a">AStringList</a> *&#160;</td>
+          <td class="paramname"><em>list</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="astringlist_8h.html#a704b29df5775083cca5476ec2e19aa83">A_CMP</a>&#160;</td>
+          <td class="paramname"><em>cmp</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Sort the StringList by a custom function. </p>
+<dl><dt><b>参数:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">list</td><td>An AStringList </td></tr>
+    <tr><td class="paramname">cmp</td><td>An Compare function </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>返回:</b></dt><dd>list </dd></dl>
+<dl class="since"><dt><b>自从:</b></dt><dd>0.2 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a9f3033110b19c9e4da5812b79504e631"></a><!-- doxytag: member="astringlist.c::a_string_list_sorted" ref="a9f3033110b19c9e4da5812b79504e631" args="(AStringList *list)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="atype_8h.html#a5ddaf36bb3c5fbdfb3312fd8fee6ade1">aboolean</a> a_string_list_sorted </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="astringlist_8h.html#aeb1db826fe604d0bcc0d477b94a0306a">AStringList</a> *&#160;</td>
+          <td class="paramname"><em>list</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Check the StringList is sorted. </p>
+<dl><dt><b>参数:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">list</td><td>An AStringList </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>返回:</b></dt><dd>TRUE or FALSE </dd></dl>
+<dl class="since"><dt><b>自从:</b></dt><dd>0.2 </dd></dl>
+
+</div>
+</div>
+</div>
+</div>
+  <div id="nav-path" class="navpath">
+    <ul>
+      <li class="navelem"><a class="el" href="astringlist_8c.html">astringlist.c</a>      </li>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>全部</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>数据结构</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>文件</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>函数</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>变量</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>类型定义</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>宏定义</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+
+    <li class="footer">Generated at 2011年十一月26日 星期六 14:18:40 for AString by
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.5 </li>
+   </ul>
+ </div>
+
+
+</body>
+</html>
