@@ -1,0 +1,238 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<title>AString: E:/projects/AString/astring.h源文件</title>
+
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+</script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+
+</head>
+<body>
+<div id="top"><!-- do not remove this div! -->
+
+
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  
+  
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">AString
+   &#160;<span id="projectnumber">0.2</span>
+   </div>
+   <div id="projectbrief">A Weight C Language String Library</div>
+  </td>
+  
+  
+  
+ </tr>
+ </tbody>
+</table>
+</div>
+
+<!-- 制作者 Doxygen 1.7.5.1 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'搜索');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>首页</span></a></li>
+      <li><a href="annotated.html"><span>数据结构</span></a></li>
+      <li class="current"><a href="files.html"><span>文件</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="搜索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>文件列表</span></a></li>
+      <li><a href="globals.html"><span>全局定义</span></a></li>
+    </ul>
+  </div>
+</div>
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+  initNavTree('astring_8h.html','');
+</script>
+<div id="doc-content">
+<div class="header">
+  <div class="headertitle">
+<div class="title">E:/projects/AString/astring.h</div>  </div>
+</div>
+<div class="contents">
+<a href="astring_8h.html">浏览该文件的文档。</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 
+<a name="l00010"></a>00010 <span class="preprocessor">#ifndef __ASTRING_H__</span>
+<a name="l00011"></a>00011 <span class="preprocessor"></span><span class="preprocessor">#define __ASTRING_H__</span>
+<a name="l00012"></a>00012 <span class="preprocessor"></span>
+<a name="l00013"></a>00013 <span class="preprocessor">#include &lt;stdlib.h&gt;</span>
+<a name="l00014"></a>00014 <span class="preprocessor">#include &lt;string.h&gt;</span>
+<a name="l00015"></a>00015 <span class="preprocessor">#include &quot;<a class="code" href="atype_8h.html" title="AString type define.">atype.h</a>&quot;</span>
+<a name="l00016"></a>00016 
+<a name="l00017"></a>00017 <span class="preprocessor">#define A_STRING_FLAG       101</span>
+<a name="l00018"></a>00018 <span class="preprocessor"></span><span class="preprocessor">#define ZERO                &#39;\0&#39;</span>
+<a name="l00019"></a>00019 <span class="preprocessor"></span>
+<a name="l00024"></a><a class="code" href="astring_8h.html#a69137404dda0203cc179a6eb19fb6b62">00024</a> <span class="preprocessor">#define A_IS_STRING(string) (*(auchar *)string == A_STRING_FLAG)</span>
+<a name="l00025"></a>00025 <span class="preprocessor"></span>
+<a name="l00031"></a><a class="code" href="struct___a_string.html">00031</a> <span class="keyword">struct </span><a class="code" href="struct___a_string.html" title="The Main Struct.">_AString</a>{
+<a name="l00032"></a><a class="code" href="struct___a_string.html#a2a0db3ad29bc396a40bf6e564d0e758e">00032</a>         <a class="code" href="atype_8h.html#aa6988e8dac6da1dfc24124b05c91e566" title="auchar">auchar</a>              <a class="code" href="struct___a_string.html#a2a0db3ad29bc396a40bf6e564d0e758e">flag</a>; 
+<a name="l00033"></a><a class="code" href="struct___a_string.html#affd26dd3fdd018d17f3c7c79aaf23b6c">00033</a>         <span class="keyword">volatile</span> <a class="code" href="atype_8h.html#a5ddaf36bb3c5fbdfb3312fd8fee6ade1" title="aboolean">aboolean</a>   <a class="code" href="struct___a_string.html#affd26dd3fdd018d17f3c7c79aaf23b6c">lock</a>; 
+<a name="l00035"></a><a class="code" href="struct___a_string.html#ad0d4d3f0977c2f4d473823cced4994f3">00035</a>         <a class="code" href="atype_8h.html#a890366194341d30ffc42673649c34200" title="asize">asize</a>               <a class="code" href="struct___a_string.html#ad0d4d3f0977c2f4d473823cced4994f3">len</a>;  
+<a name="l00036"></a><a class="code" href="struct___a_string.html#ac4204e5ec8d4de6522689d971dc6661f">00036</a>         <a class="code" href="atype_8h.html#a890366194341d30ffc42673649c34200" title="asize">asize</a>               <a class="code" href="struct___a_string.html#ac4204e5ec8d4de6522689d971dc6661f">allocated_len</a>;   
+<a name="l00038"></a><a class="code" href="struct___a_string.html#ab50d783982593ef993ea0b68f7ad8b80">00038</a>         <span class="keywordtype">char</span> *              <a class="code" href="struct___a_string.html#ab50d783982593ef993ea0b68f7ad8b80">str</a>;  
+<a name="l00039"></a>00039 };
+<a name="l00040"></a>00040 
+<a name="l00046"></a><a class="code" href="struct___a_string_array.html">00046</a> <span class="keyword">struct </span><a class="code" href="struct___a_string_array.html" title="AStringArray Struct.">_AStringArray</a>{
+<a name="l00047"></a><a class="code" href="struct___a_string_array.html#a191fd23814433f1af333d0514a4727c7">00047</a>         <a class="code" href="struct___a_string.html" title="The Main Struct.">AString</a> **          <a class="code" href="struct___a_string_array.html#a191fd23814433f1af333d0514a4727c7">data</a>; 
+<a name="l00048"></a><a class="code" href="struct___a_string_array.html#a414f8d333bfe77f81b8b41d339b83a9a">00048</a>         <a class="code" href="atype_8h.html#a890366194341d30ffc42673649c34200" title="asize">asize</a>               <a class="code" href="struct___a_string_array.html#a414f8d333bfe77f81b8b41d339b83a9a">size</a>; 
+<a name="l00049"></a>00049 };
+<a name="l00050"></a>00050 
+<a name="l00054"></a><a class="code" href="astring_8h.html#ab78aa377b6493e8ce52cc631448b02cf">00054</a> <span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code" href="struct___a_string.html" title="The Main Struct.">_AString</a> <a class="code" href="struct___a_string.html" title="The Main Struct.">AString</a>;
+<a name="l00058"></a><a class="code" href="astring_8h.html#a681f3960d3b2cca96c2b132cbfef005e">00058</a> <span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code" href="struct___a_string_array.html" title="AStringArray Struct.">_AStringArray</a> <a class="code" href="struct___a_string_array.html" title="AStringArray Struct.">AStringArray</a>;
+<a name="l00059"></a>00059 
+<a name="l00066"></a>00066 <a class="code" href="struct___a_string.html" title="The Main Struct.">AString</a> *      a_string_new                   (<span class="keyword">const</span> <span class="keywordtype">char</span> *init);
+<a name="l00067"></a>00067 
+<a name="l00076"></a>00076 <a class="code" href="struct___a_string.html" title="The Main Struct.">AString</a> *      a_string_new_len               (<span class="keyword">const</span> <span class="keywordtype">char</span> *init, 
+<a name="l00077"></a>00077                                               <a class="code" href="atype_8h.html#a890366194341d30ffc42673649c34200" title="asize">asize</a> len);
+<a name="l00078"></a>00078 
+<a name="l00086"></a>00086 <a class="code" href="struct___a_string.html" title="The Main Struct.">AString</a> *      a_string_sized_new             (<a class="code" href="atype_8h.html#a890366194341d30ffc42673649c34200" title="asize">asize</a> <a class="code" href="struct___a_string_array.html#a414f8d333bfe77f81b8b41d339b83a9a">size</a>);
+<a name="l00094"></a>00094 <a class="code" href="struct___a_string.html" title="The Main Struct.">AString</a> *      a_string_assign                (<a class="code" href="struct___a_string.html" title="The Main Struct.">AString</a> *<span class="keywordtype">string</span>,
+<a name="l00095"></a>00095                                               <span class="keyword">const</span> <span class="keywordtype">char</span> * value);
+<a name="l00103"></a>00103 <a class="code" href="struct___a_string.html" title="The Main Struct.">AString</a> *      a_string_dup                   (<a class="code" href="struct___a_string.html" title="The Main Struct.">AString</a> *source);
+<a name="l00113"></a>00113 <span class="keywordtype">char</span>    *      a_string_dupstr                (<a class="code" href="struct___a_string.html" title="The Main Struct.">AString</a> *source);
+<a name="l00114"></a>00114 
+<a name="l00122"></a>00122 <a class="code" href="struct___a_string.html" title="The Main Struct.">AString</a> *      a_string_get_file_content     (<span class="keyword">const</span> <span class="keywordtype">char</span> * filename);
+<a name="l00130"></a>00130 <a class="code" href="struct___a_string.html" title="The Main Struct.">AString</a> *      a_string_append                (<a class="code" href="struct___a_string.html" title="The Main Struct.">AString</a> *<span class="keywordtype">string</span>,
+<a name="l00131"></a>00131                                               <span class="keyword">const</span> <span class="keywordtype">char</span> *value);
+<a name="l00139"></a>00139 <a class="code" href="struct___a_string.html" title="The Main Struct.">AString</a> *      a_string_append_c              (<a class="code" href="struct___a_string.html" title="The Main Struct.">AString</a> *<span class="keywordtype">string</span>,
+<a name="l00140"></a>00140                                               <span class="keywordtype">char</span> c);
+<a name="l00148"></a>00148 <a class="code" href="struct___a_string.html" title="The Main Struct.">AString</a> *      a_string_append_unichar        (<a class="code" href="struct___a_string.html" title="The Main Struct.">AString</a> *<span class="keywordtype">string</span>,
+<a name="l00149"></a>00149                                               <a class="code" href="atype_8h.html#acadaeac708cd5376091b4c3ee5ee4e72" title="aunichar">aunichar</a> wc);
+<a name="l00158"></a>00158 <a class="code" href="struct___a_string.html" title="The Main Struct.">AString</a> *      a_string_append_len            (<a class="code" href="struct___a_string.html" title="The Main Struct.">AString</a> *<span class="keywordtype">string</span>,
+<a name="l00159"></a>00159                                               <span class="keyword">const</span> <span class="keywordtype">char</span> *value,
+<a name="l00160"></a>00160                                               <a class="code" href="atype_8h.html#a890366194341d30ffc42673649c34200" title="asize">asize</a> len);
+<a name="l00168"></a>00168 <a class="code" href="struct___a_string.html" title="The Main Struct.">AString</a> *      a_string_prepend               (<a class="code" href="struct___a_string.html" title="The Main Struct.">AString</a> *<span class="keywordtype">string</span>,
+<a name="l00169"></a>00169                                               <span class="keyword">const</span> <span class="keywordtype">char</span> *value);
+<a name="l00177"></a>00177 <a class="code" href="struct___a_string.html" title="The Main Struct.">AString</a> *      a_string_prepend_c             (<a class="code" href="struct___a_string.html" title="The Main Struct.">AString</a> *<span class="keywordtype">string</span>,
+<a name="l00178"></a>00178                                               <span class="keywordtype">char</span> c);
+<a name="l00186"></a>00186 <a class="code" href="struct___a_string.html" title="The Main Struct.">AString</a> *      a_string_prepend_unichar       (<a class="code" href="struct___a_string.html" title="The Main Struct.">AString</a> *<span class="keywordtype">string</span>,
+<a name="l00187"></a>00187                                               <a class="code" href="atype_8h.html#acadaeac708cd5376091b4c3ee5ee4e72" title="aunichar">aunichar</a> wc);
+<a name="l00196"></a>00196 <a class="code" href="struct___a_string.html" title="The Main Struct.">AString</a> *      a_string_prepend_len           (<a class="code" href="struct___a_string.html" title="The Main Struct.">AString</a> *<span class="keywordtype">string</span>,
+<a name="l00197"></a>00197                                               <span class="keyword">const</span> <span class="keywordtype">char</span> *value,
+<a name="l00198"></a>00198                                               <a class="code" href="atype_8h.html#a890366194341d30ffc42673649c34200" title="asize">asize</a> len);
+<a name="l00207"></a>00207 <a class="code" href="struct___a_string.html" title="The Main Struct.">AString</a> *      a_string_insert                (<a class="code" href="struct___a_string.html" title="The Main Struct.">AString</a> *<span class="keywordtype">string</span>,
+<a name="l00208"></a>00208                                               <a class="code" href="atype_8h.html#a890366194341d30ffc42673649c34200" title="asize">asize</a> pos,
+<a name="l00209"></a>00209                                               <span class="keyword">const</span> <span class="keywordtype">char</span> *value);
+<a name="l00218"></a>00218 <a class="code" href="struct___a_string.html" title="The Main Struct.">AString</a> *      a_string_insert_c              (<a class="code" href="struct___a_string.html" title="The Main Struct.">AString</a> *<span class="keywordtype">string</span>,
+<a name="l00219"></a>00219                                               <a class="code" href="atype_8h.html#a890366194341d30ffc42673649c34200" title="asize">asize</a> pos,
+<a name="l00220"></a>00220                                               <span class="keywordtype">char</span> c);
+<a name="l00229"></a>00229 <a class="code" href="struct___a_string.html" title="The Main Struct.">AString</a> *      a_string_insert_unichar        (<a class="code" href="struct___a_string.html" title="The Main Struct.">AString</a> *<span class="keywordtype">string</span>,
+<a name="l00230"></a>00230                                               <a class="code" href="atype_8h.html#a890366194341d30ffc42673649c34200" title="asize">asize</a> pos,
+<a name="l00231"></a>00231                                               <a class="code" href="atype_8h.html#acadaeac708cd5376091b4c3ee5ee4e72" title="aunichar">aunichar</a> wc);
+<a name="l00241"></a>00241 <a class="code" href="struct___a_string.html" title="The Main Struct.">AString</a> *      a_string_insert_len            (<a class="code" href="struct___a_string.html" title="The Main Struct.">AString</a> *<span class="keywordtype">string</span>,
+<a name="l00242"></a>00242                                               <a class="code" href="atype_8h.html#a890366194341d30ffc42673649c34200" title="asize">asize</a> pos,
+<a name="l00243"></a>00243                                               <span class="keyword">const</span> <span class="keywordtype">char</span> *value,
+<a name="l00244"></a>00244                                               <a class="code" href="atype_8h.html#a890366194341d30ffc42673649c34200" title="asize">asize</a> len);
+<a name="l00253"></a>00253 <span class="keywordtype">char</span> *         a_string_get_key               (<a class="code" href="struct___a_string.html" title="The Main Struct.">AString</a> *<span class="keywordtype">string</span>);
+<a name="l00262"></a>00262 <span class="keywordtype">char</span> *         a_string_get_value             (<a class="code" href="struct___a_string.html" title="The Main Struct.">AString</a> *<span class="keywordtype">string</span>);
+<a name="l00271"></a>00271 <a class="code" href="struct___a_string.html" title="The Main Struct.">AString</a> *      a_string_overwrite             (<a class="code" href="struct___a_string.html" title="The Main Struct.">AString</a> *<span class="keywordtype">string</span>,
+<a name="l00272"></a>00272                                               <a class="code" href="atype_8h.html#a890366194341d30ffc42673649c34200" title="asize">asize</a> pos,
+<a name="l00273"></a>00273                                               <span class="keyword">const</span> <span class="keywordtype">char</span> *value);
+<a name="l00283"></a>00283 <a class="code" href="struct___a_string.html" title="The Main Struct.">AString</a> *      a_string_overwrite_len         (<a class="code" href="struct___a_string.html" title="The Main Struct.">AString</a> *<span class="keywordtype">string</span>,
+<a name="l00284"></a>00284                                               <a class="code" href="atype_8h.html#a890366194341d30ffc42673649c34200" title="asize">asize</a> pos,
+<a name="l00285"></a>00285                                               <span class="keyword">const</span> <span class="keywordtype">char</span> *value,
+<a name="l00286"></a>00286                                               <a class="code" href="atype_8h.html#a890366194341d30ffc42673649c34200" title="asize">asize</a> len);
+<a name="l00295"></a>00295 <a class="code" href="struct___a_string.html" title="The Main Struct.">AString</a> *      a_string_erase                 (<a class="code" href="struct___a_string.html" title="The Main Struct.">AString</a> *<span class="keywordtype">string</span>,
+<a name="l00296"></a>00296                                               <a class="code" href="atype_8h.html#a890366194341d30ffc42673649c34200" title="asize">asize</a> pos,
+<a name="l00297"></a>00297                                               <a class="code" href="atype_8h.html#a890366194341d30ffc42673649c34200" title="asize">asize</a> len);
+<a name="l00305"></a>00305 <a class="code" href="struct___a_string.html" title="The Main Struct.">AString</a> *      a_string_truncate              (<a class="code" href="struct___a_string.html" title="The Main Struct.">AString</a> *<span class="keywordtype">string</span>,
+<a name="l00306"></a>00306                                               <a class="code" href="atype_8h.html#a890366194341d30ffc42673649c34200" title="asize">asize</a> len);
+<a name="l00315"></a>00315 <a class="code" href="struct___a_string.html" title="The Main Struct.">AString</a> *      a_string_set_size              (<a class="code" href="struct___a_string.html" title="The Main Struct.">AString</a> *<span class="keywordtype">string</span>,
+<a name="l00316"></a>00316                                               <a class="code" href="atype_8h.html#a890366194341d30ffc42673649c34200" title="asize">asize</a> len);
+<a name="l00324"></a>00324 <a class="code" href="struct___a_string.html" title="The Main Struct.">AString</a> *      a_string_trim                  (<a class="code" href="struct___a_string.html" title="The Main Struct.">AString</a> *<span class="keywordtype">string</span>);
+<a name="l00332"></a>00332 <a class="code" href="struct___a_string_array.html" title="AStringArray Struct.">AStringArray</a> * a_string_split                 (<a class="code" href="struct___a_string.html" title="The Main Struct.">AString</a> *<span class="keywordtype">string</span>,
+<a name="l00333"></a>00333                                               <span class="keyword">const</span> <span class="keywordtype">char</span> *splitstr);
+<a name="l00352"></a>00352 <a class="code" href="struct___a_string.html" title="The Main Struct.">AString</a> *      a_string_substring             (<a class="code" href="struct___a_string.html" title="The Main Struct.">AString</a> *<span class="keywordtype">string</span>, <a class="code" href="atype_8h.html#a890366194341d30ffc42673649c34200" title="asize">asize</a> start, <a class="code" href="atype_8h.html#a890366194341d30ffc42673649c34200" title="asize">asize</a> end);
+<a name="l00363"></a>00363 <a class="code" href="struct___a_string.html" title="The Main Struct.">AString</a> *      a_string_substring_new         (<a class="code" href="struct___a_string.html" title="The Main Struct.">AString</a> *<span class="keywordtype">string</span>, <a class="code" href="atype_8h.html#a890366194341d30ffc42673649c34200" title="asize">asize</a> start, <a class="code" href="atype_8h.html#a890366194341d30ffc42673649c34200" title="asize">asize</a> end);
+<a name="l00371"></a>00371 <span class="keywordtype">char</span>           a_string_get_char              (<a class="code" href="struct___a_string.html" title="The Main Struct.">AString</a> *<span class="keywordtype">string</span>, <a class="code" href="atype_8h.html#a890366194341d30ffc42673649c34200" title="asize">asize</a> position);
+<a name="l00380"></a>00380 <a class="code" href="struct___a_string.html" title="The Main Struct.">AString</a> *      a_string_set_char              (<a class="code" href="struct___a_string.html" title="The Main Struct.">AString</a> *<span class="keywordtype">string</span>, <a class="code" href="atype_8h.html#a890366194341d30ffc42673649c34200" title="asize">asize</a> position, <span class="keywordtype">char</span> ch);
+<a name="l00389"></a>00389 <span class="keywordtype">int</span>            a_string_find                  (<a class="code" href="struct___a_string.html" title="The Main Struct.">AString</a> *<span class="keywordtype">string</span>,
+<a name="l00390"></a>00390                                               <span class="keywordtype">char</span> *str,
+<a name="l00391"></a>00391                                               <a class="code" href="atype_8h.html#a890366194341d30ffc42673649c34200" title="asize">asize</a> position);
+<a name="l00401"></a>00401 <span class="keywordtype">int</span>            a_string_replace               (<a class="code" href="struct___a_string.html" title="The Main Struct.">AString</a> *<span class="keywordtype">string</span>,
+<a name="l00402"></a>00402                                               <span class="keywordtype">char</span> *findstr,
+<a name="l00403"></a>00403                                               <span class="keywordtype">char</span> *replacestr,
+<a name="l00404"></a>00404                                               <a class="code" href="atype_8h.html#a890366194341d30ffc42673649c34200" title="asize">asize</a> position);
+<a name="l00414"></a>00414 <span class="keywordtype">int</span>            a_string_replace_all           (<a class="code" href="struct___a_string.html" title="The Main Struct.">AString</a> *<span class="keywordtype">string</span>,
+<a name="l00415"></a>00415                                               <span class="keywordtype">char</span> *findstr,
+<a name="l00416"></a>00416                                               <span class="keywordtype">char</span> *replacestr);
+<a name="l00422"></a>00422 <span class="keywordtype">void</span>           a_string_free                  (<a class="code" href="struct___a_string.html" title="The Main Struct.">AString</a> *<span class="keywordtype">string</span>);
+<a name="l00430"></a>00430 <a class="code" href="atype_8h.html#a6ed4dce041824ce66dcceff4abf9a33e" title="auint">auint</a>          a_string_hash                  (<a class="code" href="struct___a_string.html" title="The Main Struct.">AString</a> *<span class="keywordtype">string</span>);
+<a name="l00438"></a>00438 <a class="code" href="atype_8h.html#a5ddaf36bb3c5fbdfb3312fd8fee6ade1" title="aboolean">aboolean</a>       a_string_equal                 (<a class="code" href="struct___a_string.html" title="The Main Struct.">AString</a> *<span class="keywordtype">string</span>,
+<a name="l00439"></a>00439                                               <a class="code" href="struct___a_string.html" title="The Main Struct.">AString</a> *string2);
+<a name="l00440"></a>00440 
+<a name="l00441"></a>00441 <span class="preprocessor">#endif</span>
+</pre></div></div>
+</div>
+  <div id="nav-path" class="navpath">
+    <ul>
+      <li class="navelem"><a class="el" href="astring_8h.html">astring.h</a>      </li>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>全部</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>数据结构</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>文件</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>函数</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>变量</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>类型定义</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>宏定义</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+
+    <li class="footer">Generated at 2011年十一月26日 星期六 01:49:41 for AString by
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.5.1 </li>
+   </ul>
+ </div>
+
+
+</body>
+</html>

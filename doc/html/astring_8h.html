@@ -1,0 +1,1734 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<title>AString: E:/projects/AString/astring.h文件参考</title>
+
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+</script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+
+</head>
+<body>
+<div id="top"><!-- do not remove this div! -->
+
+
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  
+  
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">AString
+   &#160;<span id="projectnumber">0.2</span>
+   </div>
+   <div id="projectbrief">A Weight C Language String Library</div>
+  </td>
+  
+  
+  
+ </tr>
+ </tbody>
+</table>
+</div>
+
+<!-- 制作者 Doxygen 1.7.5.1 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'搜索');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>首页</span></a></li>
+      <li><a href="annotated.html"><span>数据结构</span></a></li>
+      <li class="current"><a href="files.html"><span>文件</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="搜索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>文件列表</span></a></li>
+      <li><a href="globals.html"><span>全局定义</span></a></li>
+    </ul>
+  </div>
+</div>
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+  initNavTree('astring_8h.html','');
+</script>
+<div id="doc-content">
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">数据结构</a> &#124;
+<a href="#define-members">宏定义</a> &#124;
+<a href="#typedef-members">类型定义</a> &#124;
+<a href="#func-members">函数</a>  </div>
+  <div class="headertitle">
+<div class="title">E:/projects/AString/astring.h文件参考</div>  </div>
+</div>
+<div class="contents">
+
+<p>AString.  
+<a href="#details">更多...</a></p>
+<div class="textblock"><code>#include &lt;stdlib.h&gt;</code><br/>
+<code>#include &lt;string.h&gt;</code><br/>
+<code>#include &quot;<a class="el" href="atype_8h_source.html">atype.h</a>&quot;</code><br/>
+</div>
+<p><a href="astring_8h_source.html">浏览该文件的源代码。</a></p>
+<table class="memberdecls">
+<tr><td colspan="2"><h2><a name="nested-classes"></a>
+数据结构</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct___a_string.html">_AString</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">The Main Struct.  <a href="struct___a_string.html#details">更多...</a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct___a_string_array.html">_AStringArray</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">AStringArray Struct.  <a href="struct___a_string_array.html#details">更多...</a><br/></td></tr>
+<tr><td colspan="2"><h2><a name="define-members"></a>
+宏定义</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a2070ff354651102d0380db5661d46270"></a><!-- doxytag: member="astring.h::A_STRING_FLAG" ref="a2070ff354651102d0380db5661d46270" args="" -->
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>A_STRING_FLAG</b>&#160;&#160;&#160;101</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ac328e551bde3d39b6d7b8cc9e048d941"></a><!-- doxytag: member="astring.h::ZERO" ref="ac328e551bde3d39b6d7b8cc9e048d941" args="" -->
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>ZERO</b>&#160;&#160;&#160;'\0'</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a69137404dda0203cc179a6eb19fb6b62"></a><!-- doxytag: member="astring.h::A_IS_STRING" ref="a69137404dda0203cc179a6eb19fb6b62" args="(string)" -->
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="astring_8h.html#a69137404dda0203cc179a6eb19fb6b62">A_IS_STRING</a>(string)&#160;&#160;&#160;(*(<a class="el" href="atype_8h.html#aa6988e8dac6da1dfc24124b05c91e566">auchar</a> *)string == A_STRING_FLAG)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">A define. Check if a variable is an AString. <br/></td></tr>
+<tr><td colspan="2"><h2><a name="typedef-members"></a>
+类型定义</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab78aa377b6493e8ce52cc631448b02cf"></a><!-- doxytag: member="astring.h::AString" ref="ab78aa377b6493e8ce52cc631448b02cf" args="" -->
+typedef struct <a class="el" href="struct___a_string.html">_AString</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="astring_8h.html#ab78aa377b6493e8ce52cc631448b02cf">AString</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Main Struct. <br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a681f3960d3b2cca96c2b132cbfef005e"></a><!-- doxytag: member="astring.h::AStringArray" ref="a681f3960d3b2cca96c2b132cbfef005e" args="" -->
+typedef struct <a class="el" href="struct___a_string_array.html">_AStringArray</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="astring_8h.html#a681f3960d3b2cca96c2b132cbfef005e">AStringArray</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">the array of some AString <br/></td></tr>
+<tr><td colspan="2"><h2><a name="func-members"></a>
+函数</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="astring_8h.html#ab78aa377b6493e8ce52cc631448b02cf">AString</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="astring_8h.html#a4e9339a9e220bfc7375d710d130fe6c1">a_string_new</a> (const char *init)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a new AString, initialized with the given string.  <a href="#a4e9339a9e220bfc7375d710d130fe6c1"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="astring_8h.html#ab78aa377b6493e8ce52cc631448b02cf">AString</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="astring_8h.html#a3db00721591473386c66eded94097d70">a_string_new_len</a> (const char *init, <a class="el" href="atype_8h.html#a890366194341d30ffc42673649c34200">asize</a> len)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a new AString with len length. if strlen(init) is larger than len, the length of new string will be len, otherwise the length will be strlen(init)  <a href="#a3db00721591473386c66eded94097d70"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="astring_8h.html#ab78aa377b6493e8ce52cc631448b02cf">AString</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="astring_8h.html#af4cbdac359806c1ee22c919b5f503b59">a_string_sized_new</a> (<a class="el" href="atype_8h.html#a890366194341d30ffc42673649c34200">asize</a> size)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a new AString with size allocated_len This is useful if you are going to add a lot of text to the string and don't want it to be reallocated too often.  <a href="#af4cbdac359806c1ee22c919b5f503b59"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="astring_8h.html#ab78aa377b6493e8ce52cc631448b02cf">AString</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="astring_8h.html#a1a7c1b9428de4b7f9ffd1d281afb8901">a_string_assign</a> (<a class="el" href="astring_8h.html#ab78aa377b6493e8ce52cc631448b02cf">AString</a> *string, const char *value)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Copies the bytes from a string into an AString, destroying any previous contents. It is rather like the standard strcpy() function, except that you do not have to worry about having enough space to copy the string.  <a href="#a1a7c1b9428de4b7f9ffd1d281afb8901"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="astring_8h.html#ab78aa377b6493e8ce52cc631448b02cf">AString</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="astring_8h.html#a106246b4e130baf044a5685e02eabd24">a_string_dup</a> (<a class="el" href="astring_8h.html#ab78aa377b6493e8ce52cc631448b02cf">AString</a> *source)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">duplicate an AString.  <a href="#a106246b4e130baf044a5685e02eabd24"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="astring_8h.html#a78a7bd58b07d0acfc87a1472b9acf6b9">a_string_dupstr</a> (<a class="el" href="astring_8h.html#ab78aa377b6493e8ce52cc631448b02cf">AString</a> *source)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">duplicate char * from an AString.  <a href="#a78a7bd58b07d0acfc87a1472b9acf6b9"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="astring_8h.html#ab78aa377b6493e8ce52cc631448b02cf">AString</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="astring_8h.html#a7d24c6ec45a8b09c4d715dd1b30f7f67">a_string_get_file_content</a> (const char *filename)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a new AString from a file.  <a href="#a7d24c6ec45a8b09c4d715dd1b30f7f67"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="astring_8h.html#ab78aa377b6493e8ce52cc631448b02cf">AString</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="astring_8h.html#ad3ff0c6e3a6ba2c1f424bdf922a11f81">a_string_append</a> (<a class="el" href="astring_8h.html#ab78aa377b6493e8ce52cc631448b02cf">AString</a> *string, const char *value)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Append a string to An AString.  <a href="#ad3ff0c6e3a6ba2c1f424bdf922a11f81"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="astring_8h.html#ab78aa377b6493e8ce52cc631448b02cf">AString</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="astring_8h.html#a3d62938c0f154a95a6c4994a7308c354">a_string_append_c</a> (<a class="el" href="astring_8h.html#ab78aa377b6493e8ce52cc631448b02cf">AString</a> *string, char c)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Append a char to An AString.  <a href="#a3d62938c0f154a95a6c4994a7308c354"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="astring_8h.html#ab78aa377b6493e8ce52cc631448b02cf">AString</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="astring_8h.html#a3adb1744971bdb3d925a789cd75e9aac">a_string_append_unichar</a> (<a class="el" href="astring_8h.html#ab78aa377b6493e8ce52cc631448b02cf">AString</a> *string, <a class="el" href="atype_8h.html#acadaeac708cd5376091b4c3ee5ee4e72">aunichar</a> wc)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Append a char to An AString.  <a href="#a3adb1744971bdb3d925a789cd75e9aac"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="astring_8h.html#ab78aa377b6493e8ce52cc631448b02cf">AString</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="astring_8h.html#abec99aec6e2a49305bbf6444fb61122f">a_string_append_len</a> (<a class="el" href="astring_8h.html#ab78aa377b6493e8ce52cc631448b02cf">AString</a> *string, const char *value, <a class="el" href="atype_8h.html#a890366194341d30ffc42673649c34200">asize</a> len)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Append a char to An AString.  <a href="#abec99aec6e2a49305bbf6444fb61122f"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="astring_8h.html#ab78aa377b6493e8ce52cc631448b02cf">AString</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="astring_8h.html#a5ad3117d50882b3e2357781db054d0ce">a_string_prepend</a> (<a class="el" href="astring_8h.html#ab78aa377b6493e8ce52cc631448b02cf">AString</a> *string, const char *value)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Prepend a string to An AString.  <a href="#a5ad3117d50882b3e2357781db054d0ce"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="astring_8h.html#ab78aa377b6493e8ce52cc631448b02cf">AString</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="astring_8h.html#a481f420c37cc207d7e7e255e02b6c091">a_string_prepend_c</a> (<a class="el" href="astring_8h.html#ab78aa377b6493e8ce52cc631448b02cf">AString</a> *string, char c)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Prepend a char to An AString.  <a href="#a481f420c37cc207d7e7e255e02b6c091"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="astring_8h.html#ab78aa377b6493e8ce52cc631448b02cf">AString</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="astring_8h.html#a43e1c9bcdf7cace5bc08bb2a89f6d730">a_string_prepend_unichar</a> (<a class="el" href="astring_8h.html#ab78aa377b6493e8ce52cc631448b02cf">AString</a> *string, <a class="el" href="atype_8h.html#acadaeac708cd5376091b4c3ee5ee4e72">aunichar</a> wc)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Prepend a char to An AString.  <a href="#a43e1c9bcdf7cace5bc08bb2a89f6d730"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="astring_8h.html#ab78aa377b6493e8ce52cc631448b02cf">AString</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="astring_8h.html#a067a556751144bdcdb6f3dc9bf863acf">a_string_prepend_len</a> (<a class="el" href="astring_8h.html#ab78aa377b6493e8ce52cc631448b02cf">AString</a> *string, const char *value, <a class="el" href="atype_8h.html#a890366194341d30ffc42673649c34200">asize</a> len)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Prepend a char to An AString.  <a href="#a067a556751144bdcdb6f3dc9bf863acf"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="astring_8h.html#ab78aa377b6493e8ce52cc631448b02cf">AString</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="astring_8h.html#a7b67246c7a64f393d7832a4f38cda53e">a_string_insert</a> (<a class="el" href="astring_8h.html#ab78aa377b6493e8ce52cc631448b02cf">AString</a> *string, <a class="el" href="atype_8h.html#a890366194341d30ffc42673649c34200">asize</a> pos, const char *value)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Insert a string to An AString.  <a href="#a7b67246c7a64f393d7832a4f38cda53e"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="astring_8h.html#ab78aa377b6493e8ce52cc631448b02cf">AString</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="astring_8h.html#af3cd31d5464e26781cd8d8692708dcc1">a_string_insert_c</a> (<a class="el" href="astring_8h.html#ab78aa377b6493e8ce52cc631448b02cf">AString</a> *string, <a class="el" href="atype_8h.html#a890366194341d30ffc42673649c34200">asize</a> pos, char c)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Insert a char to An AString.  <a href="#af3cd31d5464e26781cd8d8692708dcc1"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="astring_8h.html#ab78aa377b6493e8ce52cc631448b02cf">AString</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="astring_8h.html#a0fc9386d03311af5611ba1510647c6d4">a_string_insert_unichar</a> (<a class="el" href="astring_8h.html#ab78aa377b6493e8ce52cc631448b02cf">AString</a> *string, <a class="el" href="atype_8h.html#a890366194341d30ffc42673649c34200">asize</a> pos, <a class="el" href="atype_8h.html#acadaeac708cd5376091b4c3ee5ee4e72">aunichar</a> wc)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Insert a char to An AString.  <a href="#a0fc9386d03311af5611ba1510647c6d4"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="astring_8h.html#ab78aa377b6493e8ce52cc631448b02cf">AString</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="astring_8h.html#a7c72aba2348fd49aed644c90757697ea">a_string_insert_len</a> (<a class="el" href="astring_8h.html#ab78aa377b6493e8ce52cc631448b02cf">AString</a> *string, <a class="el" href="atype_8h.html#a890366194341d30ffc42673649c34200">asize</a> pos, const char *value, <a class="el" href="atype_8h.html#a890366194341d30ffc42673649c34200">asize</a> len)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Insert a char to An AString.  <a href="#a7c72aba2348fd49aed644c90757697ea"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="astring_8h.html#a16180906641176bab5fe76376a0f0a68">a_string_get_key</a> (<a class="el" href="astring_8h.html#ab78aa377b6493e8ce52cc631448b02cf">AString</a> *string)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the key of the string When a string is like key=value,it return key.  <a href="#a16180906641176bab5fe76376a0f0a68"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="astring_8h.html#a57f3b73cccecd5728c5ec767fd4955f1">a_string_get_value</a> (<a class="el" href="astring_8h.html#ab78aa377b6493e8ce52cc631448b02cf">AString</a> *string)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the value of the string When a string is like key=value,it return value.  <a href="#a57f3b73cccecd5728c5ec767fd4955f1"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="astring_8h.html#ab78aa377b6493e8ce52cc631448b02cf">AString</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="astring_8h.html#a775d6b06b540ba699fe2dc70a2d120ea">a_string_overwrite</a> (<a class="el" href="astring_8h.html#ab78aa377b6493e8ce52cc631448b02cf">AString</a> *string, <a class="el" href="atype_8h.html#a890366194341d30ffc42673649c34200">asize</a> pos, const char *value)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">overwrite an AString from pos  <a href="#a775d6b06b540ba699fe2dc70a2d120ea"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="astring_8h.html#ab78aa377b6493e8ce52cc631448b02cf">AString</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="astring_8h.html#a2ce0d97266d552e1271f857d6846d607">a_string_overwrite_len</a> (<a class="el" href="astring_8h.html#ab78aa377b6493e8ce52cc631448b02cf">AString</a> *string, <a class="el" href="atype_8h.html#a890366194341d30ffc42673649c34200">asize</a> pos, const char *value, <a class="el" href="atype_8h.html#a890366194341d30ffc42673649c34200">asize</a> len)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">overwrite an AString from pos, and overwrite the most len char  <a href="#a2ce0d97266d552e1271f857d6846d607"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="astring_8h.html#ab78aa377b6493e8ce52cc631448b02cf">AString</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="astring_8h.html#ae050f90823862789141a6a702871bad4">a_string_erase</a> (<a class="el" href="astring_8h.html#ab78aa377b6493e8ce52cc631448b02cf">AString</a> *string, <a class="el" href="atype_8h.html#a890366194341d30ffc42673649c34200">asize</a> pos, <a class="el" href="atype_8h.html#a890366194341d30ffc42673649c34200">asize</a> len)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Erase something from an AString.  <a href="#ae050f90823862789141a6a702871bad4"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="astring_8h.html#ab78aa377b6493e8ce52cc631448b02cf">AString</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="astring_8h.html#addd007d57931aa460095807d7f0e81ff">a_string_truncate</a> (<a class="el" href="astring_8h.html#ab78aa377b6493e8ce52cc631448b02cf">AString</a> *string, <a class="el" href="atype_8h.html#a890366194341d30ffc42673649c34200">asize</a> len)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Truncate an AString, leave the first len char.  <a href="#addd007d57931aa460095807d7f0e81ff"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="astring_8h.html#ab78aa377b6493e8ce52cc631448b02cf">AString</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="astring_8h.html#ad68eb7cb40013b0ab972803fa124e334">a_string_set_size</a> (<a class="el" href="astring_8h.html#ab78aa377b6493e8ce52cc631448b02cf">AString</a> *string, <a class="el" href="atype_8h.html#a890366194341d30ffc42673649c34200">asize</a> len)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Set string's length if len is smaller than string-&gt;len, it'll be truncate,else it'll fill with undefined char.  <a href="#ad68eb7cb40013b0ab972803fa124e334"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="astring_8h.html#ab78aa377b6493e8ce52cc631448b02cf">AString</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="astring_8h.html#a50f3119e0d1e42906afe77acb2c6cb70">a_string_trim</a> (<a class="el" href="astring_8h.html#ab78aa377b6493e8ce52cc631448b02cf">AString</a> *string)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">wipe off the head and tail's space or tab. "  abc  " will be "abc"  <a href="#a50f3119e0d1e42906afe77acb2c6cb70"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="astring_8h.html#a681f3960d3b2cca96c2b132cbfef005e">AStringArray</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="astring_8h.html#a8bbd31fa00962a0bd97e067aae621be4">a_string_split</a> (<a class="el" href="astring_8h.html#ab78aa377b6493e8ce52cc631448b02cf">AString</a> *string, const char *splitstr)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Splits a string into array.  <a href="#a8bbd31fa00962a0bd97e067aae621be4"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="astring_8h.html#ab78aa377b6493e8ce52cc631448b02cf">AString</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="astring_8h.html#a0537e4815ff01197e59949cc0f489e1e">a_string_substring</a> (<a class="el" href="astring_8h.html#ab78aa377b6493e8ce52cc631448b02cf">AString</a> *string, <a class="el" href="atype_8h.html#a890366194341d30ffc42673649c34200">asize</a> start, <a class="el" href="atype_8h.html#a890366194341d30ffc42673649c34200">asize</a> end)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">change an AString to it's substring.  <a href="#a0537e4815ff01197e59949cc0f489e1e"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="astring_8h.html#ab78aa377b6493e8ce52cc631448b02cf">AString</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="astring_8h.html#a499cb606d6bc890c44ac97f957a85d74">a_string_substring_new</a> (<a class="el" href="astring_8h.html#ab78aa377b6493e8ce52cc631448b02cf">AString</a> *string, <a class="el" href="atype_8h.html#a890366194341d30ffc42673649c34200">asize</a> start, <a class="el" href="atype_8h.html#a890366194341d30ffc42673649c34200">asize</a> end)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Like substring, but it'll create a new AString to return. string will not to be changed.  <a href="#a499cb606d6bc890c44ac97f957a85d74"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="astring_8h.html#a68ac61a7112c90fb822e7c22c7c541ef">a_string_get_char</a> (<a class="el" href="astring_8h.html#ab78aa377b6493e8ce52cc631448b02cf">AString</a> *string, <a class="el" href="atype_8h.html#a890366194341d30ffc42673649c34200">asize</a> position)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the char in an AString.  <a href="#a68ac61a7112c90fb822e7c22c7c541ef"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="astring_8h.html#ab78aa377b6493e8ce52cc631448b02cf">AString</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="astring_8h.html#a78fcdaa38bae4fd2f9d1985af8513964">a_string_set_char</a> (<a class="el" href="astring_8h.html#ab78aa377b6493e8ce52cc631448b02cf">AString</a> *string, <a class="el" href="atype_8h.html#a890366194341d30ffc42673649c34200">asize</a> position, char ch)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the char in an AString.  <a href="#a78fcdaa38bae4fd2f9d1985af8513964"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="astring_8h.html#ab90776a02f5df8035eb8c375ec489c1a">a_string_find</a> (<a class="el" href="astring_8h.html#ab78aa377b6493e8ce52cc631448b02cf">AString</a> *string, char *str, <a class="el" href="atype_8h.html#a890366194341d30ffc42673649c34200">asize</a> position)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Find a string from an AString.  <a href="#ab90776a02f5df8035eb8c375ec489c1a"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="astring_8h.html#a08a83581908746d14b8f2e365f65d5c0">a_string_replace</a> (<a class="el" href="astring_8h.html#ab78aa377b6493e8ce52cc631448b02cf">AString</a> *string, char *findstr, char *replacestr, <a class="el" href="atype_8h.html#a890366194341d30ffc42673649c34200">asize</a> position)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Replace a string from an AString.  <a href="#a08a83581908746d14b8f2e365f65d5c0"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="astring_8h.html#a5ef45c81179d5cfb7be2c80df5a7bc54">a_string_replace_all</a> (<a class="el" href="astring_8h.html#ab78aa377b6493e8ce52cc631448b02cf">AString</a> *string, char *findstr, char *replacestr)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Replace all string from an AString.  <a href="#a5ef45c81179d5cfb7be2c80df5a7bc54"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="astring_8h.html#aa6fa44b818dc507968a2f8844d01b903">a_string_free</a> (<a class="el" href="astring_8h.html#ab78aa377b6493e8ce52cc631448b02cf">AString</a> *string)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Frees the memory allocated for the AString.  <a href="#aa6fa44b818dc507968a2f8844d01b903"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="atype_8h.html#a6ed4dce041824ce66dcceff4abf9a33e">auint</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="astring_8h.html#ab7dc5116d30d7216ea8a54bbb7811c36">a_string_hash</a> (<a class="el" href="astring_8h.html#ab78aa377b6493e8ce52cc631448b02cf">AString</a> *string)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the hashcode from a string.  <a href="#ab7dc5116d30d7216ea8a54bbb7811c36"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="atype_8h.html#a5ddaf36bb3c5fbdfb3312fd8fee6ade1">aboolean</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="astring_8h.html#a65e36dc6102ea547f95759a81fdd8414">a_string_equal</a> (<a class="el" href="astring_8h.html#ab78aa377b6493e8ce52cc631448b02cf">AString</a> *string, <a class="el" href="astring_8h.html#ab78aa377b6493e8ce52cc631448b02cf">AString</a> *string2)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">compare the two AStrings  <a href="#a65e36dc6102ea547f95759a81fdd8414"></a><br/></td></tr>
+</table>
+<hr/><a name="details" id="details"></a><h2>详细描述</h2>
+<div class="textblock"><p>AString. </p>
+<dl class="author"><dt><b>作者:</b></dt><dd>Tom </dd></dl>
+<dl class="date"><dt><b>日期:</b></dt><dd>2011-11-25 </dd></dl>
+<dl class="version"><dt><b>版本:</b></dt><dd>0.2 </dd></dl>
+<dl class="note"><dt><b>注解:</b></dt><dd>A AString is an object that handles the memory management of a C string for you. You can think of it as similar to a Java StringBuffer. In addition to the string itself, GString stores the length of the string, so can be used for binary data with embedded nul bytes. To access the C string managed by the AString string, simply use string-&gt;str. </dd></dl>
+</div><hr/><h2>函数文档</h2>
+<a class="anchor" id="ad3ff0c6e3a6ba2c1f424bdf922a11f81"></a><!-- doxytag: member="astring.h::a_string_append" ref="ad3ff0c6e3a6ba2c1f424bdf922a11f81" args="(AString *string, const char *value)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="astring_8h.html#ab78aa377b6493e8ce52cc631448b02cf">AString</a>* a_string_append </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="astring_8h.html#ab78aa377b6493e8ce52cc631448b02cf">AString</a> *&#160;</td>
+          <td class="paramname"><em>string</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>value</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Append a string to An AString. </p>
+<dl><dt><b>参数:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">string</td><td>the destination AString </td></tr>
+    <tr><td class="paramname">value</td><td>the string you want to append </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>返回:</b></dt><dd>string </dd></dl>
+<dl class="since"><dt><b>自从:</b></dt><dd>0.1 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a3d62938c0f154a95a6c4994a7308c354"></a><!-- doxytag: member="astring.h::a_string_append_c" ref="a3d62938c0f154a95a6c4994a7308c354" args="(AString *string, char c)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="astring_8h.html#ab78aa377b6493e8ce52cc631448b02cf">AString</a>* a_string_append_c </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="astring_8h.html#ab78aa377b6493e8ce52cc631448b02cf">AString</a> *&#160;</td>
+          <td class="paramname"><em>string</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char&#160;</td>
+          <td class="paramname"><em>c</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Append a char to An AString. </p>
+<dl><dt><b>参数:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">string</td><td>the destination AString </td></tr>
+    <tr><td class="paramname">c</td><td>the char you want to append </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>返回:</b></dt><dd>string </dd></dl>
+<dl class="since"><dt><b>自从:</b></dt><dd>0.1 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="abec99aec6e2a49305bbf6444fb61122f"></a><!-- doxytag: member="astring.h::a_string_append_len" ref="abec99aec6e2a49305bbf6444fb61122f" args="(AString *string, const char *value, asize len)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="astring_8h.html#ab78aa377b6493e8ce52cc631448b02cf">AString</a>* a_string_append_len </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="astring_8h.html#ab78aa377b6493e8ce52cc631448b02cf">AString</a> *&#160;</td>
+          <td class="paramname"><em>string</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>value</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="atype_8h.html#a890366194341d30ffc42673649c34200">asize</a>&#160;</td>
+          <td class="paramname"><em>len</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Append a char to An AString. </p>
+<dl><dt><b>参数:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">string</td><td>the destination AString </td></tr>
+    <tr><td class="paramname">value</td><td>the string you want to append </td></tr>
+    <tr><td class="paramname">len</td><td>the max char length to append </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>返回:</b></dt><dd>string </dd></dl>
+<dl class="since"><dt><b>自从:</b></dt><dd>0.1 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a3adb1744971bdb3d925a789cd75e9aac"></a><!-- doxytag: member="astring.h::a_string_append_unichar" ref="a3adb1744971bdb3d925a789cd75e9aac" args="(AString *string, aunichar wc)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="astring_8h.html#ab78aa377b6493e8ce52cc631448b02cf">AString</a>* a_string_append_unichar </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="astring_8h.html#ab78aa377b6493e8ce52cc631448b02cf">AString</a> *&#160;</td>
+          <td class="paramname"><em>string</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="atype_8h.html#acadaeac708cd5376091b4c3ee5ee4e72">aunichar</a>&#160;</td>
+          <td class="paramname"><em>wc</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Append a char to An AString. </p>
+<dl><dt><b>参数:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">string</td><td>the destination AString </td></tr>
+    <tr><td class="paramname">wc</td><td>the wide char you want to append </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>返回:</b></dt><dd>string </dd></dl>
+<dl class="since"><dt><b>自从:</b></dt><dd>0.1 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a1a7c1b9428de4b7f9ffd1d281afb8901"></a><!-- doxytag: member="astring.h::a_string_assign" ref="a1a7c1b9428de4b7f9ffd1d281afb8901" args="(AString *string, const char *value)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="astring_8h.html#ab78aa377b6493e8ce52cc631448b02cf">AString</a>* a_string_assign </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="astring_8h.html#ab78aa377b6493e8ce52cc631448b02cf">AString</a> *&#160;</td>
+          <td class="paramname"><em>string</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>value</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Copies the bytes from a string into an AString, destroying any previous contents. It is rather like the standard strcpy() function, except that you do not have to worry about having enough space to copy the string. </p>
+<dl><dt><b>参数:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">string</td><td>the destination AString. Its current contents are destroyed. </td></tr>
+    <tr><td class="paramname">value</td><td>the string to copy into string </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>返回:</b></dt><dd>string </dd></dl>
+<dl class="since"><dt><b>自从:</b></dt><dd>0.1 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a106246b4e130baf044a5685e02eabd24"></a><!-- doxytag: member="astring.h::a_string_dup" ref="a106246b4e130baf044a5685e02eabd24" args="(AString *source)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="astring_8h.html#ab78aa377b6493e8ce52cc631448b02cf">AString</a>* a_string_dup </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="astring_8h.html#ab78aa377b6493e8ce52cc631448b02cf">AString</a> *&#160;</td>
+          <td class="paramname"><em>source</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>duplicate an AString. </p>
+<dl class="warning"><dt><b>警告:</b></dt><dd>You should free the return string when you don't want to use it. </dd></dl>
+<dl><dt><b>参数:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">source</td><td>the source AString. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>返回:</b></dt><dd>the new AString </dd></dl>
+<dl class="since"><dt><b>自从:</b></dt><dd>0.1 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a78a7bd58b07d0acfc87a1472b9acf6b9"></a><!-- doxytag: member="astring.h::a_string_dupstr" ref="a78a7bd58b07d0acfc87a1472b9acf6b9" args="(AString *source)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char* a_string_dupstr </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="astring_8h.html#ab78aa377b6493e8ce52cc631448b02cf">AString</a> *&#160;</td>
+          <td class="paramname"><em>source</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>duplicate char * from an AString. </p>
+<dl class="warning"><dt><b>警告:</b></dt><dd>You should free the return string when you don't want to use it. When you just want the string to print or view, not change it, you can use source-&gt;str instead.</dd></dl>
+<dl><dt><b>参数:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">the</td><td>source AString. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>返回:</b></dt><dd>the new AString </dd></dl>
+<dl class="since"><dt><b>自从:</b></dt><dd>0.1 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a65e36dc6102ea547f95759a81fdd8414"></a><!-- doxytag: member="astring.h::a_string_equal" ref="a65e36dc6102ea547f95759a81fdd8414" args="(AString *string, AString *string2)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="atype_8h.html#a5ddaf36bb3c5fbdfb3312fd8fee6ade1">aboolean</a> a_string_equal </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="astring_8h.html#ab78aa377b6493e8ce52cc631448b02cf">AString</a> *&#160;</td>
+          <td class="paramname"><em>string</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="astring_8h.html#ab78aa377b6493e8ce52cc631448b02cf">AString</a> *&#160;</td>
+          <td class="paramname"><em>string2</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>compare the two AStrings </p>
+<dl><dt><b>参数:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">string</td><td>the first AString </td></tr>
+    <tr><td class="paramname">string2</td><td>the second AString </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>返回:</b></dt><dd>TRUE or FALSE </dd></dl>
+<dl class="since"><dt><b>自从:</b></dt><dd>0.1 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ae050f90823862789141a6a702871bad4"></a><!-- doxytag: member="astring.h::a_string_erase" ref="ae050f90823862789141a6a702871bad4" args="(AString *string, asize pos, asize len)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="astring_8h.html#ab78aa377b6493e8ce52cc631448b02cf">AString</a>* a_string_erase </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="astring_8h.html#ab78aa377b6493e8ce52cc631448b02cf">AString</a> *&#160;</td>
+          <td class="paramname"><em>string</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="atype_8h.html#a890366194341d30ffc42673649c34200">asize</a>&#160;</td>
+          <td class="paramname"><em>pos</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="atype_8h.html#a890366194341d30ffc42673649c34200">asize</a>&#160;</td>
+          <td class="paramname"><em>len</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Erase something from an AString. </p>
+<dl><dt><b>参数:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">string</td><td>the AString you want to erase </td></tr>
+    <tr><td class="paramname">pos</td><td>the erase start </td></tr>
+    <tr><td class="paramname">len</td><td>How long you want to erase </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>返回:</b></dt><dd>string </dd></dl>
+<dl class="since"><dt><b>自从:</b></dt><dd>0.1 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ab90776a02f5df8035eb8c375ec489c1a"></a><!-- doxytag: member="astring.h::a_string_find" ref="ab90776a02f5df8035eb8c375ec489c1a" args="(AString *string, char *str, asize position)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int a_string_find </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="astring_8h.html#ab78aa377b6493e8ce52cc631448b02cf">AString</a> *&#160;</td>
+          <td class="paramname"><em>string</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>str</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="atype_8h.html#a890366194341d30ffc42673649c34200">asize</a>&#160;</td>
+          <td class="paramname"><em>position</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Find a string from an AString. </p>
+<dl><dt><b>参数:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">string</td><td>the source AString </td></tr>
+    <tr><td class="paramname">str</td><td>the string you want to find </td></tr>
+    <tr><td class="paramname">asize</td><td>the position where you want to find </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>返回:</b></dt><dd>the position where the str at, return -1 when no found. </dd></dl>
+<dl class="since"><dt><b>自从:</b></dt><dd>0.1 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="aa6fa44b818dc507968a2f8844d01b903"></a><!-- doxytag: member="astring.h::a_string_free" ref="aa6fa44b818dc507968a2f8844d01b903" args="(AString *string)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void a_string_free </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="astring_8h.html#ab78aa377b6493e8ce52cc631448b02cf">AString</a> *&#160;</td>
+          <td class="paramname"><em>string</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Frees the memory allocated for the AString. </p>
+<dl><dt><b>参数:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">string</td><td>the AString you want to free </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="since"><dt><b>自从:</b></dt><dd>0.1 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a68ac61a7112c90fb822e7c22c7c541ef"></a><!-- doxytag: member="astring.h::a_string_get_char" ref="a68ac61a7112c90fb822e7c22c7c541ef" args="(AString *string, asize position)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char a_string_get_char </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="astring_8h.html#ab78aa377b6493e8ce52cc631448b02cf">AString</a> *&#160;</td>
+          <td class="paramname"><em>string</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="atype_8h.html#a890366194341d30ffc42673649c34200">asize</a>&#160;</td>
+          <td class="paramname"><em>position</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Get the char in an AString. </p>
+<dl><dt><b>参数:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">string</td><td>the source AString </td></tr>
+    <tr><td class="paramname">position</td><td>the position you want to get </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>返回:</b></dt><dd>the char in position </dd></dl>
+<dl class="since"><dt><b>自从:</b></dt><dd>0.1 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a7d24c6ec45a8b09c4d715dd1b30f7f67"></a><!-- doxytag: member="astring.h::a_string_get_file_content" ref="a7d24c6ec45a8b09c4d715dd1b30f7f67" args="(const char *filename)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="astring_8h.html#ab78aa377b6493e8ce52cc631448b02cf">AString</a>* a_string_get_file_content </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>filename</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Create a new AString from a file. </p>
+<dl class="warning"><dt><b>警告:</b></dt><dd>You should free the return string when you don't want to use it. </dd></dl>
+<dl><dt><b>参数:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">filename</td><td>the file you need to read. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>返回:</b></dt><dd>the new AString </dd></dl>
+<dl class="since"><dt><b>自从:</b></dt><dd>0.1 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a16180906641176bab5fe76376a0f0a68"></a><!-- doxytag: member="astring.h::a_string_get_key" ref="a16180906641176bab5fe76376a0f0a68" args="(AString *string)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char* a_string_get_key </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="astring_8h.html#ab78aa377b6493e8ce52cc631448b02cf">AString</a> *&#160;</td>
+          <td class="paramname"><em>string</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Get the key of the string When a string is like key=value,it return key. </p>
+<dl class="warning"><dt><b>警告:</b></dt><dd>You should free the return string when you don't want to use it. </dd></dl>
+<dl><dt><b>参数:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">string</td><td>the source AString </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>返回:</b></dt><dd>a new string </dd></dl>
+<dl class="since"><dt><b>自从:</b></dt><dd>0.2 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a57f3b73cccecd5728c5ec767fd4955f1"></a><!-- doxytag: member="astring.h::a_string_get_value" ref="a57f3b73cccecd5728c5ec767fd4955f1" args="(AString *string)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char* a_string_get_value </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="astring_8h.html#ab78aa377b6493e8ce52cc631448b02cf">AString</a> *&#160;</td>
+          <td class="paramname"><em>string</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Get the value of the string When a string is like key=value,it return value. </p>
+<dl class="warning"><dt><b>警告:</b></dt><dd>You should free the return string when you don't want to use it. </dd></dl>
+<dl><dt><b>参数:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">string</td><td>the source AString </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>返回:</b></dt><dd>a new string </dd></dl>
+<dl class="since"><dt><b>自从:</b></dt><dd>0.2 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ab7dc5116d30d7216ea8a54bbb7811c36"></a><!-- doxytag: member="astring.h::a_string_hash" ref="ab7dc5116d30d7216ea8a54bbb7811c36" args="(AString *string)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="atype_8h.html#a6ed4dce041824ce66dcceff4abf9a33e">auint</a> a_string_hash </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="astring_8h.html#ab78aa377b6493e8ce52cc631448b02cf">AString</a> *&#160;</td>
+          <td class="paramname"><em>string</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Get the hashcode from a string. </p>
+<dl><dt><b>参数:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">string</td><td>the AString you want to hash </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>返回:</b></dt><dd>the hashcode of the string </dd></dl>
+<dl class="note"><dt><b>注解:</b></dt><dd>using BKDRHash </dd></dl>
+<dl class="since"><dt><b>自从:</b></dt><dd>0.1 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a7b67246c7a64f393d7832a4f38cda53e"></a><!-- doxytag: member="astring.h::a_string_insert" ref="a7b67246c7a64f393d7832a4f38cda53e" args="(AString *string, asize pos, const char *value)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="astring_8h.html#ab78aa377b6493e8ce52cc631448b02cf">AString</a>* a_string_insert </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="astring_8h.html#ab78aa377b6493e8ce52cc631448b02cf">AString</a> *&#160;</td>
+          <td class="paramname"><em>string</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="atype_8h.html#a890366194341d30ffc42673649c34200">asize</a>&#160;</td>
+          <td class="paramname"><em>pos</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>value</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Insert a string to An AString. </p>
+<dl><dt><b>参数:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">string</td><td>the destination AString </td></tr>
+    <tr><td class="paramname">pos</td><td>the position where do you want to insert </td></tr>
+    <tr><td class="paramname">value</td><td>the string you want to insert </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>返回:</b></dt><dd>string </dd></dl>
+<dl class="since"><dt><b>自从:</b></dt><dd>0.1 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="af3cd31d5464e26781cd8d8692708dcc1"></a><!-- doxytag: member="astring.h::a_string_insert_c" ref="af3cd31d5464e26781cd8d8692708dcc1" args="(AString *string, asize pos, char c)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="astring_8h.html#ab78aa377b6493e8ce52cc631448b02cf">AString</a>* a_string_insert_c </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="astring_8h.html#ab78aa377b6493e8ce52cc631448b02cf">AString</a> *&#160;</td>
+          <td class="paramname"><em>string</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="atype_8h.html#a890366194341d30ffc42673649c34200">asize</a>&#160;</td>
+          <td class="paramname"><em>pos</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char&#160;</td>
+          <td class="paramname"><em>c</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Insert a char to An AString. </p>
+<dl><dt><b>参数:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">string</td><td>the destination AString </td></tr>
+    <tr><td class="paramname">pos</td><td>the position where do you want to insert </td></tr>
+    <tr><td class="paramname">c</td><td>the char you want to insert </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>返回:</b></dt><dd>string </dd></dl>
+<dl class="since"><dt><b>自从:</b></dt><dd>0.1 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a7c72aba2348fd49aed644c90757697ea"></a><!-- doxytag: member="astring.h::a_string_insert_len" ref="a7c72aba2348fd49aed644c90757697ea" args="(AString *string, asize pos, const char *value, asize len)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="astring_8h.html#ab78aa377b6493e8ce52cc631448b02cf">AString</a>* a_string_insert_len </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="astring_8h.html#ab78aa377b6493e8ce52cc631448b02cf">AString</a> *&#160;</td>
+          <td class="paramname"><em>string</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="atype_8h.html#a890366194341d30ffc42673649c34200">asize</a>&#160;</td>
+          <td class="paramname"><em>pos</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>value</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="atype_8h.html#a890366194341d30ffc42673649c34200">asize</a>&#160;</td>
+          <td class="paramname"><em>len</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Insert a char to An AString. </p>
+<dl><dt><b>参数:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">string</td><td>the destination AString </td></tr>
+    <tr><td class="paramname">pos</td><td>the position where do you want to insert </td></tr>
+    <tr><td class="paramname">value</td><td>the string you want to insert </td></tr>
+    <tr><td class="paramname">len</td><td>the max char length to insert </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>返回:</b></dt><dd>string </dd></dl>
+<dl class="since"><dt><b>自从:</b></dt><dd>0.1 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a0fc9386d03311af5611ba1510647c6d4"></a><!-- doxytag: member="astring.h::a_string_insert_unichar" ref="a0fc9386d03311af5611ba1510647c6d4" args="(AString *string, asize pos, aunichar wc)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="astring_8h.html#ab78aa377b6493e8ce52cc631448b02cf">AString</a>* a_string_insert_unichar </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="astring_8h.html#ab78aa377b6493e8ce52cc631448b02cf">AString</a> *&#160;</td>
+          <td class="paramname"><em>string</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="atype_8h.html#a890366194341d30ffc42673649c34200">asize</a>&#160;</td>
+          <td class="paramname"><em>pos</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="atype_8h.html#acadaeac708cd5376091b4c3ee5ee4e72">aunichar</a>&#160;</td>
+          <td class="paramname"><em>wc</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Insert a char to An AString. </p>
+<dl><dt><b>参数:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">string</td><td>the destination AString </td></tr>
+    <tr><td class="paramname">pos</td><td>the position where do you want to insert </td></tr>
+    <tr><td class="paramname">wc</td><td>the wide char you want to insert </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>返回:</b></dt><dd>string </dd></dl>
+<dl class="since"><dt><b>自从:</b></dt><dd>0.1 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a4e9339a9e220bfc7375d710d130fe6c1"></a><!-- doxytag: member="astring.h::a_string_new" ref="a4e9339a9e220bfc7375d710d130fe6c1" args="(const char *init)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="astring_8h.html#ab78aa377b6493e8ce52cc631448b02cf">AString</a>* a_string_new </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>init</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Create a new AString, initialized with the given string. </p>
+<dl><dt><b>参数:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">init</td><td>the initial text to copy into the string. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>返回:</b></dt><dd>a new AString </dd></dl>
+<dl class="since"><dt><b>自从:</b></dt><dd>0.1 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a3db00721591473386c66eded94097d70"></a><!-- doxytag: member="astring.h::a_string_new_len" ref="a3db00721591473386c66eded94097d70" args="(const char *init, asize len)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="astring_8h.html#ab78aa377b6493e8ce52cc631448b02cf">AString</a>* a_string_new_len </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>init</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="atype_8h.html#a890366194341d30ffc42673649c34200">asize</a>&#160;</td>
+          <td class="paramname"><em>len</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Create a new AString with len length. if strlen(init) is larger than len, the length of new string will be len, otherwise the length will be strlen(init) </p>
+<dl><dt><b>参数:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">init</td><td>the initial text to copy into the string. </td></tr>
+    <tr><td class="paramname">len</td><td>the max length </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>返回:</b></dt><dd>a new AString </dd></dl>
+<dl class="since"><dt><b>自从:</b></dt><dd>0.1 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a775d6b06b540ba699fe2dc70a2d120ea"></a><!-- doxytag: member="astring.h::a_string_overwrite" ref="a775d6b06b540ba699fe2dc70a2d120ea" args="(AString *string, asize pos, const char *value)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="astring_8h.html#ab78aa377b6493e8ce52cc631448b02cf">AString</a>* a_string_overwrite </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="astring_8h.html#ab78aa377b6493e8ce52cc631448b02cf">AString</a> *&#160;</td>
+          <td class="paramname"><em>string</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="atype_8h.html#a890366194341d30ffc42673649c34200">asize</a>&#160;</td>
+          <td class="paramname"><em>pos</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>value</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>overwrite an AString from pos </p>
+<dl><dt><b>参数:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">string</td><td>the AString you want to overwrite </td></tr>
+    <tr><td class="paramname">pos</td><td>the overwrite position </td></tr>
+    <tr><td class="paramname">value</td><td>the string you want to overwrite to </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>返回:</b></dt><dd>string </dd></dl>
+<dl class="since"><dt><b>自从:</b></dt><dd>0.1 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a2ce0d97266d552e1271f857d6846d607"></a><!-- doxytag: member="astring.h::a_string_overwrite_len" ref="a2ce0d97266d552e1271f857d6846d607" args="(AString *string, asize pos, const char *value, asize len)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="astring_8h.html#ab78aa377b6493e8ce52cc631448b02cf">AString</a>* a_string_overwrite_len </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="astring_8h.html#ab78aa377b6493e8ce52cc631448b02cf">AString</a> *&#160;</td>
+          <td class="paramname"><em>string</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="atype_8h.html#a890366194341d30ffc42673649c34200">asize</a>&#160;</td>
+          <td class="paramname"><em>pos</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>value</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="atype_8h.html#a890366194341d30ffc42673649c34200">asize</a>&#160;</td>
+          <td class="paramname"><em>len</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>overwrite an AString from pos, and overwrite the most len char </p>
+<dl><dt><b>参数:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">string</td><td>the AString you want to overwrite </td></tr>
+    <tr><td class="paramname">pos</td><td>the overwrite position </td></tr>
+    <tr><td class="paramname">value</td><td>the string you want to overwrite to </td></tr>
+    <tr><td class="paramname">len</td><td>the max char to overwrite </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>返回:</b></dt><dd>string </dd></dl>
+<dl class="since"><dt><b>自从:</b></dt><dd>0.1 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a5ad3117d50882b3e2357781db054d0ce"></a><!-- doxytag: member="astring.h::a_string_prepend" ref="a5ad3117d50882b3e2357781db054d0ce" args="(AString *string, const char *value)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="astring_8h.html#ab78aa377b6493e8ce52cc631448b02cf">AString</a>* a_string_prepend </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="astring_8h.html#ab78aa377b6493e8ce52cc631448b02cf">AString</a> *&#160;</td>
+          <td class="paramname"><em>string</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>value</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Prepend a string to An AString. </p>
+<dl><dt><b>参数:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">string</td><td>the destination AString </td></tr>
+    <tr><td class="paramname">value</td><td>the string you want to prepend </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>返回:</b></dt><dd>string </dd></dl>
+<dl class="since"><dt><b>自从:</b></dt><dd>0.1 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a481f420c37cc207d7e7e255e02b6c091"></a><!-- doxytag: member="astring.h::a_string_prepend_c" ref="a481f420c37cc207d7e7e255e02b6c091" args="(AString *string, char c)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="astring_8h.html#ab78aa377b6493e8ce52cc631448b02cf">AString</a>* a_string_prepend_c </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="astring_8h.html#ab78aa377b6493e8ce52cc631448b02cf">AString</a> *&#160;</td>
+          <td class="paramname"><em>string</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char&#160;</td>
+          <td class="paramname"><em>c</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Prepend a char to An AString. </p>
+<dl><dt><b>参数:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">string</td><td>the destination AString </td></tr>
+    <tr><td class="paramname">c</td><td>the char you want to prepend </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>返回:</b></dt><dd>string </dd></dl>
+<dl class="since"><dt><b>自从:</b></dt><dd>0.1 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a067a556751144bdcdb6f3dc9bf863acf"></a><!-- doxytag: member="astring.h::a_string_prepend_len" ref="a067a556751144bdcdb6f3dc9bf863acf" args="(AString *string, const char *value, asize len)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="astring_8h.html#ab78aa377b6493e8ce52cc631448b02cf">AString</a>* a_string_prepend_len </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="astring_8h.html#ab78aa377b6493e8ce52cc631448b02cf">AString</a> *&#160;</td>
+          <td class="paramname"><em>string</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>value</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="atype_8h.html#a890366194341d30ffc42673649c34200">asize</a>&#160;</td>
+          <td class="paramname"><em>len</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Prepend a char to An AString. </p>
+<dl><dt><b>参数:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">string</td><td>the destination AString </td></tr>
+    <tr><td class="paramname">value</td><td>the string you want to prepend </td></tr>
+    <tr><td class="paramname">len</td><td>the max char length to prepend </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>返回:</b></dt><dd>string </dd></dl>
+<dl class="since"><dt><b>自从:</b></dt><dd>0.1 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a43e1c9bcdf7cace5bc08bb2a89f6d730"></a><!-- doxytag: member="astring.h::a_string_prepend_unichar" ref="a43e1c9bcdf7cace5bc08bb2a89f6d730" args="(AString *string, aunichar wc)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="astring_8h.html#ab78aa377b6493e8ce52cc631448b02cf">AString</a>* a_string_prepend_unichar </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="astring_8h.html#ab78aa377b6493e8ce52cc631448b02cf">AString</a> *&#160;</td>
+          <td class="paramname"><em>string</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="atype_8h.html#acadaeac708cd5376091b4c3ee5ee4e72">aunichar</a>&#160;</td>
+          <td class="paramname"><em>wc</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Prepend a char to An AString. </p>
+<dl><dt><b>参数:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">string</td><td>the destination AString </td></tr>
+    <tr><td class="paramname">wc</td><td>the wide char you want to prepend </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>返回:</b></dt><dd>string </dd></dl>
+<dl class="since"><dt><b>自从:</b></dt><dd>0.1 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a08a83581908746d14b8f2e365f65d5c0"></a><!-- doxytag: member="astring.h::a_string_replace" ref="a08a83581908746d14b8f2e365f65d5c0" args="(AString *string, char *findstr, char *replacestr, asize position)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int a_string_replace </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="astring_8h.html#ab78aa377b6493e8ce52cc631448b02cf">AString</a> *&#160;</td>
+          <td class="paramname"><em>string</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>findstr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>replacestr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="atype_8h.html#a890366194341d30ffc42673649c34200">asize</a>&#160;</td>
+          <td class="paramname"><em>position</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Replace a string from an AString. </p>
+<dl><dt><b>参数:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">string</td><td>the source AString </td></tr>
+    <tr><td class="paramname">findstr</td><td>the string you want to find </td></tr>
+    <tr><td class="paramname">replacestr</td><td>the string you want to replace </td></tr>
+    <tr><td class="paramname">asize</td><td>the position where you want to replace </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>返回:</b></dt><dd>the position where the str at, return -1 when no found. </dd></dl>
+<dl class="since"><dt><b>自从:</b></dt><dd>0.1 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a5ef45c81179d5cfb7be2c80df5a7bc54"></a><!-- doxytag: member="astring.h::a_string_replace_all" ref="a5ef45c81179d5cfb7be2c80df5a7bc54" args="(AString *string, char *findstr, char *replacestr)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int a_string_replace_all </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="astring_8h.html#ab78aa377b6493e8ce52cc631448b02cf">AString</a> *&#160;</td>
+          <td class="paramname"><em>string</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>findstr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>replacestr</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Replace all string from an AString. </p>
+<dl><dt><b>参数:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">string</td><td>the source AString </td></tr>
+    <tr><td class="paramname">findstr</td><td>the string you want to find </td></tr>
+    <tr><td class="paramname">replacestr</td><td>the string you want to replace </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>返回:</b></dt><dd>the count you have replace. </dd></dl>
+<dl class="see"><dt><b>参见:</b></dt><dd><a class="el" href="astring_8h.html#a08a83581908746d14b8f2e365f65d5c0" title="Replace a string from an AString.">a_string_replace</a> </dd></dl>
+<dl class="since"><dt><b>自从:</b></dt><dd>0.1 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a78fcdaa38bae4fd2f9d1985af8513964"></a><!-- doxytag: member="astring.h::a_string_set_char" ref="a78fcdaa38bae4fd2f9d1985af8513964" args="(AString *string, asize position, char ch)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="astring_8h.html#ab78aa377b6493e8ce52cc631448b02cf">AString</a>* a_string_set_char </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="astring_8h.html#ab78aa377b6493e8ce52cc631448b02cf">AString</a> *&#160;</td>
+          <td class="paramname"><em>string</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="atype_8h.html#a890366194341d30ffc42673649c34200">asize</a>&#160;</td>
+          <td class="paramname"><em>position</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char&#160;</td>
+          <td class="paramname"><em>ch</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Set the char in an AString. </p>
+<dl><dt><b>参数:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">string</td><td>the source AString </td></tr>
+    <tr><td class="paramname">position</td><td>the position you want to get </td></tr>
+    <tr><td class="paramname">the</td><td>char you want to change to </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>返回:</b></dt><dd>the char in position </dd></dl>
+<dl class="since"><dt><b>自从:</b></dt><dd>0.1 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ad68eb7cb40013b0ab972803fa124e334"></a><!-- doxytag: member="astring.h::a_string_set_size" ref="ad68eb7cb40013b0ab972803fa124e334" args="(AString *string, asize len)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="astring_8h.html#ab78aa377b6493e8ce52cc631448b02cf">AString</a>* a_string_set_size </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="astring_8h.html#ab78aa377b6493e8ce52cc631448b02cf">AString</a> *&#160;</td>
+          <td class="paramname"><em>string</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="atype_8h.html#a890366194341d30ffc42673649c34200">asize</a>&#160;</td>
+          <td class="paramname"><em>len</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Set string's length if len is smaller than string-&gt;len, it'll be truncate,else it'll fill with undefined char. </p>
+<dl><dt><b>参数:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">string</td><td>the AString you want to set. </td></tr>
+    <tr><td class="paramname">len</td><td>the new length </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>返回:</b></dt><dd>string </dd></dl>
+<dl class="since"><dt><b>自从:</b></dt><dd>0.1 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="af4cbdac359806c1ee22c919b5f503b59"></a><!-- doxytag: member="astring.h::a_string_sized_new" ref="af4cbdac359806c1ee22c919b5f503b59" args="(asize size)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="astring_8h.html#ab78aa377b6493e8ce52cc631448b02cf">AString</a>* a_string_sized_new </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="atype_8h.html#a890366194341d30ffc42673649c34200">asize</a>&#160;</td>
+          <td class="paramname"><em>size</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Create a new AString with size allocated_len This is useful if you are going to add a lot of text to the string and don't want it to be reallocated too often. </p>
+<dl><dt><b>参数:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">size</td><td>the default size of the space allocated to hold the string </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>返回:</b></dt><dd>a new AString </dd></dl>
+<dl class="since"><dt><b>自从:</b></dt><dd>0.1 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a8bbd31fa00962a0bd97e067aae621be4"></a><!-- doxytag: member="astring.h::a_string_split" ref="a8bbd31fa00962a0bd97e067aae621be4" args="(AString *string, const char *splitstr)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="astring_8h.html#a681f3960d3b2cca96c2b132cbfef005e">AStringArray</a>* a_string_split </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="astring_8h.html#ab78aa377b6493e8ce52cc631448b02cf">AString</a> *&#160;</td>
+          <td class="paramname"><em>string</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>splitstr</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Splits a string into array. </p>
+<dl><dt><b>参数:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">string</td><td>the AString you want to split </td></tr>
+    <tr><td class="paramname">splitstr</td><td>the split string </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>返回:</b></dt><dd>string </dd></dl>
+<dl class="since"><dt><b>自从:</b></dt><dd>0.2 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a0537e4815ff01197e59949cc0f489e1e"></a><!-- doxytag: member="astring.h::a_string_substring" ref="a0537e4815ff01197e59949cc0f489e1e" args="(AString *string, asize start, asize end)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="astring_8h.html#ab78aa377b6493e8ce52cc631448b02cf">AString</a>* a_string_substring </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="astring_8h.html#ab78aa377b6493e8ce52cc631448b02cf">AString</a> *&#160;</td>
+          <td class="paramname"><em>string</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="atype_8h.html#a890366194341d30ffc42673649c34200">asize</a>&#160;</td>
+          <td class="paramname"><em>start</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="atype_8h.html#a890366194341d30ffc42673649c34200">asize</a>&#160;</td>
+          <td class="paramname"><em>end</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>change an AString to it's substring. </p>
+<dl><dt><b>参数:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">string</td><td>the AString you want to sub </td></tr>
+    <tr><td class="paramname">start</td><td>where do you want to start </td></tr>
+    <tr><td class="paramname">end</td><td>where do you want to end </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>返回:</b></dt><dd>string</dd></dl>
+<dl class="note"><dt><b>注解:</b></dt><dd>Example: </dd>
+<dd>
+</dd>
+<dd>
+str = astring_new("01234567890"); </dd>
+<dd>
+</dd>
+<dd>
+astring_substring(str, 2, 5); </dd>
+<dd>
+</dd>
+<dd>
+printf("%s\n", str-&gt;str); </dd>
+<dd>
+</dd>
+<dd>
+Run: 2345 </dd></dl>
+<dl class="since"><dt><b>自从:</b></dt><dd>0.1 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a499cb606d6bc890c44ac97f957a85d74"></a><!-- doxytag: member="astring.h::a_string_substring_new" ref="a499cb606d6bc890c44ac97f957a85d74" args="(AString *string, asize start, asize end)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="astring_8h.html#ab78aa377b6493e8ce52cc631448b02cf">AString</a>* a_string_substring_new </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="astring_8h.html#ab78aa377b6493e8ce52cc631448b02cf">AString</a> *&#160;</td>
+          <td class="paramname"><em>string</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="atype_8h.html#a890366194341d30ffc42673649c34200">asize</a>&#160;</td>
+          <td class="paramname"><em>start</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="atype_8h.html#a890366194341d30ffc42673649c34200">asize</a>&#160;</td>
+          <td class="paramname"><em>end</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Like substring, but it'll create a new AString to return. string will not to be changed. </p>
+<dl class="warning"><dt><b>警告:</b></dt><dd>You should free the return string when you don't want to use it. </dd></dl>
+<dl><dt><b>参数:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">string</td><td>the AString you want to sub </td></tr>
+    <tr><td class="paramname">start</td><td>where do you want to start </td></tr>
+    <tr><td class="paramname">end</td><td>where do you want to end </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>返回:</b></dt><dd>string </dd></dl>
+<dl class="since"><dt><b>自从:</b></dt><dd>0.1 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a50f3119e0d1e42906afe77acb2c6cb70"></a><!-- doxytag: member="astring.h::a_string_trim" ref="a50f3119e0d1e42906afe77acb2c6cb70" args="(AString *string)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="astring_8h.html#ab78aa377b6493e8ce52cc631448b02cf">AString</a>* a_string_trim </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="astring_8h.html#ab78aa377b6493e8ce52cc631448b02cf">AString</a> *&#160;</td>
+          <td class="paramname"><em>string</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>wipe off the head and tail's space or tab. "  abc  " will be "abc" </p>
+<dl><dt><b>参数:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">string</td><td>the AString you want to trim </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>返回:</b></dt><dd>string </dd></dl>
+<dl class="since"><dt><b>自从:</b></dt><dd>0.1 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="addd007d57931aa460095807d7f0e81ff"></a><!-- doxytag: member="astring.h::a_string_truncate" ref="addd007d57931aa460095807d7f0e81ff" args="(AString *string, asize len)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="astring_8h.html#ab78aa377b6493e8ce52cc631448b02cf">AString</a>* a_string_truncate </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="astring_8h.html#ab78aa377b6493e8ce52cc631448b02cf">AString</a> *&#160;</td>
+          <td class="paramname"><em>string</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="atype_8h.html#a890366194341d30ffc42673649c34200">asize</a>&#160;</td>
+          <td class="paramname"><em>len</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Truncate an AString, leave the first len char. </p>
+<dl><dt><b>参数:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">string</td><td>the AString you want to truncate </td></tr>
+    <tr><td class="paramname">len</td><td>How long you want to leave </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>返回:</b></dt><dd>string </dd></dl>
+<dl class="since"><dt><b>自从:</b></dt><dd>0.1 </dd></dl>
+
+</div>
+</div>
+</div>
+</div>
+  <div id="nav-path" class="navpath">
+    <ul>
+      <li class="navelem"><a class="el" href="astring_8h.html">astring.h</a>      </li>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>全部</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>数据结构</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>文件</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>函数</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>变量</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>类型定义</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>宏定义</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+
+    <li class="footer">Generated at 2011年十一月26日 星期六 01:49:41 for AString by
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.5.1 </li>
+   </ul>
+ </div>
+
+
+</body>
+</html>
