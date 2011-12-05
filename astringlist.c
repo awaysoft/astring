@@ -475,6 +475,8 @@ static void _a_string_list_free(AStringList *list)
 
 
 
+
+
 AStringList * a_string_list_assign (AStringList *list, AString *string)
 {
 	if (!A_IS_STRING_LIST(list)){
@@ -641,7 +643,7 @@ AStringList * a_string_list_clear (AStringList *list)
 	return list;
 }
 
-AStringList * a_string_list_exchange (AStringList *list, asize index1,											asize index2)
+AStringList * a_string_list_exchange (AStringList *list, asize index1, asize index2)
 {
 	if (!A_IS_STRING_LIST(list)){
 		A_WARNING_NOT_STRING_LIST;

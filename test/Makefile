@@ -14,3 +14,4 @@ testlist:testlist.c astring astringlist
 
 clean:
 	rm *.o
+

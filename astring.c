@@ -1181,3 +1181,4 @@ void a_string_free (AString *string)
 	free(string->str);
 	free(string);
 }
+
