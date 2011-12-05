@@ -252,7 +252,7 @@ aboolean        a_string_list_save_to_file (AStringList *list,
  * @return TRUE or FALSE
  * @since 0.2
  */
-aboolean        a_string_list_equal       (AStringList *list1,
+aboolean        a_string_list_equal        (AStringList *list1,
                                             AStringList *list2);
 /**
  * @brief Frees the memory allocated for the AStringList.

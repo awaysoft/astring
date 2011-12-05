@@ -4,4 +4,3 @@ astring:astring.c astring.h atype.h
 
 astringlist:astringlist.c astringlist.h astring
 	gcc -c astringlist.c -g
-
