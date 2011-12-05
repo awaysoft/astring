@@ -175,6 +175,16 @@ asize			a_string_list_find_name    (AStringList *list,
 AString *       a_string_list_get_value    (AStringList *list,
                                             asize index);
 /**
+ * @brief Get a AString from an AStringList
+ * @param list An AStringList
+ * @param index the position you want to get
+ * @return a new AString
+ * @see a_string_list_find_name
+ * @since 0.2
+ */
+AString *       a_string_list_get_index    (AStringList *list, 
+                                            asize index);
+/**
  * @brief Sort the StringList
  * @param list An AStringList 
  * @return list
@@ -197,6 +207,15 @@ AStringList *   a_string_list_sort_custom  (AStringList *list,
  * @since 0.2
  */
 aboolean        a_string_list_sorted       (AStringList *list);
+/**
+ * @brief Check the StringList is sorted
+ * @param list An AStringList 
+ * @param cmp An Compare function
+ * @return TRUE or FALSE
+ * @since 0.2
+ */
+aboolean        a_string_list_sorted_custom(AStringList *list,
+											A_CMP cmp);
 /**
  * @brief duplicate the AStringList
  * @warning You should free the return string when you don't want to use it.

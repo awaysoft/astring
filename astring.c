@@ -12,7 +12,7 @@
 /*  Unlock String */
 #define V(lock) --lock;
 
-#define A_WARING(msg) do{fprintf(stderr, "WARING: [%s():%d] %s\n", __func__, __LINE__, msg);}while(0)
+#define A_WARING(msg) do{fprintf(stderr, "[WARING] %s: [%s():%d] %s\n", __FILE__, __func__, __LINE__, msg);}while(0)
 
 #define A_WARING_NOT_STRING A_WARING("A_IS_STRING Check falt!")
 

@@ -1,7 +1,7 @@
-all:astring.o astringlist.o
-astring:astring.c astring.h atype.h astringlist
+all:astring astringlist
+astring:astring.c astring.h atype.h
 	gcc -c astring.c -g
 
-astringlist:astringlist.c astringlist.h astring.o
-	gcc -c astringlist.c astring.o -g
+astringlist:astringlist.c astringlist.h astring
+	gcc -c astringlist.c -g
 

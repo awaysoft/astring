@@ -14,7 +14,7 @@
 /* Unlock String */
 #define V(lock) --lock;
 
-#define A_WARING(msg) do{fprintf(stderr, "WARING: [%s():%d] %s\n", __func__, __LINE__, msg);}while(0)
+#define A_WARING(msg) do{fprintf(stderr, "[WARING] %s: [%s():%d] %s\n", __FILE__, __func__, __LINE__, msg);}while(0)
 
 #define A_WARNING_NOT_STRING_LIST A_WARING("A_IS_STRING_LIST Check falt!")
 #define A_WARNING_NOT_STRING      A_WARING("A_IS_STRING Check falt!")
@@ -73,7 +73,28 @@ static AStringList * _a_string_list_resize (AStringList *list, asize size)
 	return list;
 }
 
-static AStringList * _a_string_list_add(AStringList *list, AString *string)
+static AStringList * __a_string_list_insert(AStringList *list, asize index, AString *string)
+{
+	AString *str = a_string_dup(string);
+	if (index > list->length) index = list->length;
+	if (list->length >= list->allocated_len){
+		_a_string_list_resize(list, list->allocated_len + DEFAULT_SIZE);
+	}
+	if (index == list->length) list->data[index] = str;
+	else{
+		int i = list->length;
+		while(i && i != index){
+			list->data[i] = list->data[i-1];
+			i--;
+		}
+		list->data[i] = str;
+	}
+	list->length ++;
+
+	return list;
+}
+
+static AStringList * __a_string_list_add(AStringList *list, AString *string)
 {
 	if (list->length >= list->allocated_len){
 		_a_string_list_resize(list, list->allocated_len + DEFAULT_SIZE);
@@ -110,9 +131,8 @@ static AStringList * _a_string_list_assign (AStringList *list, AString *string)
 		}
 		*q = '\0';
 		str->len = len;
-		printf("Str:%s\n", str->str);
 
-		_a_string_list_add(list, str);
+		__a_string_list_add(list, str);
 		a_string_free(str);
 
 		if (*p) p++;
@@ -159,7 +179,7 @@ static AStringList * _a_string_list_assign_split (AStringList *list, AString *st
 		*q = '\0';
 		str->len = len;
 
-		_a_string_list_add(list, str);
+		__a_string_list_add(list, str);
 		a_string_free(str);
 
 		if (*p && (*p == '\n'||*p == '\r')) p++;
@@ -213,23 +233,34 @@ static AStringList * _a_string_list_prepend(AStringList *list, AStringList *list
 	return list;
 }
 
+static AStringList * _a_string_list_add(AStringList *list, AString *string)
+{
+	AStringList *tmplist = a_string_list_new();
+	a_string_list_assign(tmplist, string);
+	
+	_a_string_list_append(list, tmplist);
+	
+	a_string_list_free(tmplist);	
+
+	return list;
+}
+
 static AStringList * _a_string_list_insert(AStringList *list, asize index, AString *string)
 {
-	AString *str = a_string_dup(string);
+	AStringList *tmplist = a_string_list_new();
+	int i;
+	a_string_list_assign(tmplist, string);
+	
 	if (index > list->length) index = list->length;
-	if (list->length >= list->allocated_len){
+	while (list->length + tmplist->length >= list->allocated_len){
 		_a_string_list_resize(list, list->allocated_len + DEFAULT_SIZE);
 	}
-	if (index == list->length) list->data[index] = str;
-	else{
-		int i = list->length;
-		while(i && i != index){
-			list->data[i] = list->data[i-1];
-			i--;
-		}
-		list->data[i] = str;
+	
+	for (i = 0; i < tmplist->length; ++i){
+		__a_string_list_insert(list, index + i, a_string_dup(tmplist->data[i]));
 	}
-	list->length ++;
+	
+	a_string_list_free(tmplist);
 
 	return list;
 }
@@ -243,6 +274,7 @@ static AStringList * _a_string_list_delete(AStringList *list, asize index)
 	int i = index;
 	while(i < list->length - 1){
 		list->data[i] = list->data[i+1];
+		i++;
 	}
 
 	list->length --;
@@ -280,6 +312,7 @@ static int _a_string_list_find_name(AStringList *list, AString *string, asize in
 			return index;
 		}
 		free(key);
+		index++;
 	}
 	return -1;
 }
@@ -287,7 +320,7 @@ static int _a_string_list_find_name(AStringList *list, AString *string, asize in
 static AString * _a_string_list_get_value(AStringList *list, asize index)
 {
 	if (index >= list->length) return NULL;
-	char *tmpstr = a_string_get_key(list->data[index]);
+	char *tmpstr = a_string_get_value(list->data[index]);
 	AString *result = a_string_new(tmpstr);
 	free(tmpstr);
 
@@ -308,7 +341,7 @@ static int a_string_cmp2(AString *a, AString *b)
 
 static int a_string_cmp(const void *a, const void *b)
 {
-	return a_string_cmp2((AString *)a, (AString *)b);
+	return a_string_cmp2(*(AString **)a, *(AString **)b);
 }
 
 static AStringList * _a_string_list_sort(AStringList *list)
@@ -329,6 +362,18 @@ static aboolean _a_string_list_sorted(AStringList *list)
 	while(i < list->length - 2){
 		if (a_string_cmp2(list->data[i], list->data[i+1]) != a_string_cmp2(list->data[i+1], list->data[i+2]))
 			return FALSE;
+		i++;
+	}
+	return TRUE;
+}
+
+static aboolean _a_string_list_sorted_custom(AStringList *list, A_CMP cmp)
+{
+	int i = 0;
+	while(i < list->length - 2){
+		if (cmp(&(list->data[i]), &(list->data[i+1])) != cmp(&(list->data[i+1]), &(list->data[i+2])))
+			return FALSE;
+		i++;
 	}
 	return TRUE;
 }
@@ -342,6 +387,7 @@ static AStringList * _a_string_list_dup(AStringList *list)
 	result->length = list->length;
 	while(i < result->length){
 		result->data[i] = a_string_dup(list->data[i]);
+		i++;
 	}
 
 	return result;
@@ -354,10 +400,9 @@ static AString * _a_string_list_get_text(AStringList *list, auchar returnchar)
 		len += list->data[i]->len;
 		++len;
 		if (returnchar == 2) ++len;
+		i++;
 	}
-
 	AString *result = a_string_sized_new(len + 1);
-
 	i = 0;
 	while(i < list->length){
 		a_string_append(result, list->data[i]->str);
@@ -371,6 +416,7 @@ static AString * _a_string_list_get_text(AStringList *list, auchar returnchar)
 			default:
 				   break;
 		}
+		i++;
 	}
 
 	return result;
@@ -388,7 +434,7 @@ static aboolean _a_string_list_save_to_file(AStringList *list, const char *filen
 	int wsize = 1024;
 
 	fseek(fp, 0L, 0);
-	while(len){
+	while(len > 0){
 		wsize = len >= 1024?1024:len;
 		fwrite(p, 1, wsize, fp);
 		p += wsize;
@@ -408,6 +454,7 @@ static aboolean _a_string_list_equal(AStringList *list1, AStringList *list2)
 	asize i = 0;
 	while(i < list1->length){
 		if (!a_string_equal(list1->data[i], list2->data[i])) return FALSE;
+		i++;
 	}
 	return TRUE;
 }
@@ -418,6 +465,7 @@ static void _a_string_list_free(AStringList *list)
 	list->flag = 0;
 	while(i < list->length){
 		a_string_free(list->data[i]);
+		i++;
 	}
 	a_free(list->data);
 	free(list);
@@ -440,11 +488,9 @@ AStringList * a_string_list_assign (AStringList *list, AString *string)
 	}
 
 	P(list->lock);
-	P(string->lock);
 
 	_a_string_list_assign(list, string);
 
-	V(string->lock);
 	V(list->lock);
 
 	return list;
@@ -466,13 +512,9 @@ AStringList * a_string_list_assign_split (AStringList *list, AString *string, AS
 	}
 
 	P(list->lock);
-	P(string->lock);
-	P(split->lock);
 
     _a_string_list_assign_split(list, string, split);
 
-	V(split->lock);
-	V(string->lock);
 	V(list->lock);
 }
 
@@ -539,17 +581,15 @@ AStringList * a_string_list_add (AStringList *list, AString *string)
 	}
 
 	P(list->lock);
-	P(string->lock);
 
 	_a_string_list_add(list, string);
 
-	V(string->lock);
 	V(list->lock);
 
 	return list;
 }
 
-AStringList * a_string_list_insert (AStringList *list, asize index,											AString *string)
+AStringList * a_string_list_insert (AStringList *list, asize index, AString *string)
 {
 	if (!A_IS_STRING_LIST(list)){
 		A_WARNING_NOT_STRING_LIST;
@@ -561,11 +601,9 @@ AStringList * a_string_list_insert (AStringList *list, asize index,											AS
 	}
 
 	P(list->lock);
-	P(string->lock);
 
 	_a_string_list_insert(list, index, string);
 
-	V(string->lock);
 	V(list->lock);
 
 	return list;
@@ -631,11 +669,9 @@ asize a_string_list_find (AStringList *list, AString *string, asize index)
 	}
 
 	P(list->lock);
-	P(string->lock);
 
 	asize result = _a_string_list_find(list, string, index);
 
-	V(string->lock);
 	V(list->lock);
 
 	return result;
@@ -653,11 +689,9 @@ asize a_string_list_find_name (AStringList *list, AString *string, asize index)
 	}
 
 	P(list->lock);
-	P(string->lock);
 
 	asize result = _a_string_list_find_name(list, string, index);
 
-	V(string->lock);
 	V(list->lock);
 
 	return result;
@@ -673,6 +707,22 @@ AString * a_string_list_get_value (AStringList *list, asize index)
 	P(list->lock);
 
 	AString *result = _a_string_list_get_value(list, index);
+
+	V(list->lock);
+
+	return result;
+}
+
+AString * a_string_list_get_index (AStringList *list, asize index)
+{
+	if (!A_IS_STRING_LIST(list)){
+		A_WARNING_NOT_STRING_LIST;
+		return NULL;
+	}
+
+	P(list->lock);
+
+	AString *result = _a_string_list_get(list, index);
 
 	V(list->lock);
 
@@ -721,6 +771,22 @@ aboolean a_string_list_sorted (AStringList *list)
 	P(list->lock);
 
 	aboolean result = _a_string_list_sorted(list);
+
+	V(list->lock);
+
+	return result;
+}
+
+aboolean a_string_list_sorted_custom (AStringList *list, A_CMP cmp)
+{
+	if (!A_IS_STRING_LIST(list)){
+		A_WARNING_NOT_STRING_LIST;
+		return FALSE;
+	}
+
+	P(list->lock);
+
+	aboolean result = _a_string_list_sorted_custom(list, cmp);
 
 	V(list->lock);
 

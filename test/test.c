@@ -200,5 +200,7 @@ int main()
 	a_string_free(str);
 
 
+	
+	printf(">>>Test Finished! <<<\n");
 	return 0;
 }

@@ -39,6 +39,11 @@ struct _AString{
 };
 
 /**
+ * @brief Main Struct
+ */
+typedef struct _AString AString;
+
+/**
  * @brief AStringArray Struct.
  * 
  * The AStringArray struct contains the public fields of a AStringArray.It only used in a_string_split(). 
@@ -48,10 +53,6 @@ struct _AStringArray{
 	asize               size; /**< contains the length of the stringarray */
 };
 
-/**
- * @brief Main Struct
- */
-typedef struct _AString AString;
 /**
  * @brief the array of some AString
  */
