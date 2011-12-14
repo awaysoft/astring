@@ -168,6 +168,10 @@ var searchBox = new SearchBox("searchBox", "search",false,'搜索');
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Splits a string into array.  <a href="#a8bbd31fa00962a0bd97e067aae621be4"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="astring_8h.html#ab78aa377b6493e8ce52cc631448b02cf">AString</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="astring_8c.html#a50f3119e0d1e42906afe77acb2c6cb70">a_string_trim</a> (<a class="el" href="astring_8h.html#ab78aa377b6493e8ce52cc631448b02cf">AString</a> *string)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">wipe off the head and tail's space or tab. "  abc  " will be "abc"  <a href="#a50f3119e0d1e42906afe77acb2c6cb70"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="astring_8h.html#ab78aa377b6493e8ce52cc631448b02cf">AString</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="astring_8c.html#a53410defc1b55fd5a2630c427ad7d4f1">a_string_ltrim</a> (<a class="el" href="astring_8h.html#ab78aa377b6493e8ce52cc631448b02cf">AString</a> *string)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">wipe off the head's space or tab. "  abc  " will be "abc  "  <a href="#a53410defc1b55fd5a2630c427ad7d4f1"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="astring_8h.html#ab78aa377b6493e8ce52cc631448b02cf">AString</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="astring_8c.html#aeedc90ebb3232f3fc06a71f8010858b3">a_string_rtrim</a> (<a class="el" href="astring_8h.html#ab78aa377b6493e8ce52cc631448b02cf">AString</a> *string)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">wipe off the tail's space or tab. "  abc  " will be "  abc"  <a href="#aeedc90ebb3232f3fc06a71f8010858b3"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="astring_8h.html#ab78aa377b6493e8ce52cc631448b02cf">AString</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="astring_8c.html#a0537e4815ff01197e59949cc0f489e1e">a_string_substring</a> (<a class="el" href="astring_8h.html#ab78aa377b6493e8ce52cc631448b02cf">AString</a> *string, <a class="el" href="atype_8h.html#a890366194341d30ffc42673649c34200">asize</a> start, <a class="el" href="atype_8h.html#a890366194341d30ffc42673649c34200">asize</a> end)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">change an AString to it's substring.  <a href="#a0537e4815ff01197e59949cc0f489e1e"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="astring_8h.html#ab78aa377b6493e8ce52cc631448b02cf">AString</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="astring_8c.html#a499cb606d6bc890c44ac97f957a85d74">a_string_substring_new</a> (<a class="el" href="astring_8h.html#ab78aa377b6493e8ce52cc631448b02cf">AString</a> *string, <a class="el" href="atype_8h.html#a890366194341d30ffc42673649c34200">asize</a> start, <a class="el" href="atype_8h.html#a890366194341d30ffc42673649c34200">asize</a> end)</td></tr>
@@ -1026,6 +1030,33 @@ var searchBox = new SearchBox("searchBox", "search",false,'搜索');
 
 </div>
 </div>
+<a class="anchor" id="a53410defc1b55fd5a2630c427ad7d4f1"></a><!-- doxytag: member="astring.c::a_string_ltrim" ref="a53410defc1b55fd5a2630c427ad7d4f1" args="(AString *string)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="astring_8h.html#ab78aa377b6493e8ce52cc631448b02cf">AString</a>* a_string_ltrim </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="astring_8h.html#ab78aa377b6493e8ce52cc631448b02cf">AString</a> *&#160;</td>
+          <td class="paramname"><em>string</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>wipe off the head's space or tab. "  abc  " will be "abc  " </p>
+<dl><dt><b>参数:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">string</td><td>the AString you want to trim left </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>返回:</b></dt><dd>string </dd></dl>
+<dl class="since"><dt><b>自从:</b></dt><dd>0.1 </dd></dl>
+
+</div>
+</div>
 <a class="anchor" id="a4e9339a9e220bfc7375d710d130fe6c1"></a><!-- doxytag: member="astring.c::a_string_new" ref="a4e9339a9e220bfc7375d710d130fe6c1" args="(const char *init)" -->
 <div class="memitem">
 <div class="memproto">
@@ -1445,6 +1476,33 @@ var searchBox = new SearchBox("searchBox", "search",false,'搜索');
 
 </div>
 </div>
+<a class="anchor" id="aeedc90ebb3232f3fc06a71f8010858b3"></a><!-- doxytag: member="astring.c::a_string_rtrim" ref="aeedc90ebb3232f3fc06a71f8010858b3" args="(AString *string)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="astring_8h.html#ab78aa377b6493e8ce52cc631448b02cf">AString</a>* a_string_rtrim </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="astring_8h.html#ab78aa377b6493e8ce52cc631448b02cf">AString</a> *&#160;</td>
+          <td class="paramname"><em>string</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>wipe off the tail's space or tab. "  abc  " will be "  abc" </p>
+<dl><dt><b>参数:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">string</td><td>the AString you want to trim right </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>返回:</b></dt><dd>string </dd></dl>
+<dl class="since"><dt><b>自从:</b></dt><dd>0.1 </dd></dl>
+
+</div>
+</div>
 <a class="anchor" id="a78fcdaa38bae4fd2f9d1985af8513964"></a><!-- doxytag: member="astring.c::a_string_set_char" ref="a78fcdaa38bae4fd2f9d1985af8513964" args="(AString *string, asize position, char ch)" -->
 <div class="memitem">
 <div class="memproto">
@@ -1786,7 +1844,7 @@ Run: 2345 </dd></dl>
 </div>
 
 
-    <li class="footer">Generated at 2011年十二月5日 星期一 23:52:23 for AString by
+    <li class="footer">Generated at 2011年十二月14日 星期三 18:41:28 for AString by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.5 </li>
    </ul>

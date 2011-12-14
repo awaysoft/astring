@@ -324,6 +324,22 @@ AString *      a_string_set_size              (AString *string,
  */
 AString *      a_string_trim                  (AString *string);
 /**
+ * @brief wipe off the head's space or tab.
+ *  "  abc  " will be "abc  "
+ * @param string the AString you want to trim left
+ * @return string
+ * @since 0.1
+ */
+AString *      a_string_ltrim                  (AString *string);
+/**
+ * @brief wipe off the tail's space or tab.
+ *  "  abc  " will be "  abc"
+ * @param string the AString you want to trim right
+ * @return string
+ * @since 0.1
+ */
+AString *      a_string_rtrim                  (AString *string);
+/**
  * @brief Splits a string into array
  * @param string the AString you want to split
  * @param splitstr the split string

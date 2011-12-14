@@ -523,6 +523,43 @@ static AString * _a_string_trim(AString *string)
 	return string;
 }
 
+static AString * _a_string_ltrim(AString *string)
+{
+	char *endch = &(string->str[string->len]);
+	char *startch = string->str;
+	char *p = string->str, *q;
+	while(*startch && (*startch == ' ' || *startch == '\t')){
+		++startch;
+	}
+
+	q = startch;
+
+	while(q!=endch){
+		*p++ = *q++;
+	}
+
+	string->len = ((int)endch - (int)startch) / (sizeof(char));
+	string->str[string->len] = ZERO;
+	
+	return string;
+}
+
+static AString * _a_string_rtrim(AString *string)
+{
+	char *endch = &(string->str[string->len]);
+	char *startch = string->str;
+	char *p = string->str, *q;
+	while(endch != string->str && (*endch == ' ' || *endch == '\t' || *endch == ZERO)){
+		--endch;
+	}
+	++endch;
+	
+	string->len = ((int)endch - (int)startch) / (sizeof(char));
+	string->str[string->len] = ZERO;
+	
+	return string;
+}
+
 static AString *_a_string_substring(AString *string, asize start, asize end)
 {
 	if (start >= string->len) return string;
@@ -1036,6 +1073,34 @@ AString * a_string_trim(AString *string)
 	P(string->lock);
 
 	_a_string_trim(string);
+
+	V(string->lock);
+	return string;
+}
+
+AString * a_string_ltrim(AString *string)
+{
+	if (!A_IS_STRING(string)) {
+		A_WARING_NOT_STRING;
+		return string;
+	}
+	P(string->lock);
+
+	_a_string_ltrim(string);
+
+	V(string->lock);
+	return string;
+}
+
+AString * a_string_rtrim(AString *string)
+{
+	if (!A_IS_STRING(string)) {
+		A_WARING_NOT_STRING;
+		return string;
+	}
+	P(string->lock);
+
+	_a_string_rtrim(string);
 
 	V(string->lock);
 	return string;

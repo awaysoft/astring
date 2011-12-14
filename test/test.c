@@ -4,8 +4,14 @@
 void testtrim(char *str)
 {
 	AString *string = a_string_new(str);
+	AString *stringl = a_string_dup(string);
+	AString *stringr = a_string_dup(string);
 	a_string_trim(string);
+	a_string_ltrim(stringl);
+	a_string_rtrim(stringr);
 	printf("|%s| Trim From: |%s|\n", string->str, str);
+	printf("|%s| Left Trim From: |%s|\n", stringl->str, str);
+	printf("|%s| Right Trim From: |%s|\n", stringr->str, str);
 }
 
 void testfind(AString *string, char *findstr)
